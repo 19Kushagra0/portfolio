@@ -8,18 +8,23 @@ export default function Home() {
         <p className="subtitle">Frontend Developer • Next.js • JavaScript</p>
 
         <div className="buttons">
-          <a href="https://github.com/" target="_blank">
+          <a target="_blank" href="https://github.com/19Kushagra0">
             GitHub
           </a>
-          <a href="mailto:19kushagra0@gmail.com">Contact</a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/kushagra-sharma-ks/"
+          >
+            Linkdin
+          </a>
         </div>
       </section>
 
       <section className="section">
         <h2>Skills</h2>
         <div className="skills">
-          <span>HTML5</span>
-          <span>CSS3</span>
+          <span>HTML</span>
+          <span>CSS</span>
           <span>JavaScript</span>
           <span>Next.js</span>
           <span>Node.js</span>
