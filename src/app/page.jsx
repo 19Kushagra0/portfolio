@@ -39,7 +39,7 @@ export default function Home() {
           <div className="projects-box">
             <div className="card">
               <h3>Awwwards homepage clone</h3>
-              <p>Modern chat UI built using Next.js.</p>
+              <p>Modern UI built using Next.js.</p>
 
               <div className="card-links">
                 <a
@@ -60,7 +60,7 @@ export default function Home() {
             </div>
             <div className="card">
               <h3>Baremetrics hompage clone</h3>
-              <p>Modern chat UI built using React.</p>
+              <p>Modern UI built using React.</p>
 
               <div className="card-links">
                 <a
@@ -83,7 +83,7 @@ export default function Home() {
           <div className="projects-box">
             <div className="card">
               <h3>Play-ht homepage clone</h3>
-              <p>Modern chat UI built using React.</p>
+              <p>Modern UI built using React.</p>
 
               <div className="card-links">
                 <a
