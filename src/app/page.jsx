@@ -26,8 +26,9 @@ export default function Home() {
           <span>HTML</span>
           <span>CSS</span>
           <span>JavaScript</span>
-          <span>Next.js</span>
           <span>Node.js</span>
+          <span>React</span>
+          <span>Next.js</span>
           <span>Frontend Development</span>
         </div>
       </section>
@@ -35,18 +36,87 @@ export default function Home() {
       <section className="section">
         <h2>Projects</h2>
         <div className="projects">
-          <div className="card">
-            <h3>AI Chatbot UI</h3>
-            <p>Modern chat UI built using Next.js.</p>
-          </div>
+          <div className="projects-box">
+            <div className="card">
+              <h3>Awwwards homepage clone</h3>
+              <p>Modern chat UI built using Next.js.</p>
 
-          <div className="card">
-            <h3>Portfolio Website</h3>
-            <p>Clean and responsive personal portfolio.</p>
+              <div className="card-links">
+                <a
+                  className="live-project"
+                  href="https://awwwards-sotd.netlify.app/"
+                  target="_blank"
+                >
+                  Live Demo
+                </a>
+                <a
+                  className="github-project"
+                  href="https://github.com/19Kushagra0/awwwards-homepage-clone"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <div className="card">
+              <h3>Baremetrics hompage clone</h3>
+              <p>Modern chat UI built using React.</p>
+
+              <div className="card-links">
+                <a
+                  className="live-project"
+                  href="https://baremetrics-hompage-clone.netlify.app/"
+                  target="_blank"
+                >
+                  Live Demo
+                </a>
+                <a
+                  className="github-project"
+                  href="https://github.com/19Kushagra0/baremetrics-hompage-clone"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="projects-box">
+            <div className="card">
+              <h3>Play-ht homepage clone</h3>
+              <p>Modern chat UI built using React.</p>
+
+              <div className="card-links">
+                <a
+                  className="live-project"
+                  href="https://play-ht.netlify.app/"
+                  target="_blank"
+                >
+                  Live Demo
+                </a>
+                <a
+                  className="github-project"
+                  href="https://github.com/19Kushagra0/play.ht-homepage-clone"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
+      {/* <section className="section">
+        <h2>Experience</h2>
+        <div className="skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Node.js</span>
+          <span>React</span>
+          <span>Next.js</span>
+          <span>Frontend Development</span>
+        </div>
+      </section> */}
       <footer>© {new Date().getFullYear()} Kushagra Sharma • Delhi</footer>
     </main>
   );
