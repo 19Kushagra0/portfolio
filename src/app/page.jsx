@@ -105,8 +105,8 @@ export default function Home() {
             <div className="card">
               <h3>X homepage</h3>
               <p>
-                About A simple X homepage clone built with Next.js, featuring
-                full CRUD functionality.
+                A simple X homepage clone built with Next.js, featuring full
+                CRUD functionality.
               </p>
 
               <div className="card-links">
