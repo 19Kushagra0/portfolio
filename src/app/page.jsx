@@ -136,6 +136,32 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className="projects-box">
+            <div className="card">
+              <h3>AI chatbot</h3>
+              <p>
+                AI chatbot built using Next.js and React with Google Gemini API
+                integration
+              </p>
+
+              <div className="card-links">
+                <a
+                  className="live-project"
+                  href="https://ai-chatbot-one-lemon-35.vercel.app/"
+                  target="_blank"
+                >
+                  Live Demo
+                </a>
+                <a
+                  className="github-project"
+                  href="https://github.com/19Kushagra0/ai-chatbot"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section className="section">
