@@ -102,6 +102,30 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            <div className="card">
+              <h3>X homepage</h3>
+              <p>
+                About A simple X homepage clone built with Next.js, featuring
+                full CRUD functionality.
+              </p>
+
+              <div className="card-links">
+                <a
+                  className="live-project"
+                  href="https://x-homepage-with-crud.vercel.app/"
+                  target="_blank"
+                >
+                  Live Demo
+                </a>
+                <a
+                  className="github-project"
+                  href="https://github.com/19Kushagra0/x-homepage-with-crud"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
