@@ -21,6 +21,15 @@ export default function Home() {
       </section>
 
       <section className="section">
+        <h2>Carrer objective</h2>
+        <p>
+          Frontend Developer learning and working with Next.js and modern UI
+          development, looking for a frontend role to grow and contribute to
+          real-world projects.
+        </p>
+      </section>
+
+      <section className="section">
         <h2>Skills</h2>
         <div className="skills">
           <span>HTML</span>
@@ -129,18 +138,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <section className="section">
-        <h2>Experience</h2>
-        <div className="skills">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>Node.js</span>
-          <span>React</span>
-          <span>Next.js</span>
-          <span>Frontend Development</span>
-        </div>
-      </section> */}
+      <section className="section">
+        <h2>Work Experience</h2>
+      </section>
       <footer>© {new Date().getFullYear()} Kushagra Sharma • Delhi</footer>
     </main>
   );
