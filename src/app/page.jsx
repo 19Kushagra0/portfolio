@@ -161,6 +161,29 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            <div className="card">
+              <h3>Anki homepage</h3>
+              <p>
+                Anki homepage clone built using Next.js and React.
+              </p>
+
+              <div className="card-links">
+                <a
+                  className="live-project"
+                  href="https://anki-homepage-clone.vercel.app/"
+                  target="_blank"
+                >
+                  Live Demo
+                </a>
+                <a
+                  className="github-project"
+                  href="https://github.com/19Kushagra0/anki-homepage-clone"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
