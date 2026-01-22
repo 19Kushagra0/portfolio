@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -7,98 +7,106 @@ const projectsData = [
     id: 1,
     title: "Awwwards homepage clone",
     shortDescription: "Modern UI built using Next.js.",
-    fullDescription: "A simple responsive UI clone of the Awwwards design system website.",
+    fullDescription:
+      "A simple responsive UI clone of the Awwwards design system website.",
     features: [
       "Responsive design system",
       "Hero section with dynamic hover effects",
-      "Feature sections with custom CSS layouts"
+      "Feature sections with custom CSS layouts",
     ],
     techStack: ["Next.js", "CSS"],
     links: {
       live: "https://awwwards-sotd.netlify.app/",
-      github: "https://github.com/19Kushagra0/awwwards-homepage-clone"
-    }
+      github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
+    },
   },
   {
     id: 2,
     title: "Baremetrics hompage clone",
     shortDescription: "Modern UI built using React.",
-    fullDescription: "A responsive clone of the Baremetrics homepage, focusing on clean UI and layout.",
+    fullDescription:
+      "A responsive clone of the Baremetrics homepage, focusing on clean UI and layout.",
     features: [
       "Clean and modern interface",
       "Responsive navigation",
-      "CSS Grid and Flexbox layouts"
+      "CSS Grid and Flexbox layouts",
     ],
     techStack: ["React", "CSS"],
     links: {
       live: "https://baremetrics-hompage-clone.netlify.app/",
-      github: "https://github.com/19Kushagra0/baremetrics-hompage-clone"
-    }
+      github: "https://github.com/19Kushagra0/baremetrics-hompage-clone",
+    },
   },
   {
     id: 3,
     title: "Play-ht homepage clone",
     shortDescription: "Modern UI built using React.",
-    fullDescription: "A high-fidelity clone of the Play.ht homepage, showcasing modern web design principles.",
+    fullDescription:
+      "A high-fidelity clone of the Play.ht homepage, showcasing modern web design principles.",
     features: [
       "Interactive standard elements",
       "Typography focused design",
-      "Mobile-first approach"
+      "Mobile-first approach",
     ],
     techStack: ["React", "CSS"],
     links: {
       live: "https://play-ht.netlify.app/",
-      github: "https://github.com/19Kushagra0/play.ht-homepage-clone"
-    }
+      github: "https://github.com/19Kushagra0/play.ht-homepage-clone",
+    },
   },
   {
     id: 4,
     title: "X homepage",
-    shortDescription: "A simple X homepage clone built with Next.js, featuring full CRUD functionality.",
-    fullDescription: "A clone of X (Twitter) homepage implementing core concept of CRUD functionality.",
+    shortDescription:
+      "A simple X homepage clone built with Next.js, featuring full CRUD functionality.",
+    fullDescription:
+      "A clone of X (Twitter) homepage implementing core concept of CRUD functionality.",
     features: [
       "Full CRUD functionality for posts",
       "User authentication simulation",
-      "Real-time UI updates"
+      "Real-time UI updates",
     ],
     techStack: ["Next.js", "React", "CSS"],
     links: {
       live: "https://x-homepage-with-crud.vercel.app/",
-      github: "https://github.com/19Kushagra0/x-homepage-with-crud"
-    }
+      github: "https://github.com/19Kushagra0/x-homepage-with-crud",
+    },
   },
   {
     id: 5,
     title: "AI chatbot",
-    shortDescription: "AI chatbot built using Next.js and React with Google Gemini API integration",
-    fullDescription: "An intelligent chatbot interface integrated with Google's Gemini API for natural language processing.",
+    shortDescription:
+      "AI chatbot built using Next.js and React with Google Gemini API integration",
+    fullDescription:
+      "An intelligent chatbot interface integrated with Google's Gemini API for natural language processing.",
     features: [
       "Google Gemini API integration",
       "Real-time chat interface",
-      "Markdown rendering for responses"
+      "Markdown rendering for responses",
     ],
     techStack: ["Next.js", "React", "Gemini API"],
     links: {
       live: "https://ai-chatbot-one-lemon-35.vercel.app/",
-      github: "https://github.com/19Kushagra0/ai-chatbot"
-    }
+      github: "https://github.com/19Kushagra0/ai-chatbot",
+    },
   },
   {
     id: 6,
     title: "Anki homepage",
     shortDescription: "Anki homepage clone built using Next.js and React.",
-    fullDescription: "A faithful recreation of the Anki homepage, emphasizing simplicity and utility.",
+    fullDescription:
+      "A faithful recreation of the Anki homepage, emphasizing simplicity and utility.",
     features: [
       "Dark mode support",
       "Clean minimalistic design",
-      "Performance optimized"
+      "Performance optimized",
     ],
     techStack: ["Next.js", "React"],
     links: {
       live: "https://anki-homepage-clone.vercel.app/",
-      github: "https://github.com/19Kushagra0/anki-homepage-clone"
-    }
-  }
+      github: "https://github.com/19Kushagra0/anki-homepage-clone",
+    },
+  },
 ];
 
 export default function Home() {
@@ -172,11 +180,13 @@ export default function Home() {
                     className="discription-button"
                     onClick={() => setSelectedProject(project)}
                   >
-                    <Image className="discription-image"
+                    <Image
+                      className="discription-image"
                       src="/icons/discription.svg"
                       alt="discription"
                       width={20}
-                      height={20} />
+                      height={20}
+                    />
                   </button>
                 </div>
               </div>
@@ -202,9 +212,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      {/* <section className="section">
         <h2>Work Experience</h2>
-      </section>
+      </section> */}
       <footer>© {new Date().getFullYear()} Kushagra Sharma • Delhi</footer>
 
       {selectedProject && (
@@ -212,17 +222,26 @@ export default function Home() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h3>{selectedProject.title}</h3>
-              <button className="close-button" onClick={() => setSelectedProject(null)}>
-                <Image src="/icons/close.svg" alt="Close" width={20} height={20} />
+              <button
+                className="close-button"
+                onClick={() => setSelectedProject(null)}
+              >
+                <Image
+                  src="/icons/close.svg"
+                  alt="Close"
+                  width={20}
+                  height={20}
+                />
                 {/* Fallback if icon missing, or just use text */}
               </button>
             </div>
 
-            <p className="modal-description">{selectedProject.fullDescription}</p>
-
+            <p className="modal-description">
+              {selectedProject.fullDescription}
+            </p>
 
             <div className="modal-tags">
-              {selectedProject.techStack.map(tech => (
+              {selectedProject.techStack.map((tech) => (
                 <span key={tech}>{tech}</span>
               ))}
             </div>
