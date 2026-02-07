@@ -22,72 +22,20 @@ const projectsData = [
     },
   },
   {
-    id: 1,
-    title: "Awwwards homepage clone",
-    shortDescription: "Modern UI built using Next.js.",
+    id: 6,
+    title: "Anki homepage",
+    shortDescription: "Anki homepage clone built using Next.js and React.",
     fullDescription:
-      "A simple responsive UI clone of the Awwwards design system website.",
+      "A faithful recreation of the Anki homepage, emphasizing simplicity and utility.",
     features: [
-      "Responsive design system",
-      "Hero section with dynamic hover effects",
-      "Feature sections with custom CSS layouts",
+      "Dark mode support",
+      "Clean minimalistic design",
+      "Performance optimized",
     ],
-    techStack: ["Next.js", "CSS"],
+    techStack: ["Next.js", "React"],
     links: {
-      live: "https://awwwards-sotd.netlify.app/",
-      github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
-    },
-  },
-  {
-    id: 2,
-    title: "Baremetrics hompage clone",
-    shortDescription: "Modern UI built using React.",
-    fullDescription:
-      "A responsive clone of the Baremetrics homepage, focusing on clean UI and layout.",
-    features: [
-      "Clean and modern interface",
-      "Responsive navigation",
-      "CSS Grid and Flexbox layouts",
-    ],
-    techStack: ["React", "CSS"],
-    links: {
-      live: "https://baremetrics-hompage-clone.netlify.app/",
-      github: "https://github.com/19Kushagra0/baremetrics-hompage-clone",
-    },
-  },
-  {
-    id: 3,
-    title: "Play-ht homepage clone",
-    shortDescription: "Modern UI built using React.",
-    fullDescription:
-      "A high-fidelity clone of the Play.ht homepage, showcasing modern web design principles.",
-    features: [
-      "Interactive standard elements",
-      "Typography focused design",
-      "Mobile-first approach",
-    ],
-    techStack: ["React", "CSS"],
-    links: {
-      live: "https://play-ht.netlify.app/",
-      github: "https://github.com/19Kushagra0/play.ht-homepage-clone",
-    },
-  },
-  {
-    id: 4,
-    title: "X homepage",
-    shortDescription:
-      "A simple X homepage clone built with Next.js, featuring full CRUD functionality.",
-    fullDescription:
-      "A clone of X (Twitter) homepage implementing core concept of CRUD functionality.",
-    features: [
-      "Full CRUD functionality for posts",
-      "User authentication simulation",
-      "Real-time UI updates",
-    ],
-    techStack: ["Next.js", "React", "CSS"],
-    links: {
-      live: "https://x-homepage-with-crud.vercel.app/",
-      github: "https://github.com/19Kushagra0/x-homepage-with-crud",
+      live: "https://anki-homepage-clone.vercel.app/",
+      github: "https://github.com/19Kushagra0/anki-homepage-clone",
     },
   },
   {
@@ -109,20 +57,72 @@ const projectsData = [
     },
   },
   {
-    id: 6,
-    title: "Anki homepage",
-    shortDescription: "Anki homepage clone built using Next.js and React.",
+    id: 4,
+    title: "X homepage",
+    shortDescription:
+      "A simple X homepage clone built with Next.js, featuring full CRUD functionality.",
     fullDescription:
-      "A faithful recreation of the Anki homepage, emphasizing simplicity and utility.",
+      "A clone of X (Twitter) homepage implementing core concept of CRUD functionality.",
     features: [
-      "Dark mode support",
-      "Clean minimalistic design",
-      "Performance optimized",
+      "Full CRUD functionality for posts",
+      "User authentication simulation",
+      "Real-time UI updates",
     ],
-    techStack: ["Next.js", "React"],
+    techStack: ["Next.js", "React", "CSS"],
     links: {
-      live: "https://anki-homepage-clone.vercel.app/",
-      github: "https://github.com/19Kushagra0/anki-homepage-clone",
+      live: "https://x-homepage-with-crud.vercel.app/",
+      github: "https://github.com/19Kushagra0/x-homepage-with-crud",
+    },
+  },
+  {
+    id: 3,
+    title: "Play-ht homepage clone",
+    shortDescription: "Modern UI built using React.",
+    fullDescription:
+      "A high-fidelity clone of the Play.ht homepage, showcasing modern web design principles.",
+    features: [
+      "Interactive standard elements",
+      "Typography focused design",
+      "Mobile-first approach",
+    ],
+    techStack: ["React", "CSS"],
+    links: {
+      live: "https://play-ht.netlify.app/",
+      github: "https://github.com/19Kushagra0/play.ht-homepage-clone",
+    },
+  },
+  {
+    id: 2,
+    title: "Baremetrics hompage clone",
+    shortDescription: "Modern UI built using React.",
+    fullDescription:
+      "A responsive clone of the Baremetrics homepage, focusing on clean UI and layout.",
+    features: [
+      "Clean and modern interface",
+      "Responsive navigation",
+      "CSS Grid and Flexbox layouts",
+    ],
+    techStack: ["React", "CSS"],
+    links: {
+      live: "https://baremetrics-hompage-clone.netlify.app/",
+      github: "https://github.com/19Kushagra0/baremetrics-hompage-clone",
+    },
+  },
+  {
+    id: 1,
+    title: "Awwwards homepage clone",
+    shortDescription: "Modern UI built using Next.js.",
+    fullDescription:
+      "A simple responsive UI clone of the Awwwards design system website.",
+    features: [
+      "Responsive design system",
+      "Hero section with dynamic hover effects",
+      "Feature sections with custom CSS layouts",
+    ],
+    techStack: ["Next.js", "CSS"],
+    links: {
+      live: "https://awwwards-sotd.netlify.app/",
+      github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
     },
   },
 ];
