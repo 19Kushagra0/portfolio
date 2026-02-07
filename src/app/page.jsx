@@ -4,6 +4,24 @@ import { useState } from "react";
 
 const projectsData = [
   {
+    id: 7,
+    title: "School Canteen Management",
+    shortDescription: "Persistent UI for tracking student orders and spending.",
+    fullDescription:
+      "A specialized management system for school canteens. It features a dashboard to track student spending, manage individual profiles, and maintain data across sessions using LocalStorage.",
+    features: [
+      "Dynamic routing for student profiles",
+      "Global state management via React Context",
+      "Persistent data storage with LocalStorage",
+      "Optimized hydration to prevent layout shifts",
+    ],
+    techStack: ["Next.js", "React", "Context API", "CSS"],
+    links: {
+      live: "https://school-canteen-bay.vercel.app/",
+      github: "https://github.com/19Kushagra0/school-canteen",
+    },
+  },
+  {
     id: 1,
     title: "Awwwards homepage clone",
     shortDescription: "Modern UI built using Next.js.",
@@ -145,13 +163,13 @@ export default function Home() {
             target="_blank"
             href="https://www.linkedin.com/in/kushagra-sharma-ks/"
           >
-            Linkdin
+            LinkedIn
           </a>
         </div>
       </section>
 
       <section className="section">
-        <h2>Carrer objective</h2>
+        <h2>Career Objective</h2>
         <p>
           Frontend Developer learning and working with Next.js and modern UI
           development, looking for a frontend role to grow and contribute to
@@ -175,17 +193,6 @@ export default function Home() {
       <section className="section">
         <h2>Projects</h2>
         <div className="projects">
-          {/* Grouping roughly by 2s for the layout if needed, or just mapping flex/grid */}
-          {/* Original layout had nested projects-box divs. Let's keep it simple with a grid or wrap, 
-              but since we are replacing the whole block, I'll use a clean flex-wrap/grid approach 
-              or try to mimic the row-by-row structure if possible. 
-              The original CSS has .projects as flex-col and .projects-box as row. 
-              To avoid breaking layout, let's chunk them or just use one container if CSS allows.
-              
-              Looking at CSS: .projects is flex-col gap-20. .projects-box is flex-row gap-20.
-              So I should map them in pairs to preserve the layout structure.
-           */}
-
           {projectsData.map((project) => (
             <div className="card" key={project.id}>
               <div className="card-content-container">
@@ -202,7 +209,7 @@ export default function Home() {
                     <Image
                       className="discription-image"
                       src="/icons/discription.svg"
-                      alt="discription"
+                      alt="description"
                       width={20}
                       height={20}
                     />
@@ -233,9 +240,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className="section">
-        <h2>Work Experience</h2>
-      </section> */}
       <footer>© {new Date().getFullYear()} Kushagra Sharma • Delhi</footer>
 
       {selectedProject && (
@@ -253,7 +257,6 @@ export default function Home() {
                   width={20}
                   height={20}
                 />
-                {/* Fallback if icon missing, or just use text */}
               </button>
             </div>
 
