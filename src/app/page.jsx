@@ -125,6 +125,8 @@ const projectsData = [
       github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
     },
   },
+
+  
 ];
 
 export default function Home() {
