@@ -107,6 +107,25 @@ const projectsData = [
       github: "https://github.com/19Kushagra0/anki-homepage-clone",
     },
   },
+
+  {
+    id: 7, // New ID for your latest project
+    title: "School Canteen Management",
+    shortDescription: "Persistent UI for tracking student orders and spending.",
+    fullDescription:
+      "A specialized management system for school canteens. It features a dashboard to track student spending, manage individual profiles, and maintain data across sessions using LocalStorage.",
+    features: [
+      "Dynamic routing for student profiles",
+      "Global state management via React Context",
+      "Persistent data storage with LocalStorage",
+      "Optimized hydration to prevent layout shifts",
+    ],
+    techStack: ["Next.js", "React", "Context API", "CSS"],
+    links: {
+      live: "https://school-canteen-bay.vercel.app/",
+      github: "https://github.com/19Kushagra0/school-canteen",
+    },
+  },
 ];
 
 export default function Home() {
@@ -209,6 +228,8 @@ export default function Home() {
               </div>
             </div>
           ))}
+
+          <div className="card vis-none"></div>
         </div>
       </section>
 
