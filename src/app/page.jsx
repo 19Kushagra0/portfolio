@@ -5,8 +5,9 @@ import { useState } from "react";
 const projectsData = [
   {
     id: 7,
-    title: "School Canteen Management",
-    shortDescription: "Persistent UI for tracking student orders and spending.",
+    title: "School Canteen Order Management Prototype",
+    shortDescription:
+      "A frontend-focused canteen ordering system built to explore state management and data flow.",
     fullDescription:
       "A specialized management system for school canteens. It features a dashboard to track student spending, manage individual profiles, and maintain data across sessions using LocalStorage.",
     features: [
@@ -125,8 +126,6 @@ const projectsData = [
       github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
     },
   },
-
-  
 ];
 
 export default function Home() {
