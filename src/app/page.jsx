@@ -4,6 +4,46 @@ import { useState } from "react";
 
 const projectsData = [
   {
+  id: 9,
+  title: "Authentication Pages (Signup & Login)",
+  shortDescription:
+    "A frontend-first authentication flow built to understand real-world login and signup UI patterns.",
+  fullDescription:
+    "A simple authentication prototype focused on building real signup and login screens without overengineering. The project explores how authentication flows are structured on the frontend, including form state handling, validation logic, and clean UI separation between signup and login. Built as a learning project to strengthen fundamentals before introducing backend complexity.",
+  features: [
+    "Dedicated signup and login pages",
+    "Controlled form inputs with predictable state management",
+    "Clear separation of authentication flows",
+    "Reusable UI components",
+    "Clean and minimal user interface",
+  ],
+  techStack: ["Next.js", "React", "CSS"],
+  links: {
+    live: "https://auth-page-five-blond.vercel.app/",
+    github: "https://github.com/19Kushagra0/auth-page",
+  },
+},
+  {
+    id: 8,
+    title: "Interactive Authentication Page with Micro-Interactions",
+    shortDescription:
+      "A playful authentication screen focused on micro-interactions and user feedback.",
+    fullDescription:
+      "An experimental authentication UI inspired by Fireship, designed to explore how micro-interactions can improve user experience. The character responds in real time to user actions — tracking cursor movement, reacting to email input, and changing behavior while typing passwords. What started as a fun animation experiment evolved into a reusable UX prototype for modern login screens.",
+    features: [
+      "Eye-tracking character that follows cursor movement",
+      "Context-aware reactions based on active input field",
+      "Dynamic character states while typing passwords",
+      "Reusable state system for easy interaction expansion",
+      "Smooth transitions focused on delightful UX feedback",
+    ],
+    techStack: ["Next.js", "React", "CSS", "Client-side State Management"],
+    links: {
+      live: "https://auth-page-five-blond.vercel.app/",
+      github: "https://github.com/19Kushagra0/auth-page",
+    },
+  },
+  {
     id: 7,
     title: "School Canteen Order Management Prototype",
     shortDescription:
@@ -126,8 +166,6 @@ const projectsData = [
       github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
     },
   },
-
-  
 ];
 
 export default function Home() {
