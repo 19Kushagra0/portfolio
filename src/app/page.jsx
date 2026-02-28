@@ -4,25 +4,25 @@ import { useState } from "react";
 
 const projectsData = [
   {
-  id: 9,
-  title: "Authentication Pages (Signup & Login)",
-  shortDescription:
-    "A frontend-first authentication flow built to understand real-world login and signup UI patterns.",
-  fullDescription:
-    "A simple authentication prototype focused on building real signup and login screens without overengineering. The project explores how authentication flows are structured on the frontend, including form state handling, validation logic, and clean UI separation between signup and login. Built as a learning project to strengthen fundamentals before introducing backend complexity.",
-  features: [
-    "Dedicated signup and login pages",
-    "Controlled form inputs with predictable state management",
-    "Clear separation of authentication flows",
-    "Reusable UI components",
-    "Clean and minimal user interface",
-  ],
-  techStack: ["Next.js", "React", "CSS"],
-  links: {
-    live: "https://auth-page-five-blond.vercel.app/",
-    github: "https://github.com/19Kushagra0/auth-page",
+    id: 9,
+    title: "Authentication Pages (Signup & Login)",
+    shortDescription:
+      "A frontend-first authentication flow built to understand real-world login and signup UI patterns.",
+    fullDescription:
+      "A simple authentication prototype focused on building real signup and login screens without overengineering. The project explores how authentication flows are structured on the frontend, including form state handling, validation logic, and clean UI separation between signup and login. Built as a learning project to strengthen fundamentals before introducing backend complexity.",
+    features: [
+      "Dedicated signup and login pages",
+      "Controlled form inputs with predictable state management",
+      "Clear separation of authentication flows",
+      "Reusable UI components",
+      "Clean and minimal user interface",
+    ],
+    techStack: ["Next.js", "React", "CSS"],
+    links: {
+      live: "https://nextjs-jwt-auth-roan.vercel.app/",
+      github: "https://github.com/19Kushagra0/nextjs-jwt-auth",
+    },
   },
-},
   {
     id: 8,
     title: "Interactive Authentication Page with Micro-Interactions",
