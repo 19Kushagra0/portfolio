@@ -209,7 +209,11 @@ export default function Home() {
           <span>Node.js</span>
           <span>React</span>
           <span>Next.js</span>
+          <span>MongoDB</span>
+          <span>JWT</span>
+          <span>API Routes</span>
           <span>Frontend Development</span>
+          <span>Backend Development</span>
         </div>
       </section>
 
