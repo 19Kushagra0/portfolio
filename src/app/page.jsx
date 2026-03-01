@@ -5,19 +5,20 @@ import { useState } from "react";
 const projectsData = [
   {
     id: 9,
-    title: "Authentication Pages (Signup & Login)",
+    title: "Authentication Pages (Signup & Login with Database)",
     shortDescription:
-      "A frontend-first authentication flow built to understand real-world login and signup UI patterns.",
+      "A full authentication flow with real database-backed signup and login.",
     fullDescription:
-      "A simple authentication prototype focused on building real signup and login screens without overengineering. The project explores how authentication flows are structured on the frontend, including form state handling, validation logic, and clean UI separation between signup and login. Built as a learning project to strengthen fundamentals before introducing backend complexity.",
+      "A simple authentication project focused on implementing real signup and login with a database. Users are stored persistently in MongoDB, and authentication is handled using JWT. The project was built to understand how frontend authentication flows connect to a real backend without overengineering.",
     features: [
       "Dedicated signup and login pages",
       "Controlled form inputs with predictable state management",
-      "Clear separation of authentication flows",
-      "Reusable UI components",
+      "Users stored persistently in MongoDB",
+      "JWT-based authentication",
+      "Protected API routes",
       "Clean and minimal user interface",
     ],
-    techStack: ["Next.js", "React", "CSS"],
+    techStack: ["Next.js", "React", "CSS", "MongoDB", "JWT"],
     links: {
       live: "https://nextjs-jwt-auth-roan.vercel.app/",
       github: "https://github.com/19Kushagra0/nextjs-jwt-auth",
@@ -39,8 +40,8 @@ const projectsData = [
     ],
     techStack: ["Next.js", "React", "CSS", "Client-side State Management"],
     links: {
-      live: "https://auth-page-five-blond.vercel.app/",
-      github: "https://github.com/19Kushagra0/auth-page",
+      live: "https://interactive-auth-ui.vercel.app/",
+      github: "https://github.com/19Kushagra0/interactive-auth-ui",
     },
   },
   {
