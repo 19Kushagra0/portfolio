@@ -4,6 +4,41 @@ import { useState } from "react";
 
 const projectsData = [
   {
+    id: 10,
+    title: "NutriExplore — Full Stack Food Product Explorer",
+    shortDescription:
+      "A full-stack product exploration platform with search, filters, authentication, and API integration.",
+
+    fullDescription:
+      "NutriExplore is a full-stack web application that allows users to explore food products and view detailed nutritional information. The project was built to move beyond pure frontend work and understand how real applications combine frontend interfaces with backend logic. It integrates external APIs, supports product search and filtering, dynamic product pages, and includes authentication with protected features. The goal was to practice real application architecture using Next.js full-stack capabilities.",
+
+    features: [
+      "Product search using external API",
+      "Infinite scroll product loading",
+      "Dynamic product detail pages",
+      "Sorting and category filtering",
+      "Authentication system with signup and login",
+      "JWT-based authentication flow",
+      "Protected routes for authenticated users",
+      "Clean component-based UI architecture",
+    ],
+
+    techStack: [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "CSS Modules",
+      "API Routes",
+      "JWT Authentication",
+      "OpenFoodFacts API",
+    ],
+
+    links: {
+      live: "https://nutriexplore.vercel.app/",
+      github: "https://github.com/19Kushagra0/nutriexplore",
+    },
+  },
+  {
     id: 9,
     title: "Authentication Pages (Signup & Login with Database)",
     shortDescription:
