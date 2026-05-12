@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,16 +7,24 @@ const inter = Inter({
   display: "swap",
 });
 
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata = {
-  title: "Kushagra Sharma — Frontend Developer",
+  title: "Kushagra Sharma - Developer Portfolio",
   description:
     "Frontend developer building with Next.js and modern JavaScript. Clean interfaces, thoughtful interactions, and real-world application architecture.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.variable}>{children}</body>
+    <html lang="en" className="light">
+      <body className={`${inter.variable} ${geistMono.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
