@@ -14,6 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000"
+  ),
   title: "Kushagra Sharma - Developer Portfolio",
   description:
     "Frontend developer building with Next.js and modern JavaScript. Clean interfaces, thoughtful interactions, and real-world application architecture.",
