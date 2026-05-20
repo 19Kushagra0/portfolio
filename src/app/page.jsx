@@ -85,18 +85,18 @@ const projectsData = [
       github: "https://github.com/19Kushagra0/anki-homepage-clone",
     },
   },
-  {
-    id: 5,
-    number: "08",
-    title: "AI Chatbot",
-    description:
-      "A streamlined conversational interface leveraging external APIs for natural language processing and real-time responses.",
-    image: "/projects/chatbot.png",
-    links: {
-      live: "https://ai-chatbot-one-lemon-35.vercel.app/",
-      github: "https://github.com/19Kushagra0/ai-chatbot",
-    },
-  },
+  // {
+  //   id: 5,
+  //   number: "08",
+  //   title: "AI Chatbot",
+  //   description:
+  //     "A streamlined conversational interface leveraging external APIs for natural language processing and real-time responses.",
+  //   image: "/projects/chatbot.png",
+  //   links: {
+  //     live: "https://ai-chatbot-one-lemon-35.vercel.app/",
+  //     github: "https://github.com/19Kushagra0/ai-chatbot",
+  //   },
+  // },
   {
     id: 4,
     number: "09",
@@ -117,7 +117,7 @@ const projectsData = [
       "A faithful reproduction of the Play.ht website featuring modern typography, spacing, and engaging UI elements.",
     image: "/projects/playht.png",
     links: {
-      live: "https://play-ht.netlify.app/",
+      live: "https://play-ht-homepage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/play.ht-homepage-clone",
     },
   },
@@ -129,7 +129,7 @@ const projectsData = [
       "A clean, data-focused landing page clone with precise styling, well-structured components, and a professional aesthetic.",
     image: "/projects/baremetrics.png",
     links: {
-      live: "https://baremetrics-hompage-clone.netlify.app/",
+      live: "https://baremetrics-hompage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/baremetrics-hompage-clone",
     },
   },
@@ -141,7 +141,7 @@ const projectsData = [
       "A high-fidelity clone of the Awwwards platform homepage, showcasing advanced CSS techniques and a visually striking layout.",
     image: "/projects/awwwards.png",
     links: {
-      live: "https://awwwards-sotd.netlify.app/",
+      live: "https://awwwards-homepage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
     },
   },
