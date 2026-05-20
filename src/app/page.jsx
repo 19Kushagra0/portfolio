@@ -7,6 +7,7 @@ const projectsData = [
     title: "AllDrives — AI-Powered Cloud Storage Platform",
     description:
       "A high-fidelity Google Drive clone built with Next.js, Firebase, Zustand, and TanStack Query. Features Google Drive integration, persistent Gemini AI Sidebar, context-menu file summaries, real-time Firestore sync, and an elegant linear design system.",
+    image: "/projects/alldrives.png",
     links: {
       live: "https://alldrives-three.vercel.app/",
       github: "https://github.com/19Kushagra0/alldrives",
@@ -18,6 +19,7 @@ const projectsData = [
     title: "ourMails — Minimalist Gmail Client",
     description:
       "A minimalist Gmail client built with Next.js, NextAuth, Google OAuth, and the Gmail API for a cleaner, distraction-free email experience.",
+    image: "/projects/yourmails.png",
     links: {
       live: "https://yourmails.vercel.app/",
       github: "https://github.com/19Kushagra0/yourmails",
@@ -29,6 +31,7 @@ const projectsData = [
     title: "NutriExplore — Full Stack Food Product Explorer",
     description:
       "A comprehensive nutrition tracking application built with modern web standards and responsive design.",
+    image: "/projects/nutriexplore.png",
     links: {
       live: "https://nutriexplore.vercel.app/",
       github: "https://github.com/19Kushagra0/nutriexplore",
@@ -37,9 +40,10 @@ const projectsData = [
   {
     id: 9,
     number: "04",
-    title: "Authentication Pages (Signup & Login with Database)",
+    title: "Dashbord with Authentication (Signup & Login with Database)",
     description:
       "A secure signup and login flow integrated with a backend database for reliable user management.",
+    image: "/projects/dashboard.png",
     links: {
       live: "https://nextjs-jwt-auth-roan.vercel.app/",
       github: "https://github.com/19Kushagra0/nextjs-jwt-auth",
@@ -51,6 +55,7 @@ const projectsData = [
     title: "Interactive Authentication Page with Micro-Interactions",
     description:
       "Advanced authentication flows featuring smooth transitions, micro-interactions, and instant form validation.",
+    image: "/projects/microauth.png",
     links: {
       live: "https://interactive-auth-ui.vercel.app/",
       github: "https://github.com/19Kushagra0/interactive-auth-ui",
@@ -62,6 +67,7 @@ const projectsData = [
     title: "School Canteen Order Management Prototype",
     description:
       "A full-stack application for managing inventory, orders, and point-of-sale operations for educational institutions.",
+    image: "/projects/canteen.png",
     links: {
       live: "https://school-canteen-bay.vercel.app/",
       github: "https://github.com/19Kushagra0/school-canteen",
@@ -73,6 +79,7 @@ const projectsData = [
     title: "Anki Homepage Clone",
     description:
       "A pixel-perfect recreation of the Anki landing page focusing on responsive layout and semantic structure.",
+    image: "/projects/anki.png",
     links: {
       live: "https://anki-homepage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/anki-homepage-clone",
@@ -84,6 +91,7 @@ const projectsData = [
     title: "AI Chatbot",
     description:
       "A streamlined conversational interface leveraging external APIs for natural language processing and real-time responses.",
+    image: "/projects/chatbot.png",
     links: {
       live: "https://ai-chatbot-one-lemon-35.vercel.app/",
       github: "https://github.com/19Kushagra0/ai-chatbot",
@@ -95,6 +103,7 @@ const projectsData = [
     title: "X Homepage Clone",
     description:
       "A responsive clone of the X (formerly Twitter) homepage, implementing complex grid layouts and component structures.",
+    image: "/projects/x.png",
     links: {
       live: "https://x-homepage-with-crud.vercel.app/",
       github: "https://github.com/19Kushagra0/x-homepage-with-crud",
@@ -106,6 +115,7 @@ const projectsData = [
     title: "Play.ht Homepage Clone",
     description:
       "A faithful reproduction of the Play.ht website featuring modern typography, spacing, and engaging UI elements.",
+    image: "/projects/playht.png",
     links: {
       live: "https://play-ht.netlify.app/",
       github: "https://github.com/19Kushagra0/play.ht-homepage-clone",
@@ -117,6 +127,7 @@ const projectsData = [
     title: "Baremetrics Homepage Clone",
     description:
       "A clean, data-focused landing page clone with precise styling, well-structured components, and a professional aesthetic.",
+    image: "/projects/baremetrics.png",
     links: {
       live: "https://baremetrics-hompage-clone.netlify.app/",
       github: "https://github.com/19Kushagra0/baremetrics-hompage-clone",
@@ -128,6 +139,7 @@ const projectsData = [
     title: "Awwwards Homepage Clone",
     description:
       "A high-fidelity clone of the Awwwards platform homepage, showcasing advanced CSS techniques and a visually striking layout.",
+    image: "/projects/awwwards.png",
     links: {
       live: "https://awwwards-sotd.netlify.app/",
       github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
@@ -682,14 +694,14 @@ function ProjectCard({ project }) {
       {/* Preview area */}
       <div
         style={{
-          height: 192,
-          backgroundColor: "#f7f3f2",
+          aspectRatio: "16 / 9",
+          backgroundColor: "#ffffff",
           borderBottom: "1px solid #ebebeb",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: 16,
           position: "relative",
+          overflow: "hidden",
         }}
       >
         <span
@@ -700,26 +712,46 @@ function ProjectCard({ project }) {
             fontFamily: "'Geist Mono', ui-monospace, monospace",
             fontSize: 12,
             color: "#888888",
+            zIndex: 10,
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
+            padding: "2px 6px",
+            borderRadius: 4,
+            backdropFilter: "blur(4px)",
+            border: "1px solid rgba(0, 0, 0, 0.05)",
           }}
         >
           {project.number}
         </span>
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            borderRadius: 4,
-            border: "1px dashed #ebebeb",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#888888",
-            fontFamily: "'Geist Mono', ui-monospace, monospace",
-            fontSize: 12,
-          }}
-        >
-          Preview Not Available
-        </div>
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="project-preview-image"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+        ) : (
+          <div
+            style={{
+              width: "calc(100% - 32px)",
+              height: "calc(100% - 32px)",
+              borderRadius: 4,
+              border: "1px dashed #ebebeb",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#888888",
+              backgroundColor: "#f7f3f2",
+              fontFamily: "'Geist Mono', ui-monospace, monospace",
+              fontSize: 12,
+            }}
+          >
+            Preview Not Available
+          </div>
+        )}
       </div>
 
       {/* Card content */}
