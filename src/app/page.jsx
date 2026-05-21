@@ -1,5 +1,50 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+const heroContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const heroLineVariants = {
+  hidden: { opacity: 0, x: -60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const cardContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const cardItemVariants = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 const projectsData = [
   {
     id: 12,
@@ -307,9 +352,14 @@ export default function Home() {
             }}
           >
             {/* Code-numbered headline lines */}
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 12, textAlign: "left" }}>
+            <motion.div
+              variants={heroContainerVariants}
+              initial="hidden"
+              animate="visible"
+              style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 12, textAlign: "left" }}
+            >
               {/* Line 01 */}
-              <div style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+              <motion.div variants={heroLineVariants} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
                 <span
                   style={{
                     fontFamily: "'Geist Mono', ui-monospace, monospace",
@@ -336,10 +386,10 @@ export default function Home() {
                   <span style={{ color: "#0057c0" }}>Kushagra!</span>
                   {">"}
                 </h1>
-              </div>
+              </motion.div>
 
               {/* Line 02 */}
-              <div style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+              <motion.div variants={heroLineVariants} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
                 <span
                   style={{
                     fontFamily: "'Geist Mono', ui-monospace, monospace",
@@ -368,10 +418,10 @@ export default function Home() {
                   <span style={{ color: "#0057c0" }}>developer</span>
                   {">"}
                 </h2>
-              </div>
+              </motion.div>
 
               {/* Line 03 */}
-              <div style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+              <motion.div variants={heroLineVariants} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
                 <span
                   style={{
                     fontFamily: "'Geist Mono', ui-monospace, monospace",
@@ -399,8 +449,8 @@ export default function Home() {
                   <span style={{ color: "#0057c0" }}>mobile apps</span>
                   {">"}
                 </h2>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* CTA Buttons */}
             <div
@@ -520,8 +570,12 @@ export default function Home() {
           </div>
 
           {/* Projects grid */}
-          <div
+          <motion.div
             className="projects-grid"
+            variants={cardContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(2, 1fr)",
@@ -530,9 +584,11 @@ export default function Home() {
             }}
           >
             {projectsData.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <motion.div key={project.id} variants={cardItemVariants}>
+                <ProjectCard project={project} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
       </main>
 
