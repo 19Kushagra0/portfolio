@@ -47,8 +47,20 @@ const cardItemVariants = {
 
 const projectsData = [
   {
+    id: 13,
+    number: "12",
+    title: "SnipLink — AI-Powered Developer URL Shortener",
+    description:
+      "A developer-focused URL shortener featuring AI-generated custom aliases, comprehensive REST API documentation, Firebase Authentication, interactive user dashboards, detailed analytics logging, and a flexible database layer.",
+    image: "/projects/url_shortener.png",
+    links: {
+      live: "https://url-shortner-ashy-eta.vercel.app/",
+      github: "https://github.com/19Kushagra0/url-shortner",
+    },
+  },
+  {
     id: 12,
-    number: "01",
+    number: "11",
     title: "AllDrives — AI-Powered Cloud Storage Platform",
     description:
       "A high-fidelity Google Drive clone built with Next.js, Firebase, Zustand, and TanStack Query. Features Google Drive integration, persistent Gemini AI Sidebar, context-menu file summaries, real-time Firestore sync, and an elegant linear design system.",
@@ -60,7 +72,7 @@ const projectsData = [
   },
   {
     id: 11,
-    number: "02",
+    number: "10",
     title: "ourMails — Minimalist Gmail Client",
     description:
       "A minimalist Gmail client built with Next.js, NextAuth, Google OAuth, and the Gmail API for a cleaner, distraction-free email experience.",
@@ -72,7 +84,7 @@ const projectsData = [
   },
   {
     id: 10,
-    number: "03",
+    number: "09",
     title: "NutriExplore — Full Stack Food Product Explorer",
     description:
       "A comprehensive nutrition tracking application built with modern web standards and responsive design.",
@@ -84,7 +96,7 @@ const projectsData = [
   },
   {
     id: 9,
-    number: "04",
+    number: "08",
     title: "Dashbord with Authentication (Signup & Login with Database)",
     description:
       "A secure signup and login flow integrated with a backend database for reliable user management.",
@@ -96,7 +108,7 @@ const projectsData = [
   },
   {
     id: 8,
-    number: "05",
+    number: "07",
     title: "Interactive Authentication Page with Micro-Interactions",
     description:
       "Advanced authentication flows featuring smooth transitions, micro-interactions, and instant form validation.",
@@ -120,7 +132,7 @@ const projectsData = [
   },
   {
     id: 6,
-    number: "07",
+    number: "05",
     title: "Anki Homepage Clone",
     description:
       "A pixel-perfect recreation of the Anki landing page focusing on responsive layout and semantic structure.",
@@ -132,7 +144,7 @@ const projectsData = [
   },
   // {
   //   id: 5,
-  //   number: "08",
+  //   number: "04",
   //   title: "AI Chatbot",
   //   description:
   //     "A streamlined conversational interface leveraging external APIs for natural language processing and real-time responses.",
@@ -144,7 +156,7 @@ const projectsData = [
   // },
   {
     id: 4,
-    number: "09",
+    number: "03",
     title: "X Homepage Clone",
     description:
       "A responsive clone of the X (formerly Twitter) homepage, implementing complex grid layouts and component structures.",
@@ -156,7 +168,7 @@ const projectsData = [
   },
   {
     id: 3,
-    number: "10",
+    number: "02",
     title: "Play.ht Homepage Clone",
     description:
       "A faithful reproduction of the Play.ht website featuring modern typography, spacing, and engaging UI elements.",
@@ -168,7 +180,7 @@ const projectsData = [
   },
   {
     id: 2,
-    number: "11",
+    number: "01",
     title: "Baremetrics Homepage Clone",
     description:
       "A clean, data-focused landing page clone with precise styling, well-structured components, and a professional aesthetic.",
@@ -180,7 +192,7 @@ const projectsData = [
   },
   {
     id: 1,
-    number: "12",
+    number: "00",
     title: "Awwwards Homepage Clone",
     description:
       "A high-fidelity clone of the Awwwards platform homepage, showcasing advanced CSS techniques and a visually striking layout.",
