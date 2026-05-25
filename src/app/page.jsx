@@ -46,6 +46,18 @@ const cardItemVariants = {
 };
 
 const projectsData = [
+    {
+    id: 14,
+    number: "13",
+    title: "Spotify-Analizer",
+    description:
+      "AI-powered Spotify Analyzer  using Spotify OAuth, allowing users to securely connect their Spotify account, GENERATE PLAYLIST and explore their listening habits, music taste, and analytics in an interactive way.",
+    image: "/projects/spotify.png",
+    links: {
+      live: "https://spotify-analizer.vercel.app/",
+      github: "https://github.com/19Kushagra0/spotify-analizer",
+    },
+  },
   {
     id: 13,
     number: "12",
