@@ -83,8 +83,45 @@ const projectsData = [
     },
   },
   {
-    id: 12,
-    number: "11",
+    id: 16,
+    number: "15",
+    title: "Discord Analyzer ",
+    description:
+      "Discord Analyzer is an AI-powered Discord analytics dashboard that helps you understand your server data. It features a custom SQL engine called 'Coral' that lets you query Discord information using plain English. The app includes Discord OAuth authentication, Firebase storage, and AI-powered analysis with Grok.",  
+    image: "/projects/discord-analyzer.png",
+    links: {
+      live: "https://discord-analyzer-five.vercel.app/",
+      github: "https://github.com/19Kushagra0/discord-analyzer",
+    },
+  },
+  {
+    id: 15,
+    number: "14",
+    title: "C-R-M with Loyalty ",
+    description:
+      "Your CRM is a modern web application built with Next.js and React that helps manage customer relationships and business data. It features user authentication through NextAuth for secure access, Firebase for data storage, and Tailwind CSS for a clean, responsive design. The app includes data visualization with Recharts to display charts and analytics, and uses Konva for interactive canvas graphics. State management is handled by Zustand, while TanStack React Query optimizes data fetching. The application is currently live and deployed on Vercel, making it accessible online for real-time customer relationship management.",
+    image: "/projects/crm.png",
+    links: {
+      live: "https://crm-delta-five-60.vercel.app/loyalty",
+      github: "https://github.com/19Kushagra0/crm",
+    },
+  },
+  {
+    id: 14,
+    number: "13",
+    title: "Spotify-Analizer",
+    description:
+      "AI-powered Spotify Analyzer  using Spotify OAuth, allowing users to securely connect their Spotify account, GENERATE PLAYLIST and explore their listening habits, music taste, and analytics in an interactive way.",
+    image: "/projects/spotify.png",
+    links: {
+      live: "https://spotify-analizer.vercel.app/",
+      github: "https://github.com/19Kushagra0/spotify-analizer",
+    },
+  },
+
+  {
+    id: 13,
+    number: "12",
     title: "AllDrives — AI-Powered Cloud Storage Platform",
     description:
       "A high-fidelity Google Drive clone built with Next.js, Firebase, Zustand, and TanStack Query. Features Google Drive integration, persistent Gemini AI Sidebar, context-menu file summaries, real-time Firestore sync, and an elegant linear design system.",
@@ -95,8 +132,8 @@ const projectsData = [
     },
   },
   {
-    id: 11,
-    number: "10",
+    id: 12,
+    number: "11",
     title: "ourMails — Minimalist Gmail Client",
     description:
       "A minimalist Gmail client built with Next.js, NextAuth, Google OAuth, and the Gmail API for a cleaner, distraction-free email experience.",
@@ -106,9 +143,10 @@ const projectsData = [
       github: "https://github.com/19Kushagra0/yourmails",
     },
   },
+
   {
-    id: 10,
-    number: "09",
+    id: 11,
+    number: "10",
     title: "NutriExplore — Full Stack Food Product Explorer",
     description:
       "A comprehensive nutrition tracking application built with modern web standards and responsive design.",
@@ -119,41 +157,53 @@ const projectsData = [
     },
   },
   {
-    id: 9,
-    number: "08",
-    title: "Dashbord with Authentication (Signup & Login with Database)",
+    id: 10,
+    number: "09",
+    title: "SnipLink — AI-Powered Developer URL Shortener",
     description:
-      "A secure signup and login flow integrated with a backend database for reliable user management.",
-    image: "/projects/dashboard.png",
+      "A developer-focused URL shortener featuring AI-generated custom aliases, comprehensive REST API documentation, Firebase Authentication, interactive user dashboards, detailed analytics logging, and a flexible database layer.",
+    image: "/projects/url_shortener.png",
     links: {
-      live: "https://nextjs-jwt-auth-roan.vercel.app/",
-      github: "https://github.com/19Kushagra0/nextjs-jwt-auth",
+      live: "https://url-shortner-ashy-eta.vercel.app/",
+      github: "https://github.com/19Kushagra0/url-shortner",
     },
   },
-  {
-    id: 8,
-    number: "07",
-    title: "Interactive Authentication Page with Micro-Interactions",
-    description:
-      "Advanced authentication flows featuring smooth transitions, micro-interactions, and instant form validation.",
-    image: "/projects/microauth.png",
-    links: {
-      live: "https://interactive-auth-ui.vercel.app/",
-      github: "https://github.com/19Kushagra0/interactive-auth-ui",
-    },
-  },
-  {
-    id: 7,
-    number: "06",
-    title: "School Canteen Order Management Prototype",
-    description:
-      "A full-stack application for managing inventory, orders, and point-of-sale operations for educational institutions.",
-    image: "/projects/canteen.png",
-    links: {
-      live: "https://school-canteen-bay.vercel.app/",
-      github: "https://github.com/19Kushagra0/school-canteen",
-    },
-  },
+  // {
+  //   id: 9,
+  //   number: "08",
+  //   title: "Dashbord with Authentication (Signup & Login with Database)",
+  //   description:
+  //     "A secure signup and login flow integrated with a backend database for reliable user management.",
+  //   image: "/projects/dashboard.png",
+  //   links: {
+  //     live: "https://nextjs-jwt-auth-roan.vercel.app/",
+  //     github: "https://github.com/19Kushagra0/nextjs-jwt-auth",
+  //   },
+  // },
+  // {
+  //   id: 8,
+  //   number: "07",
+  //   title: "Interactive Authentication Page with Micro-Interactions",
+  //   description:
+  //     "Advanced authentication flows featuring smooth transitions, micro-interactions, and instant form validation.",
+  //   image: "/projects/microauth.png",
+  //   links: {
+  //     live: "https://interactive-auth-ui.vercel.app/",
+  //     github: "https://github.com/19Kushagra0/interactive-auth-ui",
+  //   },
+  // },
+  // {
+  //   id: 7,
+  //   number: "06",
+  //   title: "School Canteen Order Management Prototype",
+  //   description:
+  //     "A full-stack application for managing inventory, orders, and point-of-sale operations for educational institutions.",
+  //   image: "/projects/canteen.png",
+  //   links: {
+  //     live: "https://school-canteen-bay.vercel.app/",
+  //     github: "https://github.com/19Kushagra0/school-canteen",
+  //   },
+  // },
   {
     id: 6,
     number: "05",
@@ -350,7 +400,14 @@ export default function Home() {
         </nav>
       </header>
 
-      <main style={{ flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <main
+        style={{
+          flexGrow: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         {/* ── Hero Section ── */}
         <section
           style={{
@@ -392,10 +449,19 @@ export default function Home() {
               variants={heroContainerVariants}
               initial="hidden"
               animate="visible"
-              style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 12, textAlign: "left" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: 12,
+                textAlign: "left",
+              }}
             >
               {/* Line 01 */}
-              <motion.div variants={heroLineVariants} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+              <motion.div
+                variants={heroLineVariants}
+                style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
+              >
                 <span
                   style={{
                     fontFamily: "'Geist Mono', ui-monospace, monospace",
@@ -425,7 +491,10 @@ export default function Home() {
               </motion.div>
 
               {/* Line 02 */}
-              <motion.div variants={heroLineVariants} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+              <motion.div
+                variants={heroLineVariants}
+                style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
+              >
                 <span
                   style={{
                     fontFamily: "'Geist Mono', ui-monospace, monospace",
@@ -457,7 +526,10 @@ export default function Home() {
               </motion.div>
 
               {/* Line 03 */}
-              <motion.div variants={heroLineVariants} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+              <motion.div
+                variants={heroLineVariants}
+                style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
+              >
                 <span
                   style={{
                     fontFamily: "'Geist Mono', ui-monospace, monospace",
@@ -518,8 +590,14 @@ export default function Home() {
                   textDecoration: "none",
                   transition: "all 0.3s ease",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#000000"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#171717"; e.currentTarget.style.transform = "translateY(0)"; }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#000000";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "#171717";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
               >
                 <GitHubIcon />
                 GitHub
@@ -545,8 +623,16 @@ export default function Home() {
                   border: "1px solid #ebebeb",
                   transition: "all 0.3s ease",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#ffffff"; e.currentTarget.style.color = "#171717"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#fafafa"; e.currentTarget.style.color = "#4d4d4d"; e.currentTarget.style.transform = "translateY(0)"; }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#ffffff";
+                  e.currentTarget.style.color = "#171717";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "#fafafa";
+                  e.currentTarget.style.color = "#4d4d4d";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
               >
                 <LinkedInIcon />
                 LinkedIn
@@ -569,7 +655,14 @@ export default function Home() {
           }}
         >
           {/* Section header */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 8, maxWidth: 672 }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+              maxWidth: 672,
+            }}
+          >
             <span
               style={{
                 fontFamily: "'Geist Mono', ui-monospace, monospace",
@@ -600,8 +693,9 @@ export default function Home() {
                 marginTop: 8,
               }}
             >
-              A collection of projects I&apos;ve built to learn, experiment, and grow as a developer.
-              Focusing on robust frontends and seamless user experiences.
+              A collection of projects I&apos;ve built to learn, experiment, and
+              grow as a developer. Focusing on robust frontends and seamless
+              user experiences.
             </p>
           </div>
 
@@ -649,7 +743,14 @@ export default function Home() {
           }}
         >
           {/* Brand col */}
-          <div style={{ gridColumn: "span 2", display: "flex", flexDirection: "column", gap: 16 }}>
+          <div
+            style={{
+              gridColumn: "span 2",
+              display: "flex",
+              flexDirection: "column",
+              gap: 16,
+            }}
+          >
             <span
               style={{
                 fontSize: 20,
@@ -669,7 +770,8 @@ export default function Home() {
                 letterSpacing: "0.05em",
               }}
             >
-              © {new Date().getFullYear()} Kushagra Sharma. Built with precision.
+              © {new Date().getFullYear()} Kushagra Sharma. Built with
+              precision.
             </span>
             <span
               style={{
@@ -703,7 +805,10 @@ export default function Home() {
             </span>
             {[
               { label: "Github", href: "https://github.com/19Kushagra0" },
-              { label: "LinkedIn", href: "https://www.linkedin.com/in/kushagra-sharma-ks/" },
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/kushagra-sharma-ks/",
+              },
               { label: "Email", href: "mailto:kushagra@example.com" },
             ].map((link) => (
               <a
@@ -720,8 +825,14 @@ export default function Home() {
                   letterSpacing: "0.05em",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => { e.target.style.color = "#171717"; e.target.style.textDecoration = "underline"; }}
-                onMouseLeave={(e) => { e.target.style.color = "#888888"; e.target.style.textDecoration = "none"; }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = "#171717";
+                  e.target.style.textDecoration = "underline";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = "#888888";
+                  e.target.style.textDecoration = "none";
+                }}
               >
                 {link.label}
               </a>
@@ -742,9 +853,7 @@ export default function Home() {
             >
               Navigate
             </span>
-            {[
-              { label: "Work", href: "#projects" },
-            ].map((link) => (
+            {[{ label: "Work", href: "#projects" }].map((link) => (
               <a
                 key={link.label}
                 href={link.href}
@@ -757,8 +866,15 @@ export default function Home() {
                   letterSpacing: "0.05em",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => { e.target.style.color = "#171717"; e.target.style.textDecoration = "underline"; }}
-                onMouseLeave={(e) => { e.target.style.color = link.label === "Work" ? "#171717" : "#888888"; e.target.style.textDecoration = "none"; }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = "#171717";
+                  e.target.style.textDecoration = "underline";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color =
+                    link.label === "Work" ? "#171717" : "#888888";
+                  e.target.style.textDecoration = "none";
+                }}
               >
                 {link.label}
               </a>
@@ -915,8 +1031,14 @@ function ProjectCard({ project }) {
               transition: "all 0.3s ease",
               gap: 6,
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#000000"; e.currentTarget.style.transform = "translateY(-1px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#171717"; e.currentTarget.style.transform = "translateY(0)"; }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#000000";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#171717";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
           >
             <ExternalLinkIcon />
           </a>
