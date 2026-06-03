@@ -47,47 +47,11 @@ const cardItemVariants = {
 
 const projectsData = [
   {
-    id: 14,
-    number: "13",
-    title: "Spotify-Analizer",
-    description:
-      "AI-powered Spotify Analyzer  using Spotify OAuth, allowing users to securely connect their Spotify account, GENERATE PLAYLIST and explore their listening habits, music taste, and analytics in an interactive way.",
-    image: "/projects/spotify.png",
-    links: {
-      live: "https://spotify-analizer.vercel.app/",
-      github: "https://github.com/19Kushagra0/spotify-analizer",
-    },
-  },
-  {
-    id: 13,
-    number: "12",
-    title: "SnipLink — AI-Powered Developer URL Shortener",
-    description:
-      "A developer-focused URL shortener featuring AI-generated custom aliases, comprehensive REST API documentation, Firebase Authentication, interactive user dashboards, detailed analytics logging, and a flexible database layer.",
-    image: "/projects/url_shortener.png",
-    links: {
-      live: "https://url-shortner-ashy-eta.vercel.app/",
-      github: "https://github.com/19Kushagra0/url-shortner",
-    },
-  },
-  {
-    id: 13,
-    number: "12",
-    title: "SnipLink — AI-Powered Developer URL Shortener",
-    description:
-      "A developer-focused URL shortener featuring AI-generated custom aliases, comprehensive REST API documentation, Firebase Authentication, interactive user dashboards, detailed analytics logging, and a flexible database layer.",
-    image: "/projects/url_shortener.png",
-    links: {
-      live: "https://url-shortner-ashy-eta.vercel.app/",
-      github: "https://github.com/19Kushagra0/url-shortner",
-    },
-  },
-  {
     id: 16,
     number: "15",
     title: "Discord Analyzer ",
     description:
-      "Discord Analyzer is an AI-powered Discord analytics dashboard that helps you understand your server data. It features a custom SQL engine called 'Coral' that lets you query Discord information using plain English. The app includes Discord OAuth authentication, Firebase storage, and AI-powered analysis with Grok.",
+      "Discord Analyzer is an AI-powered Discord analytics dashboard that helps you understand your server data. It features a custom SQL engine called 'Coral' that lets you query Discord information using plain English. The app includes Discord OAuth authentication, Firebase storage, and AI-powered analysis with Grok.",  
     image: "/projects/discord-analyzer.png",
     links: {
       live: "https://discord-analyzer-five.vercel.app/",
