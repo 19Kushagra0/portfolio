@@ -1,13 +1,17 @@
 export const topRowTechs = [
-  { name: "Tailwind", icon: "Tailwind" },
-  { name: "Gemini API", icon: "Gemini" },
-  { name: "PostgreSQL", icon: "PostgreSQL" },
+  { name: "Next.js", icon: "Next" },
   { name: "React", icon: "React" },
+  { name: "JavaScript", icon: "JavaScript" },
+  { name: "Tailwind", icon: "Tailwind" },
+  { name: "Framer Motion", icon: "Motion" },
+  { name: "NestJS", icon: "NestJS" },
 ];
 
 export const bottomRowTechs = [
   { name: "Node.js", icon: "Node" },
-  { name: "Java", icon: "Java" },
   { name: "MongoDB", icon: "MongoDB" },
-  { name: "Framer Motion", icon: "Motion" },
+  { name: "PostgreSQL", icon: "PostgreSQL" },
+  { name: "Gemini API", icon: "Gemini" },
+  { name: "Grok API", icon: "Grok" },
+  { name: "Firebase", icon: "Firebase" },
 ];

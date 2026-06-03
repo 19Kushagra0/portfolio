@@ -7,9 +7,13 @@ import {
   PostgreSQLIcon,
   ReactIcon,
   NodeIcon,
-  JavaIcon,
+  JavaScriptIcon,
+  NextIcon,
   MongoIcon,
   MotionIcon,
+  FirebaseIcon,
+  NestIcon,
+  GrokIcon,
 } from "./Icons";
 
 const iconMap = {
@@ -18,9 +22,13 @@ const iconMap = {
   PostgreSQL: PostgreSQLIcon,
   React: ReactIcon,
   Node: NodeIcon,
-  Java: JavaIcon,
+  JavaScript: JavaScriptIcon,
+  Next: NextIcon,
   MongoDB: MongoIcon,
   Motion: MotionIcon,
+  Firebase: FirebaseIcon,
+  NestJS: NestIcon,
+  Grok: GrokIcon,
 };
 
 export default function TechStack() {
