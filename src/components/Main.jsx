@@ -140,7 +140,7 @@ export default function Main({ onOpenDetails }) {
                   color: "#171717",
                 }}
               >
-                {"<Hello, I'm "}
+                {"<Hello, I'm\u00A0"}
                 <span style={{ color: "#0057c0" }}>Kushagra!</span>
                 {">"}
               </h1>
@@ -175,7 +175,7 @@ export default function Main({ onOpenDetails }) {
               >
                 {"<"}
                 <span style={{ color: "#0057c0" }}>Frontend Focused</span>
-                {" Full Stack "}
+                {"\u00A0Full Stack\u00A0"}
                 <span style={{ color: "#0057c0" }}>Developer</span>
                 {">"}
               </h2>
@@ -210,9 +210,9 @@ export default function Main({ onOpenDetails }) {
               >
                 {"<"}
                 <span style={{ color: "#0057c0" }}>Who Builds</span>
-                {" and "}
+                {"\u00A0and\u00A0"}
                 <span style={{ color: "#0057c0" }}>Integrates</span>
-                {" modern web applications>"}
+                {"\u00A0modern web applications>"}
               </h2>
             </motion.div>
           </motion.div>
