@@ -115,7 +115,7 @@ export const projectsData = [
     learned:
       "Implemented custom semantic chunking that respects email headers and quotation markers. Mitigated hallucinations using strict prompt engineering and Cohere re-ranking, and optimized perceived latency via Next.js Edge functions.",
     links: {
-      live: "https://yourmails-demo.vercel.app",
+      live: "https://yourmails.vercel.app/",
       github: "https://github.com/19Kushagra0/yourMails",
     },
   },
@@ -233,5 +233,5 @@ export const projectsData = [
       live: "https://awwwards-homepage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
     },
-  }
+  },
 ];
