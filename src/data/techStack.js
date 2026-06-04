@@ -5,6 +5,8 @@ export const topRowTechs = [
   { name: "Tailwind", icon: "Tailwind" },
   { name: "Framer Motion", icon: "Motion" },
   { name: "NestJS", icon: "NestJS" },
+  { name: "Pinecone", icon: "Pinecone" },
+  { name: "RAG", icon: "RAG" },
 ];
 
 export const bottomRowTechs = [
@@ -14,4 +16,6 @@ export const bottomRowTechs = [
   { name: "Gemini API", icon: "Gemini" },
   { name: "Grok API", icon: "Grok" },
   { name: "Firebase", icon: "Firebase" },
+  { name: "Zustand", icon: "Zustand" },
+  { name: "OpenAI", icon: "OpenAI" },
 ];

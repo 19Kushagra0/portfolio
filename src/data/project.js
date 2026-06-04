@@ -2,22 +2,22 @@ export const projectsData = [
   {
     id: 16,
     number: "15",
-    category: "Full Stack",
-    title: "Discord Analyzer ",
+    category: "RAG",
+    title: "CoralStats: AI-Powered Discord Analytics",
     description:
-      "Discord Analyzer is an AI-powered Discord analytics dashboard that helps you understand your server data. It features a custom SQL engine called 'Coral' that lets you query Discord information using plain English. The app includes Discord OAuth authentication, Firebase storage, and AI-powered analysis with Grok.",
+      "CoralStats is an intelligent Discord analytics dashboard that turns raw community data into actionable insights. Powered by a custom local-first SQL engine called 'Coral' and an AI co-pilot called 'Grok', it translates plain English questions into valid SQL queries, executing them against live API data.",
     image: "/projects/discord-analyzer.png",
-    tags: ["Next.js", "Firebase", "SQL", "Grok AI"],
+    tags: ["Next.js", "Firebase", "SQL", "Grok / LLaMA 3.3"],
     features: [
-      "Discord OAuth integration for seamless login",
-      "Custom SQL engine ('Coral') with natural language processing",
-      "Firebase real-time storage for query caching",
-      "Grok AI automated analytics reports",
+      "Natural Language to SQL Pipeline for intelligent querying",
+      "Custom Coral SQL Engine parsing SELECT, WHERE, and JOINs",
+      "Enterprise-Grade Identity Dashboard with server mapping",
+      "Streaming LLM Responses via Next.js Edge APIs",
     ],
     problem:
-      "Server owners lack easy-to-understand analytics. Raw Discord data is hard to query without writing code. This solves the problem by allowing natural language queries that automatically translate to SQL.",
+      "Community managers often fly blind or dig through massive developer portals to find simple insights. Standard AI bots can hallucinate hard numbers. CoralStats solves this by treating external APIs as relational tables for exact-match SQL translation.",
     learned:
-      "I learned how to build a custom query parser and integrate LLMs for robust data analysis. Implementing Discord OAuth was a great deep-dive into standard OAuth 2.0 flows.",
+      "Built local SQL regex parsing logic from scratch to handle complex queries. Optimized two-stage latency using Groq's high-speed inference and learned to multiplex a ReadableStream to send JSON metadata before text tokens.",
     links: {
       live: "https://discord-analyzer-five.vercel.app/",
       github: "https://github.com/19Kushagra0/discord-analyzer",
@@ -27,21 +27,21 @@ export const projectsData = [
     id: 15,
     number: "14",
     category: "Full Stack",
-    title: "C-R-M with Loyalty ",
+    title: "DineFlow CRM",
     description:
-      "Your CRM is a modern web application built with Next.js and React that helps manage customer relationships and business data. It features user authentication through NextAuth for secure access, Firebase for data storage, and Tailwind CSS for a clean, responsive design. The app includes data visualization with Recharts to display charts and analytics, and uses Konva for interactive canvas graphics. State management is handled by Zustand, while TanStack React Query optimizes data fetching. The application is currently live and deployed on Vercel, making it accessible online for real-time customer relationship management.",
+      "DineFlow is a Michelin-service restaurant CRM and operations suite engineered to streamline front-of-house and kitchen communications. Designed for high-volume, premium dining environments, it ensures seamless synchronization between orders, table management, and customer loyalty programs.",
     image: "/projects/crm.png",
-    tags: ["Next.js", "React", "Firebase", "Zustand"],
+    tags: ["Next.js", "Tailwind CSS", "Zustand", "CSS Modules"],
     features: [
-      "Role-based user authentication",
-      "Interactive analytics dashboard with Recharts",
-      "Customer loyalty tracking system",
-      "Kanban board for lead management",
+      "Real-time Kitchen Display System (KDS) for instant order sync",
+      "Interactive Floor Plan Management with dynamic table mapping",
+      "VIP Customer Tracking for personalized service",
+      "Centralized State Management using Zustand",
     ],
     problem:
-      "Small businesses need an affordable, easy-to-use CRM that integrates loyalty programs natively, rather than relying on multiple disconnected and expensive tools.",
+      "Premium dining establishments face operational bottlenecks where even seconds of latency can impact the guest experience. DineFlow centralizes operations to reduce service latency and minimize order errors.",
     learned:
-      "Mastered Zustand for complex global state management and TanStack Query for caching and syncing data across different views. Working with Konva for interactive canvas graphics was also a highly rewarding challenge.",
+      "Designed a service layer architecture to decouple Next.js page components from Zustand stores, navigated the Next.js 16 App Router landscape, and integrated Tailwind v4 seamlessly with CSS Modules.",
     links: {
       live: "https://crm-delta-five-60.vercel.app/loyalty",
       github: "https://github.com/19Kushagra0/crm",
@@ -50,7 +50,7 @@ export const projectsData = [
   {
     id: 14,
     number: "13",
-    category: "Full Stack",
+    category: "RAG",
     title: "Spotify-Analizer",
     description:
       "AI-powered Spotify Analyzer  using Spotify OAuth, allowing users to securely connect their Spotify account, GENERATE PLAYLIST and explore their listening habits, music taste, and analytics in an interactive way.",
@@ -74,22 +74,22 @@ export const projectsData = [
   {
     id: 13,
     number: "12",
-    category: "Full Stack",
-    title: "AllDrives — AI-Powered Google Drive Workspace",
+    category: "RAG",
+    title: "AllDrives: AI-Powered Google Drive Workspace",
     description:
-      "A high-fidelity Google Drive workspace clone built with Next.js, Firebase, Zustand, and TanStack Query. Features Google Drive integration, persistent Gemini AI Sidebar, context-menu file summaries, real-time Firestore sync, and an elegant linear design system.",
+      "AllDrives is a premium, AI-powered cloud storage platform built on top of Google Drive, redesigned from the ground up with a Linear-inspired design system. It seamlessly integrates intelligent document summarization and persistent AI chat directly into the user's workspace.",
     image: "/projects/alldrives.png",
-    tags: ["Next.js", "Firebase", "Gemini AI"],
+    tags: ["Next.js", "Firebase", "Zustand", "Gemini AI"],
     features: [
-      "Google Drive API integration",
-      "Persistent Gemini AI Sidebar for context-aware chat",
-      "Real-time Firestore synchronization",
-      "Context-menu instant file summaries",
+      "AI Co-Pilot & Instant Summarization via Google Gemini",
+      "Full Google Drive Integration preserving folder structures",
+      "Premium Linear Design System with Framer Motion animations",
+      "Instant UI State leveraging Zustand and TanStack React Query",
     ],
     problem:
-      "Accessing and retrieving key insights from a cluttered Google Drive can be slow and tedious. AllDrives solves this by bringing Gemini AI directly into your Google Drive, enabling you to instantly find, summarize, and query your files without needing to open them.",
+      "Standard drive applications have clunky UIs and introduce friction when downloading files to feed into LLMs. AllDrives solves this by embedding an intelligent AI layer directly into a premium cloud storage workflow.",
     learned:
-      "Gained deep experience in optimizing React renders for a complex file explorer UI, implementing robust drag-and-drop mechanics, and integrating the Gemini API seamlessly into the workflow.",
+      "Managed complex file system states alongside async Google Drive API calls using Zustand and TanStack Query. Implemented aggressive caching and Shimmer skeleton loaders to mask network latency and deliver a seamless UX.",
     links: {
       live: "https://alldrives-three.vercel.app/",
       github: "https://github.com/19Kushagra0/alldrives",
@@ -98,15 +98,25 @@ export const projectsData = [
   {
     id: 12,
     number: "11",
-    category: "Full Stack",
-    title: "ourMails — Minimalist Gmail Client",
+    category: "RAG",
+    title: "YourMails AI",
     description:
-      "A minimalist Gmail client built with Next.js, NextAuth, Google OAuth, and the Gmail API for a cleaner, distraction-free email experience.",
+      "YourMails is a modern, AI-first email client engineered to solve inbox overload for power users and professionals. It integrates a sophisticated Retrieval-Augmented Generation (RAG) pipeline directly into the reading pane, transforming a standard inbox into an intelligent, queryable knowledge base.",
     image: "/projects/yourmails.png",
-    tags: ["Next.js", "NextAuth", "Gmail API"],
+    tags: ["Next.js", "Pinecone", "RAG", "OpenAI"],
+    features: [
+      "Semantic Inbox Search using natural language queries",
+      "Context-Aware AI Assistant for threading and drafting",
+      "Intelligent Thread Ingestion with recursive character splitting",
+      "High-Performance UI built with React 19 and optimistic updates",
+    ],
+    problem:
+      "Power users constantly lose track of action items buried deep within long email chains. Standard email clients only display messages without understanding them. YourMails solves this by making the inbox semantically searchable.",
+    learned:
+      "Implemented custom semantic chunking that respects email headers and quotation markers. Mitigated hallucinations using strict prompt engineering and Cohere re-ranking, and optimized perceived latency via Next.js Edge functions.",
     links: {
-      live: "https://yourmails.vercel.app/",
-      github: "https://github.com/19Kushagra0/yourmails",
+      live: "https://yourmails-demo.vercel.app",
+      github: "https://github.com/19Kushagra0/yourMails",
     },
   },
   {
@@ -133,6 +143,30 @@ export const projectsData = [
     links: {
       live: "https://url-shortner-ashy-eta.vercel.app/",
       github: "https://github.com/19Kushagra0/url-shortner",
+    },
+  },
+  {
+    id: 9,
+    number: "08",
+    category: "RAG",
+    title: "MailClean (Gmail Dashboard)",
+    description:
+      "MailClean is a powerful dashboard that helps busy professionals take back control of their chaotic Gmail inboxes. By connecting directly to the Gmail and Google Drive APIs, it provides deep insights into storage usage, highlights unread emails, and offers rapid quick actions to mass-archive or delete messages.",
+    image: "/projects/gmail-dashboard.png",
+    tags: ["Next.js", "Firebase", "Gmail API", "Drive API"],
+    features: [
+      "Secure OAuth2 Authentication with Firebase and Google Identity",
+      "Real-time Storage Analytics with animated SVG charts",
+      "Inbox Insights & Recent Activity via Gmail REST API",
+      "One-Tap Quick Actions for efficient inbox management",
+    ],
+    problem:
+      "Managing a clogged inbox and constantly hitting the 15GB Google storage limit is a massive friction point. MailClean provides a centralized command center to abstract away the default Gmail UI.",
+    learned:
+      "Mastered OAuth & token management, handling API rate limits efficiently, parsing complex MIME headers from Gmail responses, and building custom SVG animations.",
+    links: {
+      live: "https://gmail-dashboard-two.vercel.app",
+      github: "https://github.com/19Kushagra0/gmail-dashboard",
     },
   },
   {

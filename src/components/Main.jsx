@@ -51,9 +51,11 @@ const cardItemVariants = {
 export default function Main({ onOpenDetails }) {
   const [filter, setFilter] = useState("All");
 
-  const filteredProjects = projectsData.filter((project) => 
-    filter === "All" ? true : project.category === filter
-  );
+  const filteredProjects = projectsData.filter((project) => {
+    if (filter === "All") return true;
+    if (filter === "Full Stack" && project.category === "RAG") return true;
+    return project.category === filter;
+  });
 
   return (
     <main
@@ -361,7 +363,7 @@ export default function Main({ onOpenDetails }) {
 
         {/* Filter Tabs */}
         <div style={{ display: "flex", gap: 12, marginTop: 24, marginBottom: 8, flexWrap: "wrap" }}>
-          {["All", "Full Stack", "Pixel Perfect"].map((cat) => (
+          {["All", "Full Stack", "RAG", "Pixel Perfect"].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}

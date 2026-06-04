@@ -11,9 +11,11 @@ import {
   SiNextdotjs,
   SiFirebase,
   SiNestjs,
+  SiOpenai,
 } from "react-icons/si";
-import { FaJava, FaLinkedin, FaRobot } from "react-icons/fa";
+import { FaJava, FaLinkedin, FaRobot, FaBrain } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import { GiBearFace, GiPineTree } from "react-icons/gi";
 
 export function TailwindIcon(props) { return <SiTailwindcss size={16} {...props} />; }
 export function GeminiIcon(props) { return <SiGooglegemini size={16} {...props} />; }
@@ -28,6 +30,10 @@ export function NextIcon(props) { return <SiNextdotjs size={16} {...props} />; }
 export function FirebaseIcon(props) { return <SiFirebase size={16} {...props} />; }
 export function NestIcon(props) { return <SiNestjs size={16} {...props} />; }
 export function GrokIcon(props) { return <FaRobot size={16} {...props} />; }
+export function OpenAIIcon(props) { return <SiOpenai size={16} {...props} />; }
+export function ZustandIcon(props) { return <GiBearFace size={16} {...props} />; }
+export function PineconeIcon(props) { return <GiPineTree size={16} {...props} />; }
+export function RAGIcon(props) { return <FaBrain size={16} {...props} />; }
 
 export function GitHubIcon(props) { return <SiGithub size={16} {...props} />; }
 export function LinkedInIcon(props) { return <FaLinkedin size={16} {...props} />; }

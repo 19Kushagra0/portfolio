@@ -14,6 +14,10 @@ import {
   FirebaseIcon,
   NestIcon,
   GrokIcon,
+  OpenAIIcon,
+  ZustandIcon,
+  PineconeIcon,
+  RAGIcon,
 } from "./Icons";
 
 const iconMap = {
@@ -29,6 +33,10 @@ const iconMap = {
   Firebase: FirebaseIcon,
   NestJS: NestIcon,
   Grok: GrokIcon,
+  OpenAI: OpenAIIcon,
+  Zustand: ZustandIcon,
+  Pinecone: PineconeIcon,
+  RAG: RAGIcon,
 };
 
 export default function TechStack() {
