@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { GitHubIcon, LinkedInIcon } from "./Icons";
 import { projectsData } from "../data/project";
@@ -48,6 +49,12 @@ const cardItemVariants = {
 };
 
 export default function Main({ onOpenDetails }) {
+  const [filter, setFilter] = useState("All");
+
+  const filteredProjects = projectsData.filter((project) => 
+    filter === "All" ? true : project.category === filter
+  );
+
   return (
     <main
       style={{
@@ -89,7 +96,7 @@ export default function Main({ onOpenDetails }) {
             display: "flex",
             flexDirection: "column",
             gap: 24,
-            maxWidth: 768,
+            maxWidth: 1000,
             alignItems: "flex-start",
           }}
         >
@@ -166,10 +173,10 @@ export default function Main({ onOpenDetails }) {
                   color: "#171717",
                 }}
               >
-                {"<I am a "}
-                <span style={{ color: "#0057c0" }}>full stack</span>
-                {" web "}
-                <span style={{ color: "#0057c0" }}>developer</span>
+                {"<"}
+                <span style={{ color: "#0057c0" }}>Frontend Focused</span>
+                {" Full Stack "}
+                <span style={{ color: "#0057c0" }}>Developer</span>
                 {">"}
               </h2>
             </motion.div>
@@ -201,10 +208,11 @@ export default function Main({ onOpenDetails }) {
                   color: "#171717",
                 }}
               >
-                <span style={{ color: "#0057c0" }}>websites</span>
+                {"<"}
+                <span style={{ color: "#0057c0" }}>Who Builds</span>
                 {" and "}
-                <span style={{ color: "#0057c0" }}>mobile apps</span>
-                {">"}
+                <span style={{ color: "#0057c0" }}>Integrates</span>
+                {" modern web applications>"}
               </h2>
             </motion.div>
           </motion.div>
@@ -346,13 +354,43 @@ export default function Main({ onOpenDetails }) {
             }}
           >
             A collection of projects I&apos;ve built to learn, experiment, and
-            grow as a developer. Focusing on robust frontends and seamless
-            user experiences.
+            grow as a developer. Focusing on robust frontends and seamless user
+            experiences.
           </p>
+        </div>
+
+        {/* Filter Tabs */}
+        <div style={{ display: "flex", gap: 12, marginTop: 24, marginBottom: 8, flexWrap: "wrap" }}>
+          {["All", "Full Stack", "Pixel Perfect"].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              style={{
+                padding: "8px 16px",
+                borderRadius: 9999,
+                fontSize: 14,
+                fontWeight: 500,
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                backgroundColor: filter === cat ? "#171717" : "#f5f5f5",
+                color: filter === cat ? "#ffffff" : "#666666",
+                border: filter === cat ? "1px solid #171717" : "1px solid #ebebeb",
+              }}
+              onMouseEnter={(e) => {
+                if (filter !== cat) e.currentTarget.style.backgroundColor = "#ebebeb";
+              }}
+              onMouseLeave={(e) => {
+                if (filter !== cat) e.currentTarget.style.backgroundColor = "#f5f5f5";
+              }}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
         {/* Projects grid */}
         <motion.div
+          key={filter}
           className="projects-grid"
           variants={cardContainerVariants}
           initial="hidden"
@@ -365,10 +403,11 @@ export default function Main({ onOpenDetails }) {
             paddingTop: 24,
           }}
         >
-          {projectsData.map((project) => (
+          {filteredProjects.map((project, index) => (
             <motion.div key={project.id} variants={cardItemVariants}>
               <ProjectCard
                 project={project}
+                displayNumber={String(index + 1).padStart(2, "0")}
                 onOpenDetails={() => onOpenDetails(project)}
               />
             </motion.div>
@@ -380,7 +419,7 @@ export default function Main({ onOpenDetails }) {
 }
 
 /* ── Project Card Component ── */
-function ProjectCard({ project, onOpenDetails }) {
+function ProjectCard({ project, displayNumber, onOpenDetails }) {
   return (
     <div
       className="card-soft-glow stacked-shadow-low"
@@ -422,7 +461,7 @@ function ProjectCard({ project, onOpenDetails }) {
             border: "1px solid rgba(0, 0, 0, 0.05)",
           }}
         >
-          {project.number}
+          {displayNumber}
         </span>
         {project.image ? (
           <img

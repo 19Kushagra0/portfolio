@@ -2,6 +2,7 @@ export const projectsData = [
   {
     id: 16,
     number: "15",
+    category: "Full Stack",
     title: "Discord Analyzer ",
     description:
       "Discord Analyzer is an AI-powered Discord analytics dashboard that helps you understand your server data. It features a custom SQL engine called 'Coral' that lets you query Discord information using plain English. The app includes Discord OAuth authentication, Firebase storage, and AI-powered analysis with Grok.",
@@ -25,6 +26,7 @@ export const projectsData = [
   {
     id: 15,
     number: "14",
+    category: "Full Stack",
     title: "C-R-M with Loyalty ",
     description:
       "Your CRM is a modern web application built with Next.js and React that helps manage customer relationships and business data. It features user authentication through NextAuth for secure access, Firebase for data storage, and Tailwind CSS for a clean, responsive design. The app includes data visualization with Recharts to display charts and analytics, and uses Konva for interactive canvas graphics. State management is handled by Zustand, while TanStack React Query optimizes data fetching. The application is currently live and deployed on Vercel, making it accessible online for real-time customer relationship management.",
@@ -48,6 +50,7 @@ export const projectsData = [
   {
     id: 14,
     number: "13",
+    category: "Full Stack",
     title: "Spotify-Analizer",
     description:
       "AI-powered Spotify Analyzer  using Spotify OAuth, allowing users to securely connect their Spotify account, GENERATE PLAYLIST and explore their listening habits, music taste, and analytics in an interactive way.",
@@ -68,10 +71,10 @@ export const projectsData = [
       github: "https://github.com/19Kushagra0/spotify-analizer",
     },
   },
-
   {
     id: 13,
     number: "12",
+    category: "Full Stack",
     title: "AllDrives — AI-Powered Google Drive Workspace",
     description:
       "A high-fidelity Google Drive workspace clone built with Next.js, Firebase, Zustand, and TanStack Query. Features Google Drive integration, persistent Gemini AI Sidebar, context-menu file summaries, real-time Firestore sync, and an elegant linear design system.",
@@ -95,6 +98,7 @@ export const projectsData = [
   {
     id: 12,
     number: "11",
+    category: "Full Stack",
     title: "ourMails — Minimalist Gmail Client",
     description:
       "A minimalist Gmail client built with Next.js, NextAuth, Google OAuth, and the Gmail API for a cleaner, distraction-free email experience.",
@@ -105,10 +109,10 @@ export const projectsData = [
       github: "https://github.com/19Kushagra0/yourmails",
     },
   },
-
   {
     id: 11,
     number: "10",
+    category: "Full Stack",
     title: "NutriExplore — Full Stack Food Product Explorer",
     description:
       "A comprehensive nutrition tracking application built with modern web standards and responsive design.",
@@ -121,6 +125,7 @@ export const projectsData = [
   {
     id: 10,
     number: "09",
+    category: "Full Stack",
     title: "SnipLink — AI-Powered Developer URL Shortener",
     description:
       "A developer-focused URL shortener featuring AI-generated custom aliases, comprehensive REST API documentation, Firebase Authentication, interactive user dashboards, detailed analytics logging, and a flexible database layer.",
@@ -130,45 +135,10 @@ export const projectsData = [
       github: "https://github.com/19Kushagra0/url-shortner",
     },
   },
-  // {
-  //   id: 9,
-  //   number: "08",
-  //   title: "Dashbord with Authentication (Signup & Login with Database)",
-  //   description:
-  //     "A secure signup and login flow integrated with a backend database for reliable user management.",
-  //   image: "/projects/dashboard.png",
-  //   links: {
-  //     live: "https://nextjs-jwt-auth-roan.vercel.app/",
-  //     github: "https://github.com/19Kushagra0/nextjs-jwt-auth",
-  //   },
-  // },
-  // {
-  //   id: 8,
-  //   number: "07",
-  //   title: "Interactive Authentication Page with Micro-Interactions",
-  //   description:
-  //     "Advanced authentication flows featuring smooth transitions, micro-interactions, and instant form validation.",
-  //   image: "/projects/microauth.png",
-  //   links: {
-  //     live: "https://interactive-auth-ui.vercel.app/",
-  //     github: "https://github.com/19Kushagra0/interactive-auth-ui",
-  //   },
-  // },
-  // {
-  //   id: 7,
-  //   number: "06",
-  //   title: "School Canteen Order Management Prototype",
-  //   description:
-  //     "A full-stack application for managing inventory, orders, and point-of-sale operations for educational institutions.",
-  //   image: "/projects/canteen.png",
-  //   links: {
-  //     live: "https://school-canteen-bay.vercel.app/",
-  //     github: "https://github.com/19Kushagra0/school-canteen",
-  //   },
-  // },
   {
     id: 6,
     number: "05",
+    category: "Pixel Perfect",
     title: "Anki Homepage Clone",
     description:
       "A pixel-perfect recreation of the Anki landing page focusing on responsive layout and semantic structure.",
@@ -178,21 +148,10 @@ export const projectsData = [
       github: "https://github.com/19Kushagra0/anki-homepage-clone",
     },
   },
-  // {
-  //   id: 5,
-  //   number: "04",
-  //   title: "AI Chatbot",
-  //   description:
-  //     "A streamlined conversational interface leveraging external APIs for natural language processing and real-time responses.",
-  //   image: "/projects/chatbot.png",
-  //   links: {
-  //     live: "https://ai-chatbot-one-lemon-35.vercel.app/",
-  //     github: "https://github.com/19Kushagra0/ai-chatbot",
-  //   },
-  // },
   {
     id: 4,
     number: "03",
+    category: "Pixel Perfect",
     title: "X Homepage Clone",
     description:
       "A responsive clone of the X (formerly Twitter) homepage, implementing complex grid layouts and component structures.",
@@ -205,6 +164,7 @@ export const projectsData = [
   {
     id: 3,
     number: "02",
+    category: "Pixel Perfect",
     title: "Play.ht Homepage Clone",
     description:
       "A faithful reproduction of the Play.ht website featuring modern typography, spacing, and engaging UI elements.",
@@ -217,6 +177,7 @@ export const projectsData = [
   {
     id: 2,
     number: "01",
+    category: "Pixel Perfect",
     title: "Baremetrics Homepage Clone",
     description:
       "A clean, data-focused landing page clone with precise styling, well-structured components, and a professional aesthetic.",
@@ -229,6 +190,7 @@ export const projectsData = [
   {
     id: 1,
     number: "00",
+    category: "Pixel Perfect",
     title: "Awwwards Homepage Clone",
     description:
       "A high-fidelity clone of the Awwwards platform homepage, showcasing advanced CSS techniques and a visually striking layout.",
@@ -237,5 +199,5 @@ export const projectsData = [
       live: "https://awwwards-homepage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
     },
-  },
+  }
 ];

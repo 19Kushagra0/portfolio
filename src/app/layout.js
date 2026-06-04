@@ -22,6 +22,28 @@ export const metadata = {
   title: "Kushagra Sharma - Developer Portfolio",
   description:
     "Frontend developer building with Next.js and modern JavaScript. Clean interfaces, thoughtful interactions, and real-world application architecture.",
+  openGraph: {
+    title: "Kushagra Sharma - Developer Portfolio",
+    description: "Frontend developer building with Next.js and modern JavaScript.",
+    url: "/",
+    siteName: "Kushagra Sharma Portfolio",
+    images: [
+      {
+        url: "/opengraph-image.png", // Next.js will automatically resolve this using metadataBase
+        width: 1200,
+        height: 630,
+        alt: "Kushagra Sharma - Developer Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kushagra Sharma - Developer Portfolio",
+    description: "Frontend developer building with Next.js and modern JavaScript.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
