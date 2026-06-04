@@ -38,7 +38,7 @@ export default function Footer() {
               color: "#171717",
             }}
           >
-            Kushagra Sharma.
+            Kushagra<span className="brand-last-name"> Sharma</span>.
           </span>
           <span
             style={{

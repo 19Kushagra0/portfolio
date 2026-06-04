@@ -32,7 +32,7 @@ export default function Header() {
               textDecoration: "none",
             }}
           >
-            Kushagra Sharma.
+            Kushagra<span className="brand-last-name"> Sharma</span>.
           </a>
           <div
             className="nav-links"

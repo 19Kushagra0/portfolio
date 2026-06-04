@@ -285,6 +285,13 @@ body {
   }
 }
 
+/* ─── 400px and below ─── */
+@media (max-width: 400px) {
+  .brand-last-name {
+    display: none;
+  }
+}
+
 /* ─── 360px and below ─── */
 @media (max-width: 390px) {
   .hero-headline {
