@@ -283,22 +283,57 @@ body {
     line-height: 30px !important;
     letter-spacing: -1px !important;
   }
+
+  .header-inner {
+    gap: 12px !important;
+  }
+  .header-brand {
+    font-size: 18px !important;
+  }
+  .nav-links {
+    gap: 12px !important;
+  }
+  .nav-link-item {
+    font-size: 12px !important;
+  }
 }
 
-/* ─── 400px and below ─── */
-@media (max-width: 400px) {
+/* ─── 500px and below ─── */
+@media (max-width: 500px) {
+  .github-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+}
+
+/* ─── 405px and below ─── */
+@media (max-width: 405px) {
   .brand-last-name {
     display: none;
+  }
+  .header-inner {
+    gap: 8px !important;
+  }
+  .header-brand {
+    font-size: 16px !important;
+  }
+  .nav-links {
+    gap: 8px !important;
+  }
+  .nav-link-item {
+    font-size: 11px !important;
+  }
+    .hero-headline {
+    font-size: 22px !important;
+    line-height: 26px !important;
+    letter-spacing: -0.5px !important;
   }
 }
 
 /* ─── 360px and below ─── */
 @media (max-width: 390px) {
-  .hero-headline {
-    font-size: 22px !important;
-    line-height: 26px !important;
-    letter-spacing: -0.5px !important;
-  }
+
 
   .hero-cta-row {
     flex-direction: column !important;

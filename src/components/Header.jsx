@@ -9,21 +9,11 @@ export default function Header() {
         zIndex: 50,
       }}
     >
-      <nav
-        style={{
-          maxWidth: 1400,
-          margin: "0 auto",
-          width: "100%",
-          height: 64,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "0 24px",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+      <nav className="portfolio-nav" style={{ padding: "0 16px" }}>
+        <div className="header-inner" style={{ display: "flex", alignItems: "center", gap: 32 }}>
           <a
             href="#"
+            className="header-brand"
             style={{
               fontSize: 20,
               fontWeight: 700,
@@ -41,6 +31,7 @@ export default function Header() {
             {["Projects", "Connect"].map((item) => (
               <a
                 key={item}
+                className="nav-link-item"
                 href={item === "Connect" ? "#footer" : "#projects"}
                 style={{
                   fontSize: 14,
