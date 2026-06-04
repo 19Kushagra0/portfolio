@@ -266,4 +266,72 @@ body {
   .projects-grid {
     grid-template-columns: 1fr !important;
   }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .footer-brand-col {
+    grid-column: span 2 !important;
+  }
+}
+
+/* ─── 480px and below ─── */
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 26px !important;
+    line-height: 30px !important;
+    letter-spacing: -1px !important;
+  }
+}
+
+/* ─── 360px and below ─── */
+@media (max-width: 390px) {
+  .hero-headline {
+    font-size: 22px !important;
+    line-height: 26px !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  .hero-cta-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  .hero-cta-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-brand-col {
+    grid-column: span 1 !important;
+  }
+
+  .modal-body {
+    padding: 20px !important;
+  }
+
+  .modal-action-row {
+    flex-direction: column !important;
+  }
+
+  .modal-action-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .github-header {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .github-footer {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
 }

@@ -9,11 +9,12 @@ export default function Footer() {
       }}
     >
       <div
+        className="footer-grid"
         style={{
           maxWidth: 1400,
           margin: "0 auto",
           width: "100%",
-          padding: "64px 24px",
+          padding: "clamp(32px, 6vw, 64px) clamp(16px, 4vw, 24px)",
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
           gap: 32,
@@ -21,6 +22,7 @@ export default function Footer() {
       >
         {/* Brand col */}
         <div
+          className="footer-brand-col"
           style={{
             gridColumn: "span 2",
             display: "flex",

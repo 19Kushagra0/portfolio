@@ -46,7 +46,7 @@ export default function TechStack() {
         width: "100%",
         maxWidth: 1400,
         margin: "0 auto",
-        padding: "0 24px",
+        padding: "0 clamp(16px, 4vw, 24px)",
       }}
     >
       <style
@@ -85,7 +85,7 @@ export default function TechStack() {
         style={{
           backgroundColor: "#171717",
           borderRadius: 24,
-          padding: "40px",
+          padding: "clamp(20px, 5vw, 40px)",
           position: "relative",
           overflow: "hidden",
           border: "1px solid #2a2a2a",

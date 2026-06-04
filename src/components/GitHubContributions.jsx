@@ -43,7 +43,7 @@ export default function GitHubContributions() {
         maxWidth: 1400,
         margin: "0 auto",
         marginTop: 70, // Added 70px distance from Hero section
-        padding: "0 24px",
+        padding: "0 clamp(16px, 4vw, 24px)",
         marginBottom: 24, // Space before TechStack
       }}
     >
@@ -52,7 +52,7 @@ export default function GitHubContributions() {
         style={{
           backgroundColor: "#171717",
           borderRadius: 24,
-          padding: "40px",
+          padding: "clamp(20px, 5vw, 40px)",
           position: "relative",
           overflow: "hidden",
           border: "1px solid #2a2a2a",
@@ -60,6 +60,7 @@ export default function GitHubContributions() {
       >
         {/* Header */}
         <div
+          className="github-header"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -164,6 +165,7 @@ export default function GitHubContributions() {
 
         {/* Footer */}
         <div
+          className="github-footer"
           style={{
             display: "flex",
             justifyContent: "space-between",

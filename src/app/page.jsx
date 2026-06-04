@@ -64,7 +64,7 @@ function ProjectModal({ project, onClose }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "40px 24px", // More space on top and bottom
+        padding: "40px clamp(12px, 4vw, 24px)",
       }}
     >
       <style>
@@ -189,6 +189,7 @@ function ProjectModal({ project, onClose }) {
 
         {/* Content Body */}
         <div
+          className="modal-body"
           style={{
             padding: "40px",
             display: "flex",
@@ -364,6 +365,7 @@ function ProjectModal({ project, onClose }) {
 
           {/* Action Buttons */}
           <div
+            className="modal-action-row"
             style={{
               display: "flex",
               alignItems: "center",
@@ -377,6 +379,7 @@ function ProjectModal({ project, onClose }) {
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
+              className="modal-action-btn"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -400,6 +403,7 @@ function ProjectModal({ project, onClose }) {
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
+              className="modal-action-btn"
               style={{
                 display: "inline-flex",
                 alignItems: "center",

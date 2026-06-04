@@ -73,7 +73,7 @@ export default function Main({ onOpenDetails }) {
           width: "100%",
           maxWidth: 1400,
           margin: "0 auto",
-          padding: "192px 24px",
+          padding: "clamp(64px, 15vw, 192px) clamp(16px, 4vw, 24px)",
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
@@ -221,6 +221,7 @@ export default function Main({ onOpenDetails }) {
 
           {/* CTA Buttons */}
           <div
+            className="hero-cta-row"
             style={{
               display: "flex",
               alignItems: "center",
@@ -233,6 +234,7 @@ export default function Main({ onOpenDetails }) {
               href="https://github.com/19Kushagra0"
               target="_blank"
               rel="noopener noreferrer"
+              className="hero-cta-btn"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -265,6 +267,7 @@ export default function Main({ onOpenDetails }) {
               href="https://www.linkedin.com/in/kushagra-sharma-ks/"
               target="_blank"
               rel="noopener noreferrer"
+              className="hero-cta-btn"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -310,7 +313,7 @@ export default function Main({ onOpenDetails }) {
           width: "100%",
           maxWidth: 1400,
           margin: "0 auto",
-          padding: "128px 24px",
+          padding: "clamp(48px, 10vw, 128px) clamp(16px, 4vw, 24px)",
           display: "flex",
           flexDirection: "column",
           gap: 40,
