@@ -21,10 +21,10 @@ export const metadata = {
   ),
   title: "Kushagra Sharma - Developer Portfolio",
   description:
-    "Frontend developer building with Next.js and modern JavaScript. Clean interfaces, thoughtful interactions, and real-world application architecture.",
+    "Frontend focused full stack developer building and integrating web applications.",
   openGraph: {
     title: "Kushagra Sharma - Developer Portfolio",
-    description: "Frontend developer building with Next.js and modern JavaScript.",
+    description: "Frontend focused full stack developer building and integrating web applications.",
     url: "/",
     siteName: "Kushagra Sharma Portfolio",
     locale: "en_US",
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Kushagra Sharma - Developer Portfolio",
-    description: "Frontend developer building with Next.js and modern JavaScript.",
+    description: "Frontend focused full stack developer building and integrating web applications.",
   },
 };
 
