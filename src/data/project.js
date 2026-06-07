@@ -29,9 +29,9 @@ export const projectsData = [
     category: "Full Stack",
     title: "DineFlow CRM",
     description:
-      "DineFlow is a Michelin-service restaurant CRM and operations suite engineered to streamline front-of-house and kitchen communications. Designed for high-volume, premium dining environments, it ensures seamless synchronization between orders, table management, and customer loyalty programs.",
+      "DineFlow is a Michelin-service restaurant CRM and operations suite engineered to streamline front-of-house and kitchen communications. Designed for high-volume, premium dining environments, it ensures seamless synchronization between orders, table management, and customer loyalty programs, now backed by a real-time Firebase database.",
     image: "/projects/crm.png",
-    tags: ["Next.js", "Tailwind CSS", "Zustand", "CSS Modules"],
+    tags: ["Next.js", "Tailwind CSS", "Zustand", "CSS Modules", "Firebase"],
     features: [
       "Real-time Kitchen Display System (KDS) for instant order sync",
       "Interactive Floor Plan Management with dynamic table mapping",
