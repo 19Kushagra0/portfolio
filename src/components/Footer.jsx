@@ -49,8 +49,7 @@ export default function Footer() {
               letterSpacing: "0.05em",
             }}
           >
-            © {new Date().getFullYear()} Kushagra Sharma. Built with
-            precision.
+            © {new Date().getFullYear()} Kushagra Sharma. Built with precision.
           </span>
           <span
             style={{
@@ -70,18 +69,6 @@ export default function Footer() {
 
         {/* Connect col */}
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <span
-            style={{
-              fontFamily: "'Geist Mono', ui-monospace, monospace",
-              fontSize: 12,
-              color: "#888888",
-              textTransform: "uppercase",
-              letterSpacing: "0.05em",
-              marginBottom: 4,
-            }}
-          >
-            Connect
-          </span>
           {[
             { label: "Github", href: "https://github.com/19Kushagra0" },
             {
@@ -120,18 +107,6 @@ export default function Footer() {
 
         {/* Navigate col */}
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <span
-            style={{
-              fontFamily: "'Geist Mono', ui-monospace, monospace",
-              fontSize: 12,
-              color: "#888888",
-              textTransform: "uppercase",
-              letterSpacing: "0.05em",
-              marginBottom: 4,
-            }}
-          >
-            Navigate
-          </span>
           {[{ label: "Work", href: "#projects" }].map((link) => (
             <a
               key={link.label}

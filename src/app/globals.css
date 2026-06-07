@@ -313,7 +313,8 @@ body {
     display: none;
   }
   .header-inner {
-    gap: 8px !important;
+    justify-content: space-between !important;
+    width: 100% !important;
   }
   .header-brand {
     font-size: 16px !important;
