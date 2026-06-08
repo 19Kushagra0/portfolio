@@ -17,5 +17,4 @@ export const bottomRowTechs = [
   { name: "Grok API", icon: "Grok" },
   { name: "Firebase", icon: "Firebase" },
   { name: "Zustand", icon: "Zustand" },
-  { name: "OpenAI", icon: "OpenAI" },
 ];
