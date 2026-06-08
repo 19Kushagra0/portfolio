@@ -15,7 +15,8 @@ export const projectsData = [
       "Streaming LLM Responses via Next.js Edge APIs",
     ],
     problem:
-      "Community managers often fly blind or dig through massive developer portals to find simple insights. Standard AI bots can hallucinate hard numbers. CoralStats solves this by treating external APIs as relational tables for exact-match SQL translation.",
+
+      "Community managers often struggle to find useful insights from large amounts of data. CoralStats makes it easy by turning API data into simple, accurate answers and reports using AI and Coral stats.",
     learned:
       "Built local SQL regex parsing logic from scratch to handle complex queries. Optimized two-stage latency using Groq's high-speed inference and learned to multiplex a ReadableStream to send JSON metadata before text tokens.",
     links: {
@@ -39,7 +40,8 @@ export const projectsData = [
       "Centralized State Management using Zustand",
     ],
     problem:
-      "Premium dining establishments face operational bottlenecks where even seconds of latency can impact the guest experience. DineFlow centralizes operations to reduce service latency and minimize order errors.",
+      "Restaurants often struggle with disconnected systems, miscommunication between staff and kitchen, and order delays. DineFlow streamlines operations by bringing together order management, table tracking, kitchen workflows, staff coordination, and customer relationship tools.",
+
     learned:
       "Designed a service layer architecture to decouple Next.js page components from Zustand stores, navigated the Next.js 16 App Router landscape, and integrated Tailwind v4 seamlessly with CSS Modules.",
     links: {
@@ -62,8 +64,8 @@ export const projectsData = [
       "AI-generated playlists based on mood input",
       "Interactive audio visualization",
     ],
-    problem:
-      "Users want deeper, on-demand insights into their listening habits beyond the annual Spotify Wrapped, with the ability to instantly generate new playlists based on their current mood and real-time data.",
+    problem: "Get deeper insights into your listening habits and music trends while instantly generating personalized AI-powered playlists based on your mood and preferences.",
+
     learned:
       "Working with rate-limited third-party APIs and managing secure token refresh cycles. It also vastly improved my skills in data visualization and handling complex audio features.",
     links: {
@@ -87,7 +89,7 @@ export const projectsData = [
       "Instant UI State leveraging Zustand and TanStack React Query",
     ],
     problem:
-      "Standard drive applications have clunky UIs and introduce friction when downloading files to feed into LLMs. AllDrives solves this by embedding an intelligent AI layer directly into a premium cloud storage workflow.",
+      "A drive application where you can login your google drive and and ask ai to do your tasks .",
     learned:
       "Managed complex file system states alongside async Google Drive API calls using Zustand and TanStack Query. Implemented aggressive caching and Shimmer skeleton loaders to mask network latency and deliver a seamless UX.",
     links: {
@@ -111,7 +113,7 @@ export const projectsData = [
       "High-Performance UI built with React 19 and optimistic updates",
     ],
     problem:
-      "Power users constantly lose track of action items buried deep within long email chains. Standard email clients only display messages without understanding them. YourMails solves this by making the inbox semantically searchable.",
+      "AI powered email app with a clean and minimal design. Read, write, and manage your emails without the clutter.",
     learned:
       "Implemented custom semantic chunking that respects email headers and quotation markers. Mitigated hallucinations using strict prompt engineering and Cohere re-ranking, and optimized perceived latency via Next.js Edge functions.",
     links: {
@@ -125,7 +127,7 @@ export const projectsData = [
     category: "Full Stack",
     title: "NutriExplore — Full Stack Food Product Explorer",
     description:
-      "A comprehensive nutrition tracking application built with modern web standards and responsive design.",
+      "Search out what's inside your packaged food. Check ingredients, nutrition, and product details in seconds.",
     image: "/projects/nutriexplore.png",
     links: {
       live: "https://nutriexplore.vercel.app/",
@@ -138,7 +140,7 @@ export const projectsData = [
     category: "Full Stack",
     title: "SnipLink — AI-Powered Developer URL Shortener",
     description:
-      "A developer-focused URL shortener featuring AI-generated custom aliases, comprehensive REST API documentation, Firebase Authentication, interactive user dashboards, detailed analytics logging, and a flexible database layer.",
+      "Shorten links with AI-generated aliases. Manage, share, and track every link from one dashboard.",
     image: "/projects/url_shortener.png",
     links: {
       live: "https://url-shortner-ashy-eta.vercel.app/",
@@ -151,7 +153,7 @@ export const projectsData = [
     category: "RAG",
     title: "MailClean (Gmail Dashboard)",
     description:
-      "MailClean is a powerful dashboard that helps busy professionals take back control of their chaotic Gmail inboxes. By connecting directly to the Gmail and Google Drive APIs, it provides deep insights into storage usage, highlights unread emails, and offers rapid quick actions to mass-archive or delete messages.",
+      "A simple gmail dashboard get access of your gmail analytics and actions at one place",
     image: "/projects/gmail-dashboard.png",
     tags: ["Next.js", "Firebase", "Gmail API", "Drive API"],
     features: [
@@ -161,7 +163,7 @@ export const projectsData = [
       "One-Tap Quick Actions for efficient inbox management",
     ],
     problem:
-      "Managing a clogged inbox and constantly hitting the 15GB Google storage limit is a massive friction point. MailClean provides a centralized command center to abstract away the default Gmail UI.",
+      "A simple gmail dashboard get access of your gmail analytics and actions at one place",
     learned:
       "Mastered OAuth & token management, handling API rate limits efficiently, parsing complex MIME headers from Gmail responses, and building custom SVG animations.",
     links: {
@@ -175,7 +177,7 @@ export const projectsData = [
     category: "Pixel Perfect",
     title: "Anki Homepage Clone",
     description:
-      "A pixel-perfect recreation of the Anki landing page focusing on responsive layout and semantic structure.",
+      "A pixel-perfect recreation of the Anki Homepage with a fully responsive design.",
     image: "/projects/anki.png",
     links: {
       live: "https://anki-homepage-clone.vercel.app/",
@@ -188,7 +190,7 @@ export const projectsData = [
     category: "Pixel Perfect",
     title: "X Homepage Clone",
     description:
-      "A responsive clone of the X (formerly Twitter) homepage, implementing complex grid layouts and component structures.",
+      "A pixel-perfect recreation of the X (Twitter) UI with a fully responsive design.",
     image: "/projects/x.png",
     links: {
       live: "https://x-homepage-with-crud.vercel.app/",
@@ -201,7 +203,7 @@ export const projectsData = [
     category: "Pixel Perfect",
     title: "Play.ht Homepage Clone",
     description:
-      "A faithful reproduction of the Play.ht website featuring modern typography, spacing, and engaging UI elements.",
+      "A pixel-perfect recreation of the Play.ht Homepage with a fully responsive design.",
     image: "/projects/playht.png",
     links: {
       live: "https://play-ht-homepage-clone.vercel.app/",
@@ -214,7 +216,7 @@ export const projectsData = [
     category: "Pixel Perfect",
     title: "Baremetrics Homepage Clone",
     description:
-      "A clean, data-focused landing page clone with precise styling, well-structured components, and a professional aesthetic.",
+      "A pixel-perfect recreation of the Baremetrics Homepage with a fully responsive design.",
     image: "/projects/baremetrics.png",
     links: {
       live: "https://baremetrics-hompage-clone.vercel.app/",
@@ -227,7 +229,7 @@ export const projectsData = [
     category: "Pixel Perfect",
     title: "Awwwards Homepage Clone",
     description:
-      "A high-fidelity clone of the Awwwards platform homepage, showcasing advanced CSS techniques and a visually striking layout.",
+      "A pixel-perfect recreation of the Awwwards Homepage with a fully responsive design.",
     image: "/projects/awwwards.png",
     links: {
       live: "https://awwwards-homepage-clone.vercel.app/",
