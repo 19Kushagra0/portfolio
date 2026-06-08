@@ -1,6 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Header from "@/components/Header";
+import Main from "@/components/Main";
+import Footer from "@/components/Footer";
 
 const heroContainerVariants = {
   hidden: {},
