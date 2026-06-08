@@ -49,10 +49,30 @@ const cardItemVariants = {
 };
 
 const CATEGORY_PILL_STYLES = {
-  All:            { bg: "linear-gradient(135deg, rgba(0,112,243,0.88) 0%, rgba(0,87,192,0.88) 100%)",             shadow: "0 8px 32px 0 rgba(0,112,243,0.25)",  activeText: "#0057c0", activeShadow: "0 4px 12px rgba(0,112,243,0.22)" },
-  "Full Stack":   { bg: "linear-gradient(135deg, rgba(37,99,235,0.90) 0%, rgba(59,130,246,0.90) 60%, rgba(96,165,250,0.90) 100%)",  shadow: "0 8px 32px 0 rgba(59,130,246,0.30)", activeText: "#1d4ed8", activeShadow: "0 4px 14px rgba(59,130,246,0.35)" },
-  RAG:            { bg: "linear-gradient(135deg, rgba(8,145,178,0.90) 0%, rgba(6,182,212,0.90) 55%, rgba(34,211,238,0.90) 100%)",  shadow: "0 8px 32px 0 rgba(6,182,212,0.30)",  activeText: "#0e7490", activeShadow: "0 4px 14px rgba(6,182,212,0.35)" },
-  "Pixel Perfect":{ bg: "linear-gradient(135deg, rgba(121,40,202,0.90) 0%, rgba(139,92,246,0.90) 55%, rgba(167,139,250,0.90) 100%)", shadow: "0 8px 32px 0 rgba(139,92,246,0.30)", activeText: "#6d28d9", activeShadow: "0 4px 14px rgba(139,92,246,0.35)" },
+  All: {
+    bg: "linear-gradient(135deg, rgba(0,112,243,0.88) 0%, rgba(0,87,192,0.88) 100%)",
+    shadow: "0 8px 32px 0 rgba(0,112,243,0.25)",
+    activeText: "#0057c0",
+    activeShadow: "0 4px 12px rgba(0,112,243,0.22)",
+  },
+  "Full Stack": {
+    bg: "linear-gradient(135deg, rgba(37,99,235,0.90) 0%, rgba(59,130,246,0.90) 60%, rgba(96,165,250,0.90) 100%)",
+    shadow: "0 8px 32px 0 rgba(59,130,246,0.30)",
+    activeText: "#1d4ed8",
+    activeShadow: "0 4px 14px rgba(59,130,246,0.35)",
+  },
+  RAG: {
+    bg: "linear-gradient(135deg, rgba(8,145,178,0.90) 0%, rgba(6,182,212,0.90) 55%, rgba(34,211,238,0.90) 100%)",
+    shadow: "0 8px 32px 0 rgba(6,182,212,0.30)",
+    activeText: "#0e7490",
+    activeShadow: "0 4px 14px rgba(6,182,212,0.35)",
+  },
+  "Pixel Perfect": {
+    bg: "linear-gradient(135deg, rgba(121,40,202,0.90) 0%, rgba(139,92,246,0.90) 55%, rgba(167,139,250,0.90) 100%)",
+    shadow: "0 8px 32px 0 rgba(139,92,246,0.30)",
+    activeText: "#6d28d9",
+    activeShadow: "0 4px 14px rgba(139,92,246,0.35)",
+  },
 };
 
 export default function Main({ onOpenDetails }) {
@@ -379,11 +399,15 @@ export default function Main({ onOpenDetails }) {
             gap: 4,
             padding: 6,
             borderRadius: 9999,
-            background: (CATEGORY_PILL_STYLES[filter] || CATEGORY_PILL_STYLES["All"]).bg,
+            background: (
+              CATEGORY_PILL_STYLES[filter] || CATEGORY_PILL_STYLES["All"]
+            ).bg,
             backdropFilter: "blur(12px)",
             WebkitBackdropFilter: "blur(12px)",
             border: "1px solid rgba(255, 255, 255, 0.15)",
-            boxShadow: (CATEGORY_PILL_STYLES[filter] || CATEGORY_PILL_STYLES["All"]).shadow,
+            boxShadow: (
+              CATEGORY_PILL_STYLES[filter] || CATEGORY_PILL_STYLES["All"]
+            ).shadow,
             marginTop: 24,
             marginBottom: 8,
             alignSelf: "flex-start",
@@ -396,7 +420,8 @@ export default function Main({ onOpenDetails }) {
         >
           {["All", "RAG", "Full Stack", "Pixel Perfect"].map((cat) => {
             const isActive = filter === cat;
-            const pillStyle = CATEGORY_PILL_STYLES[cat] || CATEGORY_PILL_STYLES["All"];
+            const pillStyle =
+              CATEGORY_PILL_STYLES[cat] || CATEGORY_PILL_STYLES["All"];
             return (
               <button
                 key={cat}
@@ -411,7 +436,9 @@ export default function Main({ onOpenDetails }) {
                   cursor: "pointer",
                   transition: "color 0.25s ease, transform 0.25s ease",
                   backgroundColor: "transparent",
-                  color: isActive ? pillStyle.activeText : "rgba(255, 255, 255, 0.85)",
+                  color: isActive
+                    ? pillStyle.activeText
+                    : "rgba(255, 255, 255, 0.85)",
                   border: "none",
                   zIndex: 1,
                   outline: "none",
@@ -479,7 +506,12 @@ export default function Main({ onOpenDetails }) {
                 initial={{ x: 0 }}
                 whileInView={{ x: 28 }}
                 viewport={{ once: false, margin: "-35% 0px -35% 0px" }}
-                transition={{ type: "spring", stiffness: 180, damping: 28, mass: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 180,
+                  damping: 28,
+                  mass: 1,
+                }}
                 style={{ width: "100%" }}
               >
                 <ProjectCard
@@ -507,12 +539,15 @@ export default function Main({ onOpenDetails }) {
      the live site on click
    ───────────────────────────────────────────── */
 const CATEGORY_GRADIENTS = {
-  "Full Stack":    "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%)",
-  "RAG":           "linear-gradient(135deg, #164e63 0%, #0891b2 55%, #22d3ee 100%)",
-  "Pixel Perfect": "linear-gradient(135deg, #3b0764 0%, #7c3aed 55%, #a78bfa 100%)",
+  "Full Stack":
+    "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%)",
+  RAG: "linear-gradient(135deg, #164e63 0%, #0891b2 55%, #22d3ee 100%)",
+  "Pixel Perfect":
+    "linear-gradient(135deg, #3b0764 0%, #7c3aed 55%, #a78bfa 100%)",
 };
 
-const DEFAULT_GRADIENT = "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%)";
+const DEFAULT_GRADIENT =
+  "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%)";
 
 function ProjectCard({ project, displayNumber, onOpenDetails }) {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
@@ -589,11 +624,12 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
       <div
         style={{
           flex: "1 1 50%",
-          padding: "clamp(24px, 4vw, 40px) clamp(12px, 2vw, 20px) clamp(24px, 4vw, 40px) clamp(24px, 4vw, 40px)",
+          padding:
+            "clamp(24px, 4vw, 40px) clamp(12px, 2vw, 20px) clamp(24px, 4vw, 40px) clamp(24px, 4vw, 40px)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          gap: 24,
+          gap: 12,
           textAlign: "left",
         }}
       >
@@ -624,9 +660,9 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
           </h3>
           <p
             style={{
-              fontSize: 15,
+              fontSize: 14,
               color: "#666666",
-              lineHeight: "1.6",
+              lineHeight: "1.4",
               margin: 0,
             }}
           >
