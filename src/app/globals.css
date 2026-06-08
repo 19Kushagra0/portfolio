@@ -395,9 +395,24 @@ body {
 }
 
 /* ─── Project Card: hide system cursor everywhere on the card ─── */
-.project-row-card,
-.project-row-card * {
-  cursor: none !important;
+@media (min-width: 501px) {
+  .project-row-card,
+  .project-row-card * {
+    cursor: none !important;
+  }
+}
+
+/* ─── Restore cursor on mobile (≤500px) ─── */
+@media (max-width: 500px) {
+  .project-row-card,
+  .project-row-card * {
+    cursor: auto !important;
+  }
+  .project-row-card a,
+  .project-row-card button,
+  .project-image-container {
+    cursor: pointer !important;
+  }
 }
 
 /* Restore pointer/default cursor on action buttons container and children */

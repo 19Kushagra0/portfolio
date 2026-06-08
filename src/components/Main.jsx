@@ -76,10 +76,9 @@ const CATEGORY_PILL_STYLES = {
 };
 
 function useWindowWidth() {
-  const [width, setWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1024
-  );
+  const [width, setWidth] = useState(1024);
   useEffect(() => {
+    setWidth(window.innerWidth);
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -520,6 +519,7 @@ export default function Main({ onOpenDetails }) {
                   project={project}
                   displayNumber={String(index + 1).padStart(2, "00")}
                   onOpenDetails={() => onOpenDetails(project)}
+                  isMobile={isMobile}
                 />
               </motion.div>
             </motion.div>
@@ -551,7 +551,7 @@ const CATEGORY_GRADIENTS = {
 const DEFAULT_GRADIENT =
   "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%)";
 
-function ProjectCard({ project, displayNumber, onOpenDetails }) {
+function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [suppressTooltip, setSuppressTooltip] = useState(false);
@@ -566,7 +566,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
     });
   };
 
-  const showTooltip = hovered && !suppressTooltip;
+  const showTooltip = hovered && !suppressTooltip && !isMobile;
 
   return (
     <div
@@ -577,6 +577,11 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
       onMouseLeave={() => {
         setHovered(false);
         setSuppressTooltip(false);
+      }}
+      onClick={() => {
+        if (!isMobile) {
+          window.open(project.links.live, "_blank", "noopener,noreferrer");
+        }
       }}
       style={{
         display: "flex",
@@ -589,7 +594,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
         transition: "box-shadow 0.3s ease",
         width: "100%",
         position: "relative",
-        cursor: "none",
+        cursor: "pointer",
       }}
     >
       {/* ── Follow-cursor tooltip (covers entire card) ── */}
@@ -677,6 +682,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
           className="project-actions-container"
           onMouseEnter={() => setSuppressTooltip(true)}
           onMouseLeave={() => setSuppressTooltip(false)}
+          onClick={(e) => e.stopPropagation()}
           style={{
             display: "flex",
             alignItems: "center",
@@ -783,11 +789,15 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
         </div>
       </div>
 
-      {/* ── Right Column: clicking navigates to live site ── */}
-      <a
-        href={project.links.live}
-        target="_blank"
-        rel="noopener noreferrer"
+      {/* ── Right Column: decorative image panel (clickable only on mobile) ── */}
+      <div
+        className="project-image-container"
+        onClick={(e) => {
+          if (isMobile) {
+            e.stopPropagation();
+            window.open(project.links.live, "_blank", "noopener,noreferrer");
+          }
+        }}
         style={{
           flex: "1 1 50%",
           background: CATEGORY_GRADIENTS[project.category] || DEFAULT_GRADIENT,
@@ -797,8 +807,6 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
           padding: 32,
           position: "relative",
           overflow: "hidden",
-          textDecoration: "none",
-          cursor: "none",
         }}
       >
         {project.image ? (
@@ -837,7 +845,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
             Preview Not Available
           </div>
         )}
-      </a>
+      </div>
     </div>
   );
 }
