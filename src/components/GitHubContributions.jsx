@@ -103,6 +103,7 @@ export default function GitHubContributions() {
 
         {/* Calendar Grid Container */}
         <div
+          className="github-contrib-scroll"
           style={{
             display: "flex",
             justifyContent: "center", // Center the graph

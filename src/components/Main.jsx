@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { GitHubIcon, LinkedInIcon } from "./Icons";
 import { projectsData } from "../data/project";
 import TechStack from "./TechStack";
@@ -365,32 +365,79 @@ export default function Main({ onOpenDetails }) {
         </div>
 
         {/* Filter Tabs */}
-        <div style={{ display: "flex", gap: 12, marginTop: 24, marginBottom: 8, flexWrap: "wrap" }}>
-          {["All", "Full Stack", "RAG", "Pixel Perfect"].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              style={{
-                padding: "8px 16px",
-                borderRadius: 9999,
-                fontSize: 14,
-                fontWeight: 500,
-                cursor: "pointer",
-                transition: "all 0.2s ease",
-                backgroundColor: filter === cat ? "#171717" : "#f5f5f5",
-                color: filter === cat ? "#ffffff" : "#666666",
-                border: filter === cat ? "1px solid #171717" : "1px solid #ebebeb",
-              }}
-              onMouseEnter={(e) => {
-                if (filter !== cat) e.currentTarget.style.backgroundColor = "#ebebeb";
-              }}
-              onMouseLeave={(e) => {
-                if (filter !== cat) e.currentTarget.style.backgroundColor = "#f5f5f5";
-              }}
-            >
-              {cat}
-            </button>
-          ))}
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 4,
+            padding: 6,
+            borderRadius: 9999,
+            background:
+              "linear-gradient(135deg, rgba(0, 112, 243, 0.85) 0%, rgba(0, 51, 160, 0.85) 100%)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+            boxShadow: "0 8px 32px 0 rgba(0, 112, 243, 0.15)",
+            marginTop: 24,
+            marginBottom: 8,
+            alignSelf: "flex-start",
+            position: "relative",
+            flexWrap: "nowrap",
+            maxWidth: "100%",
+            overflowX: "auto",
+          }}
+        >
+          {["All", "Full Stack", "RAG", "Pixel Perfect"].map((cat) => {
+            const isActive = filter === cat;
+            return (
+              <button
+                key={cat}
+                className="filter-tab-btn"
+                onClick={() => setFilter(cat)}
+                style={{
+                  position: "relative",
+                  padding: "8px 20px",
+                  borderRadius: 9999,
+                  fontSize: 14,
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  transition: "color 0.25s ease, transform 0.25s ease",
+                  backgroundColor: "transparent",
+                  color: isActive ? "#0057c0" : "rgba(255, 255, 255, 0.85)",
+                  border: "none",
+                  zIndex: 1,
+                  outline: "none",
+                  whiteSpace: "nowrap",
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.color = "#ffffff";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.color = "rgba(255, 255, 255, 0.85)";
+                  }
+                }}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeFilterTab"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      backgroundColor: "#ffffff",
+                      borderRadius: 9999,
+                      zIndex: -1,
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                    }}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {cat}
+              </button>
+            );
+          })}
         </div>
 
         {/* Projects grid */}
@@ -403,13 +450,22 @@ export default function Main({ onOpenDetails }) {
           viewport={{ once: true, margin: "-80px" }}
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 24,
+            gridTemplateColumns: "1fr",
+            justifyContent: "center",
+            justifyItems: "center",
+            maxWidth: 960,
+            margin: "0 auto",
+            width: "100%",
+            gap: 32,
             paddingTop: 24,
           }}
         >
           {filteredProjects.map((project, index) => (
-            <motion.div key={project.id} variants={cardItemVariants}>
+            <motion.div
+              key={project.id}
+              variants={cardItemVariants}
+              style={{ width: "100%" }}
+            >
               <ProjectCard
                 project={project}
                 displayNumber={String(index + 1).padStart(2, "0")}
@@ -423,224 +479,302 @@ export default function Main({ onOpenDetails }) {
   );
 }
 
-/* ── Project Card Component ── */
+/* ─────────────────────────────────────────────
+   Project Card Component
+   ─────────────────────────────────────────────
+   • Mouse tracking on the entire card wrapper
+   • Follow-cursor "View Project" tooltip shown
+     everywhere EXCEPT when hovering the two
+     action buttons (suppressTooltip flag)
+   • Right panel is an <a> that navigates to
+     the live site on click
+   ───────────────────────────────────────────── */
 function ProjectCard({ project, displayNumber, onOpenDetails }) {
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const [hovered, setHovered] = useState(false);
+  const [suppressTooltip, setSuppressTooltip] = useState(false);
+  const cardRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    setCoords({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  const showTooltip = hovered && !suppressTooltip;
+
   return (
     <div
-      className="card-soft-glow stacked-shadow-low"
+      ref={cardRef}
+      className="project-row-card"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => {
+        setHovered(false);
+        setSuppressTooltip(false);
+      }}
       style={{
         display: "flex",
-        flexDirection: "column",
-        borderRadius: 12,
+        borderRadius: 24,
         border: "1px solid #ebebeb",
         overflow: "hidden",
         backgroundColor: "#ffffff",
+        minHeight: "380px",
+        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.03)",
+        transition: "box-shadow 0.3s ease",
+        width: "100%",
+        position: "relative",
+        cursor: "none",
       }}
     >
-      {/* Preview area */}
-      <div
-        style={{
-          aspectRatio: "16 / 9",
-          backgroundColor: "#ffffff",
-          borderBottom: "1px solid #ebebeb",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <span
-          style={{
-            position: "absolute",
-            top: 12,
-            left: 12,
-            fontFamily: "'Geist Mono', ui-monospace, monospace",
-            fontSize: 12,
-            color: "#888888",
-            zIndex: 10,
-            backgroundColor: "rgba(255, 255, 255, 0.8)",
-            padding: "2px 6px",
-            borderRadius: 4,
-            backdropFilter: "blur(4px)",
-            border: "1px solid rgba(0, 0, 0, 0.05)",
-          }}
-        >
-          {displayNumber}
-        </span>
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="project-preview-image"
+      {/* ── Follow-cursor tooltip (covers entire card) ── */}
+      <AnimatePresence>
+        {showTooltip && (
+          <motion.div
             style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
+              position: "absolute",
+              left: coords.x,
+              top: coords.y,
+              transform: "translate(-50%, -50%)",
+              pointerEvents: "none",
+              zIndex: 50,
+              backgroundColor: "rgba(255, 107, 107, 0.95)",
+              color: "#ffffff",
+              padding: "8px 18px",
+              borderRadius: 9999,
+              fontSize: 13,
+              fontWeight: 600,
+              boxShadow: "0 8px 20px rgba(255, 107, 107, 0.4)",
+              whiteSpace: "nowrap",
             }}
-          />
-        ) : (
-          <div
-            style={{
-              width: "calc(100% - 32px)",
-              height: "calc(100% - 32px)",
-              borderRadius: 4,
-              border: "1px dashed #ebebeb",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#888888",
-              backgroundColor: "#f7f3f2",
-              fontFamily: "'Geist Mono', ui-monospace, monospace",
-              fontSize: 12,
-            }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 450, damping: 25 }}
           >
-            Preview Not Available
-          </div>
+            View Project
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
 
-      {/* Card content */}
+      {/* ── Left Column: Content ── */}
       <div
         style={{
-          padding: 24,
+          flex: "1 1 50%",
+          padding: "clamp(24px, 4vw, 40px)",
           display: "flex",
           flexDirection: "column",
-          gap: 16,
-          flexGrow: 1,
+          justifyContent: "center",
+          gap: 24,
+          textAlign: "left",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <span
+            style={{
+              fontFamily: "'Geist Mono', ui-monospace, monospace",
+              fontSize: 12,
+              color: "#888888",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              fontWeight: 600,
+            }}
+          >
+            {project.category || "Project"} — {displayNumber}
+          </span>
           <h3
             style={{
-              fontSize: 20,
-              fontWeight: 600,
-              letterSpacing: "-0.6px",
-              lineHeight: "28px",
+              fontSize: "clamp(24px, 3vw, 32px)",
+              fontWeight: 700,
+              letterSpacing: "-1px",
+              lineHeight: "1.2",
               color: "#171717",
+              margin: 0,
             }}
           >
             {project.title}
           </h3>
           <p
             style={{
-              fontSize: 14,
-              color: "#888888",
-              lineHeight: "20px",
-              letterSpacing: "-0.28px",
-              display: "-webkit-box",
-              WebkitLineClamp: 1,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
+              fontSize: 15,
+              color: "#666666",
+              lineHeight: "1.6",
+              margin: 0,
             }}
           >
-            {project.description}
+            {project.problem || project.description}
           </p>
         </div>
 
-        {/* Tech Stack Tags */}
-        {project.tags && project.tags.length > 0 && (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {project.tags.map((tag, idx) => (
-              <span
-                key={idx}
-                style={{
-                  fontFamily: "'Geist Mono', ui-monospace, monospace",
-                  fontSize: 12,
-                  color: "#666666",
-                  backgroundColor: "#f5f5f5",
-                  padding: "4px 8px",
-                  borderRadius: 6,
-                  border: "1px solid #ebebeb",
-                }}
-              >
-                [{tag}]
-              </span>
-            ))}
-          </div>
-        )}
-
-        {/* Card actions */}
+        {/* Action Buttons */}
         <div
+          className="project-actions-container"
+          onMouseEnter={() => setSuppressTooltip(true)}
+          onMouseLeave={() => setSuppressTooltip(false)}
           style={{
             display: "flex",
-            flexDirection: "column",
-            gap: 16,
-            marginTop: "auto",
-            paddingTop: 8,
+            alignItems: "center",
+            gap: 12,
+            width: "100%",
+            position: "relative",
+            zIndex: 10,
           }}
         >
-          {/* View Details Button */}
+          {/* View Details — text-only blue; hides cursor tooltip while hovered */}
           <button
-            onClick={onOpenDetails}
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpenDetails();
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "#0041a0";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "#0057c0";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
             style={{
-              display: "flex",
+              display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
-              height: 40,
-              borderRadius: 8,
-              backgroundColor: "#171717",
-              color: "#ffffff",
+              gap: 8,
+              height: 46,
+              padding: "0 8px",
+              borderRadius: 9999,
+              backgroundColor: "transparent",
+              color: "#0057c0",
               fontSize: 14,
               fontWeight: 600,
               border: "none",
               cursor: "pointer",
-              width: "100%",
-              transition: "all 0.2s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#333333";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#171717";
+              width: "max-content",
+              boxShadow: "none",
+              transition: "all 0.25s ease",
+              position: "relative",
+              zIndex: 10,
             }}
           >
             View Details
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ transform: "rotate(-45deg)" }}
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </button>
 
-          {/* Links: Live Demo • GitHub */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 12,
-              fontSize: 14,
-              fontWeight: 500,
-            }}
-          >
-            <a
-              href={project.links.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: "#666666",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.target.style.color = "#171717")}
-              onMouseLeave={(e) => (e.target.style.color = "#666666")}
-            >
-              Live Demo
-            </a>
-            <span style={{ color: "#d4d4d4" }}>•</span>
+          {/* GitHub icon link */}
+          {project.links.github && (
             <a
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                color: "#666666",
-                textDecoration: "none",
-                transition: "color 0.2s",
+              onClick={(e) => e.stopPropagation()}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.opacity = "0.65";
+                e.currentTarget.style.transform = "translateY(-1px)";
               }}
-              onMouseEnter={(e) => (e.target.style.color = "#171717")}
-              onMouseLeave={(e) => (e.target.style.color = "#666666")}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.opacity = "1";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 38,
+                height: 38,
+                borderRadius: 9999,
+                border: "none",
+                backgroundColor: "transparent",
+                color: "#171717",
+                transition: "all 0.25s ease",
+                position: "relative",
+                zIndex: 10,
+                flexShrink: 0,
+              }}
+              title="View on GitHub"
             >
-              GitHub
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
             </a>
-          </div>
+          )}
         </div>
       </div>
+
+      {/* ── Right Column: clicking navigates to live site ── */}
+      <a
+        href={project.links.live}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          flex: "1 1 50%",
+          background: "linear-gradient(135deg, #0b1528 0%, #0f2b48 100%)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 32,
+          position: "relative",
+          overflow: "hidden",
+          textDecoration: "none",
+          cursor: "none",
+        }}
+      >
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            style={{
+              maxWidth: "90%",
+              maxHeight: "85%",
+              width: "auto",
+              height: "auto",
+              objectFit: "contain",
+              borderRadius: 12,
+              boxShadow: "0 12px 36px rgba(0, 0, 0, 0.4)",
+              transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+              pointerEvents: "none",
+            }}
+          />
+        ) : (
+          <div
+            style={{
+              width: "80%",
+              height: "70%",
+              borderRadius: 8,
+              border: "1px dashed rgba(255, 255, 255, 0.2)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "rgba(255, 255, 255, 0.6)",
+              backgroundColor: "rgba(255, 255, 255, 0.05)",
+              fontFamily: "'Geist Mono', ui-monospace, monospace",
+              fontSize: 12,
+              pointerEvents: "none",
+            }}
+          >
+            Preview Not Available
+          </div>
+        )}
+      </a>
     </div>
   );
 }
