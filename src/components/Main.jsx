@@ -667,7 +667,27 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               margin: 0,
             }}
           >
-            {project.title}
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#0057c0";
+                setSuppressTooltip(true);
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "#171717";
+                setSuppressTooltip(false);
+              }}
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                transition: "color 0.2s ease",
+              }}
+            >
+              {project.title}
+            </a>
           </h3>
           <p
             style={{

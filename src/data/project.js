@@ -103,7 +103,7 @@ export const projectsData = [
     category: "RAG",
     title: "YourMails AI",
     description:
-      "YourMails is a modern, AI-first email client engineered to solve inbox overload for power users and professionals. It integrates a sophisticated Retrieval-Augmented Generation (RAG) pipeline directly into the reading pane, transforming a standard inbox into an intelligent, queryable knowledge base.",
+      "YourMails is an AI-powered email client that helps users manage their inbox faster. Users can ask questions about their emails, get instant summaries, understand long conversations, and generate replies directly from their inbox.",
     image: "/projects/yourmails.png",
     tags: ["Next.js", "Pinecone", "RAG", "OpenAI"],
     features: [
@@ -125,7 +125,7 @@ export const projectsData = [
     id: 11,
     number: "10",
     category: "Full Stack",
-    title: "NutriExplore — Full Stack Food Product Explorer",
+    title: "NutriExplore",
     description:
       "Search out what's inside your packaged food. Check ingredients, nutrition, and product details in seconds.",
     image: "/projects/nutriexplore.png",
