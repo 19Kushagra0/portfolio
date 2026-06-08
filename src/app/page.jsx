@@ -51,7 +51,7 @@ const projectsData = [
     number: "15",
     title: "Discord Analyzer ",
     description:
-      "Discord Analyzer is an AI-powered Discord analytics dashboard that helps you understand your server data. It features a custom SQL engine called 'Coral' that lets you query Discord information using plain English. The app includes Discord OAuth authentication, Firebase storage, and AI-powered analysis with Grok.",  
+      "Discord Analyzer is an AI-powered Discord analytics dashboard that helps you understand your server data. It features a custom SQL engine called 'Coral' that lets you query Discord information using plain English. The app includes Discord OAuth authentication, Firebase storage, and AI-powered analysis with Grok.",
     image: "/projects/discord-analyzer.png",
     links: {
       live: "https://discord-analyzer-five.vercel.app/",
@@ -292,6 +292,8 @@ function LinkedInIcon() {
 }
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <div
       style={{
@@ -303,734 +305,259 @@ export default function Home() {
         flexDirection: "column",
       }}
     >
-      {/* ── Nav ── */}
-      <header
-        style={{
-          backgroundColor: "#ffffff",
-          borderBottom: "1px solid #ebebeb",
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-        }}
-      >
-        <nav
-          style={{
-            maxWidth: 1400,
-            margin: "0 auto",
-            width: "100%",
-            height: 64,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "0 24px",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-            <a
-              href="#"
-              style={{
-                fontSize: 20,
-                fontWeight: 700,
-                letterSpacing: "-0.6px",
-                color: "#171717",
-                textDecoration: "none",
-              }}
-            >
-              Kushagra Sharma.
-            </a>
-            <div
-              className="nav-links"
-              style={{ display: "flex", alignItems: "center", gap: 24 }}
-            >
-              {["Projects", "Connect"].map((item) => (
-                <a
-                  key={item}
-                  href={item === "Connect" ? "#footer" : "#projects"}
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 500,
-                    color: "#888888",
-                    textDecoration: "none",
-                    transition: "color 0.2s",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#171717")}
-                  onMouseLeave={(e) => (e.target.style.color = "#888888")}
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
-        </nav>
-      </header>
-
-      <main
-        style={{
-          flexGrow: 1,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        {/* ── Hero Section ── */}
-        <section
-          style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: 1400,
-            margin: "0 auto",
-            padding: "192px 24px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            overflow: "hidden",
-          }}
-        >
-          {/* Mesh gradient */}
-          <div
-            className="mesh-bg"
-            style={{
-              position: "absolute",
-              inset: 0,
-              zIndex: 0,
-              pointerEvents: "none",
-            }}
+      <Header />
+      <Main onOpenDetails={setSelectedProject} />
+      <Footer />
+      {/* Project Details Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
           />
-
-          <div
-            style={{
-              position: "relative",
-              zIndex: 10,
-              display: "flex",
-              flexDirection: "column",
-              gap: 24,
-              maxWidth: 768,
-              alignItems: "flex-start",
-            }}
-          >
-            {/* Code-numbered headline lines */}
-            <motion.div
-              variants={heroContainerVariants}
-              initial="hidden"
-              animate="visible"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                gap: 12,
-                textAlign: "left",
-              }}
-            >
-              {/* Line 01 */}
-              <motion.div
-                variants={heroLineVariants}
-                style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
-              >
-                <span
-                  style={{
-                    fontFamily: "'Geist Mono', ui-monospace, monospace",
-                    fontSize: 12,
-                    color: "#888888",
-                    paddingTop: 10,
-                    minWidth: 24,
-                    lineHeight: 1,
-                  }}
-                >
-                  01
-                </span>
-                <h1
-                  className="hero-headline"
-                  style={{
-                    fontSize: 48,
-                    fontWeight: 600,
-                    letterSpacing: "-2.4px",
-                    lineHeight: "48px",
-                    color: "#171717",
-                  }}
-                >
-                  {"<Hello, I'm "}
-                  <span style={{ color: "#0057c0" }}>Kushagra!</span>
-                  {">"}
-                </h1>
-              </motion.div>
-
-              {/* Line 02 */}
-              <motion.div
-                variants={heroLineVariants}
-                style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
-              >
-                <span
-                  style={{
-                    fontFamily: "'Geist Mono', ui-monospace, monospace",
-                    fontSize: 12,
-                    color: "#888888",
-                    paddingTop: 10,
-                    minWidth: 24,
-                    lineHeight: 1,
-                  }}
-                >
-                  02
-                </span>
-                <h2
-                  className="hero-headline"
-                  style={{
-                    fontSize: 48,
-                    fontWeight: 600,
-                    letterSpacing: "-2.4px",
-                    lineHeight: "48px",
-                    color: "#171717",
-                  }}
-                >
-                  {"<I am a "}
-                  <span style={{ color: "#0057c0" }}>full stack</span>
-                  {" web "}
-                  <span style={{ color: "#0057c0" }}>developer</span>
-                  {">"}
-                </h2>
-              </motion.div>
-
-              {/* Line 03 */}
-              <motion.div
-                variants={heroLineVariants}
-                style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
-              >
-                <span
-                  style={{
-                    fontFamily: "'Geist Mono', ui-monospace, monospace",
-                    fontSize: 12,
-                    color: "#888888",
-                    paddingTop: 10,
-                    minWidth: 24,
-                    lineHeight: 1,
-                  }}
-                >
-                  03
-                </span>
-                <h2
-                  className="hero-headline"
-                  style={{
-                    fontSize: 48,
-                    fontWeight: 600,
-                    letterSpacing: "-2.4px",
-                    lineHeight: "48px",
-                    color: "#171717",
-                  }}
-                >
-                  <span style={{ color: "#0057c0" }}>websites</span>
-                  {" and "}
-                  <span style={{ color: "#0057c0" }}>mobile apps</span>
-                  {">"}
-                </h2>
-              </motion.div>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 16,
-                paddingTop: 32,
-                marginLeft: 40,
-              }}
-            >
-              <a
-                href="https://github.com/19Kushagra0"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 8,
-                  height: 48,
-                  padding: "0 32px",
-                  borderRadius: 9999,
-                  backgroundColor: "#171717",
-                  color: "#ffffff",
-                  fontSize: 16,
-                  fontWeight: 700,
-                  letterSpacing: "-0.05em",
-                  textDecoration: "none",
-                  transition: "all 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#000000";
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#171717";
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                <GitHubIcon />
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kushagra-sharma-ks/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 8,
-                  height: 48,
-                  padding: "0 32px",
-                  borderRadius: 9999,
-                  backgroundColor: "#fafafa",
-                  color: "#4d4d4d",
-                  fontSize: 16,
-                  fontWeight: 700,
-                  letterSpacing: "-0.05em",
-                  textDecoration: "none",
-                  border: "1px solid #ebebeb",
-                  transition: "all 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#ffffff";
-                  e.currentTarget.style.color = "#171717";
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#fafafa";
-                  e.currentTarget.style.color = "#4d4d4d";
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                <LinkedInIcon />
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Projects Section ── */}
-        <section
-          id="projects"
-          style={{
-            width: "100%",
-            maxWidth: 1400,
-            margin: "0 auto",
-            padding: "128px 24px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 40,
-          }}
-        >
-          {/* Section header */}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 8,
-              maxWidth: 672,
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'Geist Mono', ui-monospace, monospace",
-                fontSize: 12,
-                color: "#888888",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-              }}
-            >
-              Portfolio
-            </span>
-            <h2
-              style={{
-                fontSize: 32,
-                fontWeight: 600,
-                letterSpacing: "-1.28px",
-                lineHeight: "40px",
-                color: "#171717",
-              }}
-            >
-              Selected Projects.
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: "#888888",
-                lineHeight: "24px",
-                marginTop: 8,
-              }}
-            >
-              A collection of projects I&apos;ve built to learn, experiment, and
-              grow as a developer. Focusing on robust frontends and seamless
-              user experiences.
-            </p>
-          </div>
-
-          {/* Projects grid */}
-          <motion.div
-            className="projects-grid"
-            variants={cardContainerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: 24,
-              paddingTop: 24,
-            }}
-          >
-            {projectsData.map((project) => (
-              <motion.div key={project.id} variants={cardItemVariants}>
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </section>
-      </main>
-
-      {/* ── Footer ── */}
-      <footer
-        id="footer"
-        style={{
-          backgroundColor: "#ffffff",
-          borderTop: "1px solid #ebebeb",
-          width: "100%",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1400,
-            margin: "0 auto",
-            width: "100%",
-            padding: "64px 24px",
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 32,
-          }}
-        >
-          {/* Brand col */}
-          <div
-            style={{
-              gridColumn: "span 2",
-              display: "flex",
-              flexDirection: "column",
-              gap: 16,
-            }}
-          >
-            <span
-              style={{
-                fontSize: 20,
-                fontWeight: 700,
-                letterSpacing: "-0.6px",
-                color: "#171717",
-              }}
-            >
-              Kushagra Sharma.
-            </span>
-            <span
-              style={{
-                fontFamily: "'Geist Mono', ui-monospace, monospace",
-                fontSize: 12,
-                color: "#888888",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
-            >
-              © {new Date().getFullYear()} Kushagra Sharma. Built with
-              precision.
-            </span>
-            <span
-              style={{
-                fontFamily: "'Geist Mono', ui-monospace, monospace",
-                fontSize: 12,
-                color: "#888888",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                display: "flex",
-                alignItems: "center",
-                gap: 6,
-              }}
-            >
-              📍 Delhi, India
-            </span>
-          </div>
-
-          {/* Connect col */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <span
-              style={{
-                fontFamily: "'Geist Mono', ui-monospace, monospace",
-                fontSize: 12,
-                color: "#888888",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                marginBottom: 4,
-              }}
-            >
-              Connect
-            </span>
-            {[
-              { label: "Github", href: "https://github.com/19Kushagra0" },
-              {
-                label: "LinkedIn",
-                href: "https://www.linkedin.com/in/kushagra-sharma-ks/",
-              },
-              { label: "Email", href: "mailto:kushagra@example.com" },
-            ].map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  fontFamily: "'Geist Mono', ui-monospace, monospace",
-                  fontSize: 12,
-                  color: "#888888",
-                  textDecoration: "none",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = "#171717";
-                  e.target.style.textDecoration = "underline";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = "#888888";
-                  e.target.style.textDecoration = "none";
-                }}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Navigate col */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <span
-              style={{
-                fontFamily: "'Geist Mono', ui-monospace, monospace",
-                fontSize: 12,
-                color: "#888888",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                marginBottom: 4,
-              }}
-            >
-              Navigate
-            </span>
-            {[{ label: "Work", href: "#projects" }].map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                style={{
-                  fontFamily: "'Geist Mono', ui-monospace, monospace",
-                  fontSize: 12,
-                  color: link.label === "Work" ? "#171717" : "#888888",
-                  textDecoration: "none",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = "#171717";
-                  e.target.style.textDecoration = "underline";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color =
-                    link.label === "Work" ? "#171717" : "#888888";
-                  e.target.style.textDecoration = "none";
-                }}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </footer>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
 
-/* ── Project Card Component ── */
-function ProjectCard({ project }) {
+/* ── Project Modal Component ── */
+function ProjectModal({ project, onClose }) {
+  // Close on Escape key
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
+
+  // Lock body scroll
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   return (
     <div
-      className="card-soft-glow stacked-shadow-low"
       style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 100,
         display: "flex",
-        flexDirection: "column",
-        borderRadius: 8,
-        border: "1px solid #ebebeb",
-        overflow: "hidden",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "40px clamp(12px, 4vw, 24px)",
       }}
     >
-      {/* Preview area */}
-      <div
+      <style>
+        {`
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}
+      </style>
+      {/* Backdrop overlay */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        onClick={onClose}
         style={{
-          aspectRatio: "16 / 9",
-          backgroundColor: "#ffffff",
-          borderBottom: "1px solid #ebebeb",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative",
-          overflow: "hidden",
+          position: "absolute",
+          inset: 0,
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          backdropFilter: "blur(8px)",
+          cursor: "pointer",
         }}
-      >
-        <span
-          style={{
-            position: "absolute",
-            top: 12,
-            left: 12,
-            fontFamily: "'Geist Mono', ui-monospace, monospace",
-            fontSize: 12,
-            color: "#888888",
-            zIndex: 10,
-            backgroundColor: "rgba(255, 255, 255, 0.8)",
-            padding: "2px 6px",
-            borderRadius: 4,
-            backdropFilter: "blur(4px)",
-            border: "1px solid rgba(0, 0, 0, 0.05)",
-          }}
-        >
-          {project.number}
-        </span>
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="project-preview-image"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-            }}
-          />
-        ) : (
-          <div
-            style={{
-              width: "calc(100% - 32px)",
-              height: "calc(100% - 32px)",
-              borderRadius: 4,
-              border: "1px dashed #ebebeb",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#888888",
-              backgroundColor: "#f7f3f2",
-              fontFamily: "'Geist Mono', ui-monospace, monospace",
-              fontSize: 12,
-            }}
-          >
-            Preview Not Available
-          </div>
-        )}
-      </div>
+      />
 
-      {/* Card content */}
-      <div
+      {/* Modal Container */}
+      <motion.div
+        className="hide-scrollbar"
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         style={{
-          padding: 24,
+          position: "relative",
+          width: "100%",
+          maxWidth: 896, // ~max-w-4xl
+          maxHeight: "85vh", // Slightly more space on top/bottom
+          backgroundColor: "#ffffff",
+          borderRadius: 16,
+          border: "none",
+          boxShadow: "0 35px 70px -15px rgba(0, 0, 0, 0.9)",
+          overflowY: "auto",
           display: "flex",
           flexDirection: "column",
-          gap: 16,
-          flexGrow: 1,
+          cursor: "default",
         }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-          <h3
-            style={{
-              fontSize: 20,
-              fontWeight: 600,
-              letterSpacing: "-0.6px",
-              lineHeight: "28px",
-              color: "#171717",
-            }}
-          >
-            {project.title}
-          </h3>
-          <p
-            style={{
-              fontSize: 14,
-              color: "#888888",
-              lineHeight: "20px",
-              letterSpacing: "-0.28px",
-              display: "-webkit-box",
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}
-          >
-            {project.description}
-          </p>
-        </div>
-
-        {/* Card actions */}
-        <div
+        {/* Close button */}
+        <button
+          onClick={onClose}
           style={{
+            position: "absolute",
+            top: 16,
+            right: 16,
+            zIndex: 10,
+            width: 36,
+            height: 36,
             display: "flex",
             alignItems: "center",
-            gap: 12,
-            marginTop: "auto",
-            paddingTop: 16,
+            justifyContent: "center",
+            borderRadius: "50%",
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            border: "1px solid #ebebeb",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+            color: "#171717",
+          }}
+          aria-label="Close modal"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        {/* Content Body */}
+        <div
+          className="modal-body"
+          style={{
+            padding: "40px",
+            display: "flex",
+            flexDirection: "column",
+            gap: 32,
           }}
         >
-          {/* Live demo button */}
-          <a
-            href={project.links.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: 32,
-              padding: "0 12px",
-              borderRadius: 9999,
-              backgroundColor: "#171717",
-              color: "#ffffff",
-              fontSize: 14,
-              fontWeight: 700,
-              letterSpacing: "-0.05em",
-              textDecoration: "none",
-              transition: "all 0.3s ease",
-              gap: 6,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#000000";
-              e.currentTarget.style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#171717";
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            <ExternalLinkIcon />
-          </a>
+          {/* Header */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <h2
+              style={{
+                fontSize: 32,
+                fontWeight: 700,
+                letterSpacing: "-1px",
+                color: "#171717",
+                margin: 0,
+              }}
+            >
+              {project.title}
+            </h2>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: "26px",
+                color: "#666666",
+                margin: 0,
+              }}
+            >
+              {project.description}
+            </p>
+          </div>
 
-          {/* GitHub button */}
-          <a
-            href={project.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-glass-secondary"
+          {/* Tech Stack */}
+          {project.tags && project.tags.length > 0 && (
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "#171717",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                Tech Stack
+              </h4>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {project.tags.map((tag, idx) => (
+                  <span
+                    key={idx}
+                    style={{
+                      fontFamily: "'Geist Mono', ui-monospace, monospace",
+                      fontSize: 13,
+                      color: "#4d4d4d",
+                      backgroundColor: "#f5f5f5",
+                      padding: "6px 12px",
+                      borderRadius: 8,
+                      border: "1px solid #ebebeb",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Details Grid */}
+          <div
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 6,
-              height: 32,
-              padding: "0 12px",
-              borderRadius: 9999,
-              fontSize: 14,
-              fontWeight: 500,
-              textDecoration: "none",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 32,
             }}
           >
-            <GitHubIcon />
-            GitHub
-          </a>
+            {/* Features List */}
+            {project.features && project.features.length > 0 && (
+              <div
+                style={{ display: "flex", flexDirection: "column", gap: 12 }}
+              >
+                <h4
+                  style={{
+                    margin: 0,
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "#171717",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                  }}
+                >
+                  Key Features
+                </h4>
+                <ul
+                  style={{
+                    margin: 0,
+                    paddingLeft: 20,
+                    color: "#4d4d4d",
+                    fontSize: 15,
+                    lineHeight: "24px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                  }}
+                >
+                  {project.features.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {/* Action Buttons removed */}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
