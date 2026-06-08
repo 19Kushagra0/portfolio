@@ -203,10 +203,10 @@ export default function Main({ onOpenDetails }) {
                 }}
               >
                 {"<"}
-                <span style={{ color: "#0057c0" }}>Frontend Focused</span>
-                {"\u00A0Full Stack\u00A0"}
-                <span style={{ color: "#0057c0" }}>Developer</span>
-                {">"}
+                <span style={{ color: "#0057c0" }}>I Wires</span>
+                {"\u00A0ideas and\u00A0"}
+                <span style={{ color: "#0057c0" }}>Ships</span>
+                {"\u00A0products>"}
               </h2>
             </motion.div>
 
@@ -237,11 +237,11 @@ export default function Main({ onOpenDetails }) {
                   color: "#171717",
                 }}
               >
-                {"<"}
-                <span style={{ color: "#0057c0" }}>Who Builds</span>
-                {"\u00A0and\u00A0"}
-                <span style={{ color: "#0057c0" }}>Integrates</span>
-                {"\u00A0modern web applications>"}
+                {"<From\u00A0"}
+                <span style={{ color: "#0057c0" }}>APIs</span>
+                {"\u00A0to\u00A0"}
+                <span style={{ color: "#0057c0" }}>UI</span>
+                {",\u00A0end to end>"}
               </h2>
             </motion.div>
           </motion.div>
