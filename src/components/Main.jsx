@@ -394,7 +394,7 @@ export default function Main({ onOpenDetails }) {
             transition: "background 0.4s ease, box-shadow 0.4s ease",
           }}
         >
-          {["All", "Full Stack", "RAG", "Pixel Perfect"].map((cat) => {
+          {["All", "RAG", "Full Stack", "Pixel Perfect"].map((cat) => {
             const isActive = filter === cat;
             const pillStyle = CATEGORY_PILL_STYLES[cat] || CATEGORY_PILL_STYLES["All"];
             return (
@@ -474,11 +474,19 @@ export default function Main({ onOpenDetails }) {
               variants={cardItemVariants}
               style={{ width: "100%" }}
             >
-              <ProjectCard
-                project={project}
-                displayNumber={String(index + 1).padStart(2, "0")}
-                onOpenDetails={() => onOpenDetails(project)}
-              />
+              <motion.div
+                initial={{ x: 0 }}
+                whileInView={{ x: 28 }}
+                viewport={{ once: false, margin: "-35% 0px -35% 0px" }}
+                transition={{ type: "spring", stiffness: 180, damping: 28, mass: 1 }}
+                style={{ width: "100%" }}
+              >
+                <ProjectCard
+                  project={project}
+                  displayNumber={String(index + 1).padStart(2, "00")}
+                  onOpenDetails={() => onOpenDetails(project)}
+                />
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>
