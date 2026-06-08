@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GitHubIcon, LinkedInIcon } from "./Icons";
 import { projectsData } from "../data/project";
@@ -75,8 +75,22 @@ const CATEGORY_PILL_STYLES = {
   },
 };
 
+function useWindowWidth() {
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1024
+  );
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return width;
+}
+
 export default function Main({ onOpenDetails }) {
   const [filter, setFilter] = useState("All");
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth <= 500;
 
   const filteredProjects = projectsData.filter((project) => {
     if (filter === "All") return true;
@@ -377,11 +391,11 @@ export default function Main({ onOpenDetails }) {
           >
             Things I&apos;ve Shipped.
           </h2>
-
         </div>
 
         {/* Filter Tabs */}
         <div
+          className="filter-tabs-container"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -399,7 +413,6 @@ export default function Main({ onOpenDetails }) {
             ).shadow,
             marginTop: 24,
             marginBottom: 8,
-            alignSelf: "flex-start",
             position: "relative",
             flexWrap: "nowrap",
             maxWidth: "100%",
@@ -482,7 +495,7 @@ export default function Main({ onOpenDetails }) {
             width: "100%",
             gap: 32,
             paddingTop: 24,
-            paddingRight: 36,
+            paddingRight: isMobile ? 0 : 36,
           }}
         >
           {filteredProjects.map((project, index) => (
@@ -493,7 +506,7 @@ export default function Main({ onOpenDetails }) {
             >
               <motion.div
                 initial={{ x: 0 }}
-                whileInView={{ x: 28 }}
+                whileInView={{ x: isMobile ? 0 : 28 }}
                 viewport={{ once: false, margin: "-35% 0px -35% 0px" }}
                 transition={{
                   type: "spring",

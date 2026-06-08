@@ -311,6 +311,15 @@ body {
     align-items: flex-start !important;
     gap: 12px !important;
   }
+  .filter-tabs-container {
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+.filter-tabs-container {
+  align-self: flex-start;
 }
 
 /* ─── 405px and below ─── */
