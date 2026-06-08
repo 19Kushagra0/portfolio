@@ -478,41 +478,7 @@ function ProjectModal({ project, onClose }) {
             </p>
           </div>
 
-          {/* Tech Stack */}
-          {project.tags && project.tags.length > 0 && (
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <h4
-                style={{
-                  margin: 0,
-                  fontSize: 14,
-                  fontWeight: 600,
-                  color: "#171717",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em",
-                }}
-              >
-                Tech Stack
-              </h4>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {project.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    style={{
-                      fontFamily: "'Geist Mono', ui-monospace, monospace",
-                      fontSize: 13,
-                      color: "#4d4d4d",
-                      backgroundColor: "#f5f5f5",
-                      padding: "6px 12px",
-                      borderRadius: 8,
-                      border: "1px solid #ebebeb",
-                    }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
+
 
           {/* Details Grid */}
           <div
