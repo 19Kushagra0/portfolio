@@ -220,9 +220,9 @@ export default function Main({ onOpenDetails }) {
                 }}
               >
                 {"<"}
-                <span style={{ color: "#0057c0" }}>I Wires</span>
+                <span style={{ color: "#0057c0" }}>I Wire</span>
                 {"\u00A0ideas and\u00A0"}
-                <span style={{ color: "#0057c0" }}>Ships</span>
+                <span style={{ color: "#0057c0" }}>Ship</span>
                 {"\u00A0products>"}
               </h2>
             </motion.div>
