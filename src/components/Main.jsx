@@ -364,7 +364,7 @@ export default function Main({ onOpenDetails }) {
               letterSpacing: "0.1em",
             }}
           >
-            Portfolio
+            Work
           </span>
           <h2
             style={{
@@ -375,7 +375,7 @@ export default function Main({ onOpenDetails }) {
               color: "#171717",
             }}
           >
-            Selected Projects.
+            Things I&apos;ve Shipped.
           </h2>
           <p
             style={{
@@ -385,9 +385,7 @@ export default function Main({ onOpenDetails }) {
               marginTop: 8,
             }}
           >
-            A collection of projects I&apos;ve built to learn, experiment, and
-            grow as a developer. Focusing on robust frontends and seamless user
-            experiences.
+            Projects I&apos;ve wired from idea to deployment. Every line of code, every API call, every pixel end to end.
           </p>
         </div>
 
