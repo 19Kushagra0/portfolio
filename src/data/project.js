@@ -125,7 +125,7 @@ export const projectsData = [
     id: 11,
     number: "10",
     category: "Full Stack",
-    title: "NutriExplore — Full Stack Food Product Explorer",
+    title: "NutriExplore",
     description:
       "Search out what's inside your packaged food. Check ingredients, nutrition, and product details in seconds.",
     image: "/projects/nutriexplore.png",
