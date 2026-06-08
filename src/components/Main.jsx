@@ -78,6 +78,7 @@ const CATEGORY_PILL_STYLES = {
 function useWindowWidth() {
   const [width, setWidth] = useState(1024);
   useEffect(() => {
+    setWidth(window.innerWidth);
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     const timer = setTimeout(handleResize, 0);
