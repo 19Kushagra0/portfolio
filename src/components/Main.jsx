@@ -466,6 +466,7 @@ export default function Main({ onOpenDetails }) {
             width: "100%",
             gap: 32,
             paddingTop: 24,
+            paddingRight: 36,
           }}
         >
           {filteredProjects.map((project, index) => (
@@ -588,7 +589,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails }) {
       <div
         style={{
           flex: "1 1 50%",
-          padding: "clamp(24px, 4vw, 40px)",
+          padding: "clamp(24px, 4vw, 40px) clamp(12px, 2vw, 20px) clamp(24px, 4vw, 40px) clamp(24px, 4vw, 40px)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
