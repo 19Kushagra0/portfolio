@@ -377,16 +377,7 @@ export default function Main({ onOpenDetails }) {
           >
             Things I&apos;ve Shipped.
           </h2>
-          <p
-            style={{
-              fontSize: 16,
-              color: "#888888",
-              lineHeight: "24px",
-              marginTop: 8,
-            }}
-          >
-            Projects I&apos;ve wired from idea to deployment. Every line of code, every API call, every pixel end to end.
-          </p>
+
         </div>
 
         {/* Filter Tabs */}
