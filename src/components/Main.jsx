@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GitHubIcon, LinkedInIcon } from "./Icons";
+import { GitHubIcon, LinkedInIcon, ExternalLinkIcon } from "./Icons";
 import { projectsData } from "../data/project";
 import TechStack from "./TechStack";
 import GitHubContributions from "./GitHubContributions";
@@ -767,6 +767,39 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </button>
+
+          {/* Live Demo — visible only on mobile/tablets (< 640px) */}
+          <a
+            href={project.links.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            className="inline-flex sm:hidden items-center justify-center gap-1.5 px-4 rounded-full text-sm font-semibold transition-all duration-200"
+            style={{
+              height: 38,
+              paddingLeft: 18,
+              paddingRight: 18,
+              backgroundColor: "rgba(0, 87, 192, 0.05)",
+              border: "1px solid rgba(0, 87, 192, 0.1)",
+              color: "#0057c0",
+              textDecoration: "none",
+              cursor: "pointer",
+              boxShadow: "0 2px 6px rgba(0, 87, 192, 0.03)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(0, 87, 192, 0.08)";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(0, 87, 192, 0.05)";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            Live Demo
+            <ExternalLinkIcon size={14} />
+          </a>
         </div>
       </div>
 
