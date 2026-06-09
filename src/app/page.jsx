@@ -353,7 +353,7 @@ function ProjectModal({ project, onClose }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "40px clamp(12px, 4vw, 24px)",
+        padding: "clamp(16px, 4vh, 40px) clamp(8px, 4vw, 24px)",
       }}
     >
       <style>
@@ -394,7 +394,7 @@ function ProjectModal({ project, onClose }) {
           position: "relative",
           width: "100%",
           maxWidth: 896, // ~max-w-4xl
-          maxHeight: "85vh", // Slightly more space on top/bottom
+          maxHeight: "90vh",
           backgroundColor: "#ffffff",
           borderRadius: 16,
           border: "none",
@@ -411,8 +411,8 @@ function ProjectModal({ project, onClose }) {
           onClick={onClose}
           style={{
             position: "absolute",
-            top: 16,
-            right: 16,
+            top: "clamp(12px, 3vw, 24px)",
+            right: "clamp(12px, 3vw, 24px)",
             zIndex: 10,
             width: 36,
             height: 36,
@@ -447,29 +447,31 @@ function ProjectModal({ project, onClose }) {
         <div
           className="modal-body"
           style={{
-            padding: "40px",
+            padding: "clamp(24px, 5vw, 48px)",
             display: "flex",
             flexDirection: "column",
-            gap: 32,
+            gap: "clamp(20px, 5vw, 32px)",
           }}
         >
           {/* Header */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "clamp(8px, 2vw, 12px)" }}>
             <h2
               style={{
-                fontSize: 32,
+                fontSize: "clamp(1.5rem, 4.5vw, 2rem)",
                 fontWeight: 700,
-                letterSpacing: "-1px",
+                letterSpacing: "-0.03em",
+                lineHeight: "1.25",
                 color: "#171717",
                 margin: 0,
+                paddingRight: "clamp(40px, 8vw, 48px)", // Leave space for close button
               }}
             >
               {project.title}
             </h2>
             <p
               style={{
-                fontSize: 16,
-                lineHeight: "26px",
+                fontSize: "clamp(0.9375rem, 2.5vw, 1rem)",
+                lineHeight: "clamp(1.45rem, 3.8vw, 1.625rem)",
                 color: "#666666",
                 margin: 0,
               }}
@@ -478,25 +480,23 @@ function ProjectModal({ project, onClose }) {
             </p>
           </div>
 
-
-
           {/* Details Grid */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: 32,
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "clamp(20px, 5vw, 32px)",
             }}
           >
             {/* Features List */}
             {project.features && project.features.length > 0 && (
               <div
-                style={{ display: "flex", flexDirection: "column", gap: 12 }}
+                style={{ display: "flex", flexDirection: "column", gap: "clamp(8px, 2vw, 12px)" }}
               >
                 <h4
                   style={{
                     margin: 0,
-                    fontSize: 14,
+                    fontSize: "clamp(0.8rem, 2vw, 0.875rem)",
                     fontWeight: 600,
                     color: "#171717",
                     textTransform: "uppercase",
@@ -508,13 +508,13 @@ function ProjectModal({ project, onClose }) {
                 <ul
                   style={{
                     margin: 0,
-                    paddingLeft: 20,
+                    paddingLeft: "clamp(16px, 4vw, 20px)",
                     color: "#4d4d4d",
-                    fontSize: 15,
-                    lineHeight: "24px",
+                    fontSize: "clamp(0.875rem, 2.2vw, 0.9375rem)",
+                    lineHeight: "clamp(1.35rem, 3.5vw, 1.5rem)",
                     display: "flex",
                     flexDirection: "column",
-                    gap: 8,
+                    gap: "clamp(6px, 1.5vw, 8px)",
                   }}
                 >
                   {project.features.map((feature, idx) => (
