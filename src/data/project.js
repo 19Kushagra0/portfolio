@@ -1,27 +1,26 @@
 export const projectsData = [
   {
-    id: 16,
-    number: "15",
+    id: 12,
+    number: "11",
     category: "RAG",
-    title: "CoralStats",
+    title: "YourMails",
     description:
-      "CoralStats is an intelligent Discord analytics dashboard that turns raw community data into actionable insights. Powered by a custom local-first SQL engine called 'Coral' and an AI co-pilot called 'Grok', it translates plain English questions into valid SQL queries, executing them against live API data.",
-    image: "/projects/discord-analyzer.png",
-    tags: ["Next.js", "Firebase", "SQL", "Grok / LLaMA 3.3"],
+      "YourMails is an AI-powered email client that helps users manage their inbox faster and more efficiently. Users can ask questions about their emails, generate instant summaries, understand lengthy email threads, create smart replies, and automatically organize incoming emails through an AI-powered labeling pipeline and custom rules.",
+    image: "/projects/yourmails.png",
+    tags: ["Next.js", "Pinecone", "RAG", "OpenAI"],
     features: [
-      "Natural Language to SQL Pipeline for intelligent querying",
-      "Custom Coral SQL Engine parsing SELECT, WHERE, and JOINs",
-      "Enterprise-Grade Identity Dashboard with server mapping",
-      "Streaming LLM Responses via Next.js Edge APIs",
+      "Semantic Inbox Search using natural language queries",
+      "Context-Aware AI Assistant for threading and drafting",
+      "Intelligent Thread Ingestion with recursive character splitting",
+      "High-Performance UI built with React 19 and optimistic updates",
     ],
     problem:
-
-      "Community managers often struggle to find useful insights from large amounts of data. CoralStats makes it easy by turning API data into simple, accurate answers and reports using AI and Coral stats.",
+      "Managing an overflowing inbox is frustrating. YourMails uses an AI-powered email labeling pipeline and custom rules to automatically sort and organize incoming emails, helping you find what matters without the clutter.",
     learned:
-      "Built local SQL regex parsing logic from scratch to handle complex queries. Optimized two-stage latency using Groq's high-speed inference and learned to multiplex a ReadableStream to send JSON metadata before text tokens.",
+      "Implemented custom semantic chunking that respects email headers and quotation markers. Mitigated hallucinations using strict prompt engineering and Cohere re-ranking, and optimized perceived latency via Next.js Edge functions.",
     links: {
-      live: "https://discord-analyzer-five.vercel.app/",
-      github: "https://github.com/19Kushagra0/discord-analyzer",
+      live: "https://yourmails.vercel.app/",
+      github: "https://github.com/19Kushagra0/yourMails",
     },
   },
   {
@@ -98,27 +97,28 @@ export const projectsData = [
     },
   },
   {
-    id: 12,
-    number: "11",
+    id: 16,
+    number: "15",
     category: "RAG",
-    title: "YourMails",
+    title: "CoralStats",
     description:
-      "YourMails is an AI-powered email client that helps users manage their inbox faster. Users can ask questions about their emails, get instant summaries, understand long conversations, and generate replies directly from their inbox.",
-    image: "/projects/yourmails.png",
-    tags: ["Next.js", "Pinecone", "RAG", "OpenAI"],
+      "CoralStats is an intelligent Discord analytics dashboard that turns raw community data into actionable insights. Powered by a custom local-first SQL engine called 'Coral' and an AI co-pilot called 'Grok', it translates plain English questions into valid SQL queries, executing them against live API data.",
+    image: "/projects/discord-analyzer.png",
+    tags: ["Next.js", "Firebase", "SQL", "Grok / LLaMA 3.3"],
     features: [
-      "Semantic Inbox Search using natural language queries",
-      "Context-Aware AI Assistant for threading and drafting",
-      "Intelligent Thread Ingestion with recursive character splitting",
-      "High-Performance UI built with React 19 and optimistic updates",
+      "Natural Language to SQL Pipeline for intelligent querying",
+      "Custom Coral SQL Engine parsing SELECT, WHERE, and JOINs",
+      "Enterprise-Grade Identity Dashboard with server mapping",
+      "Streaming LLM Responses via Next.js Edge APIs",
     ],
     problem:
-      "AI powered email app with a clean and minimal design. Read, write, and manage your emails without the clutter.",
+
+      "Community managers often struggle to find useful insights from large amounts of data. CoralStats makes it easy by turning API data into simple, accurate answers and reports using AI and Coral stats.",
     learned:
-      "Implemented custom semantic chunking that respects email headers and quotation markers. Mitigated hallucinations using strict prompt engineering and Cohere re-ranking, and optimized perceived latency via Next.js Edge functions.",
+      "Built local SQL regex parsing logic from scratch to handle complex queries. Optimized two-stage latency using Groq's high-speed inference and learned to multiplex a ReadableStream to send JSON metadata before text tokens.",
     links: {
-      live: "https://yourmails.vercel.app/",
-      github: "https://github.com/19Kushagra0/yourMails",
+      live: "https://discord-analyzer-five.vercel.app/",
+      github: "https://github.com/19Kushagra0/discord-analyzer",
     },
   },
   {

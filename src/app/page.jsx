@@ -51,15 +51,15 @@ const cardItemVariants = {
 
 const projectsData = [
   {
-    id: 16,
-    number: "15",
-    title: "Discord Analyzer ",
+    id: 12,
+    number: "11",
+    title: "YourMails — Minimalist Gmail Client",
     description:
-      "Discord Analyzer is an AI-powered Discord analytics dashboard that helps you understand your server data. It features a custom SQL engine called 'Coral' that lets you query Discord information using plain English. The app includes Discord OAuth authentication, Firebase storage, and AI-powered analysis with Grok.",
-    image: "/projects/discord-analyzer.png",
+      "A minimalist Gmail client built with Next.js, NextAuth, Google OAuth, and the Gmail API for a cleaner, distraction-free email experience.",
+    image: "/projects/yourmails.png",
     links: {
-      live: "https://discord-analyzer-five.vercel.app/",
-      github: "https://github.com/19Kushagra0/discord-analyzer",
+      live: "https://yourmails.vercel.app/",
+      github: "https://github.com/19Kushagra0/yourmails",
     },
   },
   {
@@ -100,15 +100,15 @@ const projectsData = [
     },
   },
   {
-    id: 12,
-    number: "11",
-    title: "ourMails — Minimalist Gmail Client",
+    id: 16,
+    number: "15",
+    title: "Discord Analyzer ",
     description:
-      "A minimalist Gmail client built with Next.js, NextAuth, Google OAuth, and the Gmail API for a cleaner, distraction-free email experience.",
-    image: "/projects/yourmails.png",
+      "Discord Analyzer is an AI-powered Discord analytics dashboard that helps you understand your server data. It features a custom SQL engine called 'Coral' that lets you query Discord information using plain English. The app includes Discord OAuth authentication, Firebase storage, and AI-powered analysis with Grok.",
+    image: "/projects/discord-analyzer.png",
     links: {
-      live: "https://yourmails.vercel.app/",
-      github: "https://github.com/19Kushagra0/yourmails",
+      live: "https://discord-analyzer-five.vercel.app/",
+      github: "https://github.com/19Kushagra0/discord-analyzer",
     },
   },
 
