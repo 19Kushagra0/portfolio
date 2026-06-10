@@ -217,7 +217,7 @@ export default function Main({ onOpenDetails }) {
                 }}
               >
                 {"<I am\u00A0"}
-                <span style={{ color: "#0057c0" }}>wiring</span>
+                <span style={{ color: "#0057c0" }}>Wiring</span>
                 {"\u00A0ideas\u00A0&>"}
               </h2>
             </motion.div>
@@ -570,8 +570,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
       <div
         style={{
           flex: "1 1 50%",
-          padding:
-            "24px clamp(20px, 3vw, 40px) 24px clamp(32px, 4.5vw, 48px)",
+          padding: "24px clamp(20px, 3vw, 40px) 24px clamp(32px, 4.5vw, 48px)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
