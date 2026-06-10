@@ -234,6 +234,10 @@ body {
   transform: scale(1.05);
 }
 
+.project-row-card:hover .project-image-container img {
+  transform: scale(1.05) !important;
+}
+
 /* ─── Nav ─── */
 .portfolio-nav {
   background-color: var(--color-canvas);
