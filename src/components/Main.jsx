@@ -50,28 +50,28 @@ const cardItemVariants = {
 
 const CATEGORY_PILL_STYLES = {
   All: {
-    bg: "linear-gradient(135deg, rgba(0,112,243,0.88) 0%, rgba(0,87,192,0.88) 100%)",
-    shadow: "0 8px 32px 0 rgba(0,112,243,0.25)",
-    activeText: "#0057c0",
-    activeShadow: "0 4px 12px rgba(0,112,243,0.22)",
+    bg: "#f5f5f5",
+    shadow: "0 2px 10px rgba(0,0,0,0.05)",
+    activeText: "#171717",
+    activeShadow: "0 2px 8px rgba(0,0,0,0.08)",
   },
   "Full Stack": {
-    bg: "linear-gradient(135deg, rgba(37,99,235,0.90) 0%, rgba(59,130,246,0.90) 60%, rgba(96,165,250,0.90) 100%)",
-    shadow: "0 8px 32px 0 rgba(59,130,246,0.30)",
-    activeText: "#1d4ed8",
-    activeShadow: "0 4px 14px rgba(59,130,246,0.35)",
+    bg: "#f5f5f5",
+    shadow: "0 2px 10px rgba(0,0,0,0.05)",
+    activeText: "#171717",
+    activeShadow: "0 2px 8px rgba(0,0,0,0.08)",
   },
   RAG: {
-    bg: "linear-gradient(135deg, rgba(8,145,178,0.90) 0%, rgba(6,182,212,0.90) 55%, rgba(34,211,238,0.90) 100%)",
-    shadow: "0 8px 32px 0 rgba(6,182,212,0.30)",
-    activeText: "#0e7490",
-    activeShadow: "0 4px 14px rgba(6,182,212,0.35)",
+    bg: "#f5f5f5",
+    shadow: "0 2px 10px rgba(0,0,0,0.05)",
+    activeText: "#171717",
+    activeShadow: "0 2px 8px rgba(0,0,0,0.08)",
   },
   "Pixel Perfect": {
-    bg: "linear-gradient(135deg, rgba(121,40,202,0.90) 0%, rgba(139,92,246,0.90) 55%, rgba(167,139,250,0.90) 100%)",
-    shadow: "0 8px 32px 0 rgba(139,92,246,0.30)",
-    activeText: "#6d28d9",
-    activeShadow: "0 4px 14px rgba(139,92,246,0.35)",
+    bg: "#f5f5f5",
+    shadow: "0 2px 10px rgba(0,0,0,0.05)",
+    activeText: "#171717",
+    activeShadow: "0 2px 8px rgba(0,0,0,0.08)",
   },
 };
 
@@ -410,7 +410,7 @@ export default function Main({ onOpenDetails }) {
             ).bg,
             backdropFilter: "blur(12px)",
             WebkitBackdropFilter: "blur(12px)",
-            border: "1px solid rgba(255, 255, 255, 0.15)",
+            border: "1px solid rgba(0, 0, 0, 0.05)",
             boxShadow: (
               CATEGORY_PILL_STYLES[filter] || CATEGORY_PILL_STYLES["All"]
             ).shadow,
@@ -441,9 +441,7 @@ export default function Main({ onOpenDetails }) {
                   cursor: "pointer",
                   transition: "color 0.25s ease, transform 0.25s ease",
                   backgroundColor: "transparent",
-                  color: isActive
-                    ? pillStyle.activeText
-                    : "rgba(255, 255, 255, 0.85)",
+                  color: isActive ? pillStyle.activeText : "#666666",
                   border: "none",
                   zIndex: 1,
                   outline: "none",
@@ -451,12 +449,12 @@ export default function Main({ onOpenDetails }) {
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.color = "#ffffff";
+                    e.currentTarget.style.color = "#171717";
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.color = "rgba(255, 255, 255, 0.85)";
+                    e.currentTarget.style.color = "#666666";
                   }
                 }}
               >
@@ -493,10 +491,10 @@ export default function Main({ onOpenDetails }) {
             gridTemplateColumns: "1fr",
             justifyContent: "center",
             justifyItems: "center",
-            maxWidth: 960,
+            maxWidth: 1140,
             margin: "0 auto",
             width: "100%",
-            gap: 32,
+            gap: 40,
             paddingTop: 24,
             paddingRight: isMobile ? 0 : 36,
           }}
@@ -545,43 +543,17 @@ export default function Main({ onOpenDetails }) {
      the live site on click
    ───────────────────────────────────────────── */
 const CATEGORY_GRADIENTS = {
-  "Full Stack":
-    "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%)",
-  RAG: "linear-gradient(135deg, #164e63 0%, #0891b2 55%, #22d3ee 100%)",
-  "Pixel Perfect":
-    "linear-gradient(135deg, #3b0764 0%, #7c3aed 55%, #a78bfa 100%)",
+  "Full Stack": "#e8e8e8",
+  RAG: "#e8e8e8",
+  "Pixel Perfect": "#e8e8e8",
 };
 
-const DEFAULT_GRADIENT =
-  "linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%)";
+const DEFAULT_GRADIENT = "#e8e8e8";
 
 function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
-  const [hovered, setHovered] = useState(false);
-  const [suppressTooltip, setSuppressTooltip] = useState(false);
-  const cardRef = useRef(null);
-
-  const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    setCoords({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
-
-  const showTooltip = hovered && !suppressTooltip && !isMobile;
-
   return (
     <div
-      ref={cardRef}
       className="project-row-card"
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => {
-        setHovered(false);
-        setSuppressTooltip(false);
-      }}
       onClick={() => {
         if (!isMobile) {
           window.open(project.links.live, "_blank", "noopener,noreferrer");
@@ -593,7 +565,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         border: "1px solid #ebebeb",
         overflow: "hidden",
         backgroundColor: "#ffffff",
-        minHeight: "380px",
+        minHeight: "440px",
         boxShadow: "0 10px 30px rgba(0, 0, 0, 0.03)",
         transition: "box-shadow 0.3s ease",
         width: "100%",
@@ -601,54 +573,25 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         cursor: "pointer",
       }}
     >
-      {/* ── Follow-cursor tooltip (covers entire card) ── */}
-      <AnimatePresence>
-        {showTooltip && (
-          <motion.div
-            style={{
-              position: "absolute",
-              left: coords.x,
-              top: coords.y,
-              transform: "translate(-50%, -50%)",
-              pointerEvents: "none",
-              zIndex: 50,
-              backgroundColor: "rgba(255, 107, 107, 0.95)",
-              color: "#ffffff",
-              padding: "8px 18px",
-              borderRadius: 9999,
-              fontSize: 13,
-              fontWeight: 600,
-              boxShadow: "0 8px 20px rgba(255, 107, 107, 0.4)",
-              whiteSpace: "nowrap",
-            }}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 450, damping: 25 }}
-          >
-            View Project
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* ── Left Column: Content ── */}
       <div
         style={{
           flex: "1 1 50%",
           padding:
-            "clamp(24px, 4vw, 40px) clamp(12px, 2vw, 20px) clamp(24px, 4vw, 40px) clamp(24px, 4vw, 40px)",
+            "clamp(32px, 4.5vw, 48px) clamp(20px, 3vw, 40px) clamp(32px, 4.5vw, 48px) clamp(32px, 4.5vw, 48px)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          gap: 12,
+          gap: 24,
           textAlign: "left",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <span
             style={{
               fontFamily: "'Geist Mono', ui-monospace, monospace",
-              fontSize: 12,
+              fontSize: 13,
               color: "#888888",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
@@ -659,10 +602,10 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
           </span>
           <h3
             style={{
-              fontSize: "clamp(24px, 3vw, 32px)",
+              fontSize: "clamp(28px, 3.5vw, 40px)",
               fontWeight: 700,
               letterSpacing: "-1px",
-              lineHeight: "1.2",
+              lineHeight: "1.15",
               color: "#171717",
               margin: 0,
             }}
@@ -674,11 +617,9 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               onClick={(e) => e.stopPropagation()}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = "#0057c0";
-                setSuppressTooltip(true);
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.color = "#171717";
-                setSuppressTooltip(false);
               }}
               style={{
                 color: "inherit",
@@ -691,9 +632,9 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
           </h3>
           <p
             style={{
-              fontSize: 14,
+              fontSize: 16,
               color: "#666666",
-              lineHeight: "1.4",
+              lineHeight: "1.6",
               margin: 0,
             }}
           >
@@ -704,13 +645,11 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         {/* Action Buttons */}
         <div
           className="project-actions-container"
-          onMouseEnter={() => setSuppressTooltip(true)}
-          onMouseLeave={() => setSuppressTooltip(false)}
           onClick={(e) => e.stopPropagation()}
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 12,
+            gap: 16,
             width: "100%",
             position: "relative",
             zIndex: 10,
@@ -734,13 +673,13 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
-              gap: 8,
+              gap: 10,
               height: 46,
               padding: "0 8px",
               borderRadius: 9999,
               backgroundColor: "transparent",
               color: "#0057c0",
-              fontSize: 14,
+              fontSize: 15,
               fontWeight: 600,
               border: "none",
               cursor: "pointer",
@@ -753,8 +692,8 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
           >
             View Details
             <svg
-              width="16"
-              height="16"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -768,7 +707,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
             </svg>
           </button>
 
-          {/* Live Demo — visible only on mobile/tablets (< 640px) */}
+          {/* Live Demo — visible on all devices */}
           <a
             href={project.links.live}
             target="_blank"
@@ -776,29 +715,30 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
             onClick={(e) => {
               e.stopPropagation();
             }}
-            className="inline-flex sm:hidden items-center justify-center gap-1.5 px-4 rounded-full text-sm font-semibold transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 px-4 rounded-full font-semibold transition-all duration-200"
             style={{
               height: 38,
-              paddingLeft: 18,
-              paddingRight: 18,
-              backgroundColor: "rgba(0, 87, 192, 0.05)",
-              border: "1px solid rgba(0, 87, 192, 0.1)",
+              paddingLeft: 8,
+              paddingRight: 8,
+              backgroundColor: "transparent",
+              border: "none",
               color: "#0057c0",
               textDecoration: "none",
               cursor: "pointer",
-              boxShadow: "0 2px 6px rgba(0, 87, 192, 0.03)",
+              boxShadow: "none",
+              fontSize: 15,
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(0, 87, 192, 0.08)";
+              e.currentTarget.style.color = "#0041a0";
               e.currentTarget.style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(0, 87, 192, 0.05)";
+              e.currentTarget.style.color = "#0057c0";
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
             Live Demo
-            <ExternalLinkIcon size={14} />
+            <ExternalLinkIcon size={16} />
           </a>
         </div>
       </div>
