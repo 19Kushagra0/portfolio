@@ -127,7 +127,7 @@ const projectsData = [
   {
     id: 10,
     number: "09",
-    title: "SnipLink — AI-Powered Developer URL Shortener",
+    title: "SnipLink AI-Powered Developer URL Shortener",
     description:
       "A developer-focused URL shortener featuring AI-generated custom aliases, comprehensive REST API documentation, Firebase Authentication, interactive user dashboards, detailed analytics logging, and a flexible database layer.",
     image: "/projects/url_shortener.png",
@@ -454,7 +454,13 @@ function ProjectModal({ project, onClose }) {
           }}
         >
           {/* Header */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "clamp(8px, 2vw, 12px)" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "clamp(8px, 2vw, 12px)",
+            }}
+          >
             <h2
               style={{
                 fontSize: "clamp(1.5rem, 4.5vw, 2rem)",
@@ -491,7 +497,11 @@ function ProjectModal({ project, onClose }) {
             {/* Features List */}
             {project.features && project.features.length > 0 && (
               <div
-                style={{ display: "flex", flexDirection: "column", gap: "clamp(8px, 2vw, 12px)" }}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "clamp(8px, 2vw, 12px)",
+                }}
               >
                 <h4
                   style={{
