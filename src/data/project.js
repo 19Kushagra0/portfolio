@@ -3,7 +3,7 @@ export const projectsData = [
     id: 16,
     number: "15",
     category: "RAG",
-    title: "CoralStats: AI-Powered Discord Analytics",
+    title: "CoralStats",
     description:
       "CoralStats is an intelligent Discord analytics dashboard that turns raw community data into actionable insights. Powered by a custom local-first SQL engine called 'Coral' and an AI co-pilot called 'Grok', it translates plain English questions into valid SQL queries, executing them against live API data.",
     image: "/projects/discord-analyzer.png",
@@ -53,7 +53,7 @@ export const projectsData = [
     id: 14,
     number: "13",
     category: "RAG",
-    title: "Spotify-Analizer",
+    title: "Music DNA",
     description:
       "AI-powered Spotify Analyzer  using Spotify OAuth, allowing users to securely connect their Spotify account, GENERATE PLAYLIST and explore their listening habits, music taste, and analytics in an interactive way.",
     image: "/projects/spotify.png",
@@ -77,7 +77,7 @@ export const projectsData = [
     id: 13,
     number: "12",
     category: "RAG",
-    title: "AllDrives: AI-Powered Google Drive Workspace",
+    title: "AllDrives",
     description:
       "AllDrives is a premium, AI-powered cloud storage platform built on top of Google Drive, redesigned from the ground up with a Linear-inspired design system. It seamlessly integrates intelligent document summarization and persistent AI chat directly into the user's workspace.",
     image: "/projects/alldrives.png",
@@ -101,7 +101,7 @@ export const projectsData = [
     id: 12,
     number: "11",
     category: "RAG",
-    title: "YourMails AI",
+    title: "YourMails",
     description:
       "YourMails is an AI-powered email client that helps users manage their inbox faster. Users can ask questions about their emails, get instant summaries, understand long conversations, and generate replies directly from their inbox.",
     image: "/projects/yourmails.png",
@@ -138,7 +138,7 @@ export const projectsData = [
     id: 10,
     number: "09",
     category: "Full Stack",
-    title: "SnipLink AI-Powered Developer URL Shortener",
+    title: "SnipLink ",
     description:
       "Shorten links with AI-generated aliases. Manage, share, and track every link from one dashboard.",
     image: "/projects/url_shortener.png",

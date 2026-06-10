@@ -739,7 +739,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         }}
         style={{
           flex: "1 1 50%",
-          backgroundColor: "#f0f0f0",
+          backgroundColor: "#e5e5e5",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
