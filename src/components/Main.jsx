@@ -28,23 +28,20 @@ const heroLineVariants = {
 };
 
 const cardContainerVariants = {
-  hidden: {},
+  hidden: { opacity: 1 },
   visible: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0,
     },
   },
 };
 
 const cardItemVariants = {
-  hidden: { opacity: 0, scale: 0.85 },
+  hidden: { opacity: 1, scale: 1 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: {
-      duration: 0.9,
-      ease: [0.22, 1, 0.36, 1],
-    },
   },
 };
 
@@ -742,7 +739,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         }}
         style={{
           flex: "1 1 50%",
-          background: CATEGORY_GRADIENTS[project.category] || DEFAULT_GRADIENT,
+          backgroundColor: "#f0f0f0",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
