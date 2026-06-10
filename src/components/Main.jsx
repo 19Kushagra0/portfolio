@@ -546,7 +546,7 @@ const DEFAULT_GRADIENT = "#e8e8e8";
 function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
   return (
     <div
-      className="project-row-card"
+      className="project-row-card group"
       onClick={() => {
         if (!isMobile) {
           window.open(project.links.live, "_blank", "noopener,noreferrer");
@@ -752,6 +752,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
           <img
             src={project.image}
             alt={project.title}
+            className="project-card-image"
             style={{
               maxWidth: "90%",
               maxHeight: "85%",
@@ -760,7 +761,6 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               objectFit: "contain",
               borderRadius: 12,
               boxShadow: "0 12px 36px rgba(0, 0, 0, 0.4)",
-              transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
               pointerEvents: "none",
             }}
           />
