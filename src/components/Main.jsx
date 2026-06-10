@@ -187,7 +187,7 @@ export default function Main({ onOpenDetails }) {
                 }}
               >
                 {"<Hello, I'm\u00A0"}
-                <span style={{ color: "#0057c0" }}>Kushagra!</span>
+                <span style={{ color: "#0057c0" }}>Kushagra</span>
                 {">"}
               </h1>
             </motion.div>
@@ -219,11 +219,9 @@ export default function Main({ onOpenDetails }) {
                   color: "#171717",
                 }}
               >
-                {"<"}
-                <span style={{ color: "#0057c0" }}>I Wire</span>
-                {"\u00A0ideas and\u00A0"}
-                <span style={{ color: "#0057c0" }}>Ship</span>
-                {"\u00A0products>"}
+                {"<I am\u00A0"}
+                <span style={{ color: "#0057c0" }}>wiring</span>
+                {"\u00A0ideas\u00A0&>"}
               </h2>
             </motion.div>
 
@@ -254,11 +252,9 @@ export default function Main({ onOpenDetails }) {
                   color: "#171717",
                 }}
               >
-                {"<From\u00A0"}
-                <span style={{ color: "#0057c0" }}>APIs</span>
-                {"\u00A0to\u00A0"}
-                <span style={{ color: "#0057c0" }}>UI</span>
-                {",\u00A0end to end>"}
+                {"<"}
+                <span style={{ color: "#0057c0" }}>Shipping</span>
+                {"\u00A0products>"}
               </h2>
             </motion.div>
           </motion.div>
@@ -573,7 +569,6 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         cursor: "pointer",
       }}
     >
-
       {/* ── Left Column: Content ── */}
       <div
         style={{
@@ -591,7 +586,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
           <span
             style={{
               fontFamily: "'Geist Mono', ui-monospace, monospace",
-              fontSize: 13,
+              fontSize: "clamp(11px, 1.1vw, 13px)",
               color: "#888888",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
@@ -602,7 +597,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
           </span>
           <h3
             style={{
-              fontSize: "clamp(28px, 3.5vw, 40px)",
+              fontSize: "clamp(22px, 3vw, 40px)",
               fontWeight: 700,
               letterSpacing: "-1px",
               lineHeight: "1.15",
@@ -615,16 +610,9 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#0057c0";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#171717";
-              }}
               style={{
                 color: "inherit",
                 textDecoration: "none",
-                transition: "color 0.2s ease",
               }}
             >
               {project.title}
@@ -632,7 +620,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
           </h3>
           <p
             style={{
-              fontSize: 16,
+              fontSize: "clamp(14px, 1.25vw, 16px)",
               color: "#666666",
               lineHeight: "1.6",
               margin: 0,
@@ -679,7 +667,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               borderRadius: 9999,
               backgroundColor: "transparent",
               color: "#0057c0",
-              fontSize: 15,
+              fontSize: "clamp(13px, 1.15vw, 15px)",
               fontWeight: 600,
               border: "none",
               cursor: "pointer",
@@ -726,7 +714,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               textDecoration: "none",
               cursor: "pointer",
               boxShadow: "none",
-              fontSize: 15,
+              fontSize: "clamp(13px, 1.15vw, 15px)",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = "#0041a0";
