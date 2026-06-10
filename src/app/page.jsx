@@ -175,7 +175,7 @@ const projectsData = [
   {
     id: 6,
     number: "05",
-    title: "Anki Homepage Clone",
+    title: "Anki Homepage ",
     description:
       "A pixel-perfect recreation of the Anki landing page focusing on responsive layout and semantic structure.",
     image: "/projects/anki.png",
@@ -199,7 +199,7 @@ const projectsData = [
   {
     id: 4,
     number: "03",
-    title: "X Homepage Clone",
+    title: "X Homepage ",
     description:
       "A responsive clone of the X (formerly Twitter) homepage, implementing complex grid layouts and component structures.",
     image: "/projects/x.png",
@@ -211,7 +211,7 @@ const projectsData = [
   {
     id: 3,
     number: "02",
-    title: "Play.ht Homepage Clone",
+    title: "Play.ht Homepage ",
     description:
       "A faithful reproduction of the Play.ht website featuring modern typography, spacing, and engaging UI elements.",
     image: "/projects/playht.png",
@@ -223,7 +223,7 @@ const projectsData = [
   {
     id: 2,
     number: "01",
-    title: "Baremetrics Homepage Clone",
+    title: "Baremetrics Homepage ",
     description:
       "A clean, data-focused landing page clone with precise styling, well-structured components, and a professional aesthetic.",
     image: "/projects/baremetrics.png",
@@ -235,7 +235,7 @@ const projectsData = [
   {
     id: 1,
     number: "00",
-    title: "Awwwards Homepage Clone",
+    title: "Awwwards Homepage ",
     description:
       "A high-fidelity clone of the Awwwards platform homepage, showcasing advanced CSS techniques and a visually striking layout.",
     image: "/projects/awwwards.png",

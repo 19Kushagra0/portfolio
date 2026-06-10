@@ -175,7 +175,7 @@ export const projectsData = [
     id: 6,
     number: "05",
     category: "Pixel Perfect",
-    title: "Anki Homepage Clone",
+    title: "Anki Homepage ",
     description:
       "A pixel-perfect recreation of the Anki Homepage with a fully responsive design.",
     image: "/projects/anki.png",
@@ -188,7 +188,7 @@ export const projectsData = [
     id: 4,
     number: "03",
     category: "Pixel Perfect",
-    title: "X Homepage Clone",
+    title: "X Homepage ",
     description:
       "A pixel-perfect recreation of the X (Twitter) UI with a fully responsive design.",
     image: "/projects/x.png",
@@ -201,7 +201,7 @@ export const projectsData = [
     id: 3,
     number: "02",
     category: "Pixel Perfect",
-    title: "Play.ht Homepage Clone",
+    title: "Play.ht Homepage ",
     description:
       "A pixel-perfect recreation of the Play.ht Homepage with a fully responsive design.",
     image: "/projects/playht.png",
@@ -214,7 +214,7 @@ export const projectsData = [
     id: 2,
     number: "01",
     category: "Pixel Perfect",
-    title: "Baremetrics Homepage Clone",
+    title: "Baremetrics Homepage ",
     description:
       "A pixel-perfect recreation of the Baremetrics Homepage with a fully responsive design.",
     image: "/projects/baremetrics.png",
@@ -227,7 +227,7 @@ export const projectsData = [
     id: 1,
     number: "00",
     category: "Pixel Perfect",
-    title: "Awwwards Homepage Clone",
+    title: "Awwwards Homepage ",
     description:
       "A pixel-perfect recreation of the Awwwards Homepage with a fully responsive design.",
     image: "/projects/awwwards.png",
