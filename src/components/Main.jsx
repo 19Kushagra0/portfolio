@@ -407,8 +407,8 @@ export default function Main({ onOpenDetails }) {
             boxShadow: (
               CATEGORY_PILL_STYLES[filter] || CATEGORY_PILL_STYLES["All"]
             ).shadow,
-            marginTop: 24,
-            marginBottom: 8,
+            marginTop: -8,
+            marginBottom: 0,
             position: "relative",
             flexWrap: "nowrap",
             maxWidth: "100%",
@@ -488,7 +488,7 @@ export default function Main({ onOpenDetails }) {
             margin: "0 auto",
             width: "100%",
             gap: 40,
-            paddingTop: 24,
+            paddingTop: 0,
             paddingRight: isMobile ? 0 : 36,
           }}
         >
@@ -571,11 +571,11 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         style={{
           flex: "1 1 50%",
           padding:
-            "clamp(32px, 4.5vw, 48px) clamp(20px, 3vw, 40px) clamp(32px, 4.5vw, 48px) clamp(32px, 4.5vw, 48px)",
+            "clamp(32px, 4.5vw, 48px) clamp(20px, 3vw, 40px) clamp(16px, 2.25vw, 24px) clamp(32px, 4.5vw, 48px)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          gap: 24,
+          gap: 12,
           textAlign: "left",
         }}
       >

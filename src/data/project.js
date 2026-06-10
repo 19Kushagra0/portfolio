@@ -138,7 +138,7 @@ export const projectsData = [
     id: 10,
     number: "09",
     category: "Full Stack",
-    title: "SnipLink — AI-Powered Developer URL Shortener",
+    title: "SnipLink AI-Powered Developer URL Shortener",
     description:
       "Shorten links with AI-generated aliases. Manage, share, and track every link from one dashboard.",
     image: "/projects/url_shortener.png",
