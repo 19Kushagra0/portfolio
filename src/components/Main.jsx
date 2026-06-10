@@ -558,7 +558,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         border: "1px solid #ebebeb",
         overflow: "hidden",
         backgroundColor: "#ffffff",
-        minHeight: "440px",
+        minHeight: "360px",
         boxShadow: "0 10px 30px rgba(0, 0, 0, 0.03)",
         transition: "box-shadow 0.3s ease",
         width: "100%",
@@ -571,7 +571,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         style={{
           flex: "1 1 50%",
           padding:
-            "clamp(32px, 4.5vw, 48px) clamp(20px, 3vw, 40px) clamp(16px, 2.25vw, 24px) clamp(32px, 4.5vw, 48px)",
+            "24px clamp(20px, 3vw, 40px) 24px clamp(32px, 4.5vw, 48px)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
