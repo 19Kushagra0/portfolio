@@ -216,8 +216,8 @@ export default function Main({ onOpenDetails }) {
                   color: "#171717",
                 }}
               >
-                {"<I am\u00A0"}
-                <span style={{ color: "#0057c0" }}>Wiring</span>
+                {"<I\u00A0"}
+                <span style={{ color: "#0057c0" }}>Wire</span>
                 {"\u00A0ideas\u00A0&>"}
               </h2>
             </motion.div>
@@ -250,7 +250,7 @@ export default function Main({ onOpenDetails }) {
                 }}
               >
                 {"<"}
-                <span style={{ color: "#0057c0" }}>Shipping</span>
+                <span style={{ color: "#0057c0" }}>Ship</span>
                 {"\u00A0products>"}
               </h2>
             </motion.div>
