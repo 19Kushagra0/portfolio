@@ -132,7 +132,7 @@ export default function TechStack() {
           }}
         >
           {/* Top Row: Left to Right */}
-          <div className="marquee-row" style={{ overflow: "hidden", width: "100%" }}>
+          <div className="marquee-row" style={{ width: "100%", padding: "4px 0" }}>
             <div className="marquee-track-ltr">
               {/* First Set */}
               {topRowTechs.map((tech, idx) => {
@@ -188,7 +188,7 @@ export default function TechStack() {
           </div>
 
           {/* Bottom Row: Right to Left */}
-          <div className="marquee-row" style={{ overflow: "hidden", width: "100%" }}>
+          <div className="marquee-row" style={{ width: "100%", padding: "4px 0" }}>
             <div className="marquee-track-rtl">
               {/* First Set */}
               {bottomRowTechs.map((tech, idx) => {
