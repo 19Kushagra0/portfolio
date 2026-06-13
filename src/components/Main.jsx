@@ -290,11 +290,11 @@ export default function Main({ onOpenDetails }) {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#000000";
-                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.transform = "scale(1.05)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "#171717";
-                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.transform = "scale(1)";
               }}
             >
               <GitHubIcon />
@@ -325,12 +325,12 @@ export default function Main({ onOpenDetails }) {
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#ffffff";
                 e.currentTarget.style.color = "#171717";
-                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.transform = "scale(1.05)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "#fafafa";
                 e.currentTarget.style.color = "#4d4d4d";
-                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.transform = "scale(1)";
               }}
             >
               <LinkedInIcon />
@@ -773,13 +773,18 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
                 }}
               />
             )}
-            <img
+            <motion.img
               ref={imgRef}
               src={project.image}
               alt={project.title}
               className="project-card-image"
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageLoaded(true)}
+              whileHover={{ scale: 1.05 }}
+              transition={{
+                scale: { type: "spring", stiffness: 400, damping: 25 },
+                opacity: { duration: 0.4, ease: "easeOut" }
+              }}
               style={{
                 maxWidth: "90%",
                 maxHeight: "85%",
@@ -788,9 +793,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
                 objectFit: "contain",
                 borderRadius: 12,
                 boxShadow: "0 12px 36px rgba(0, 0, 0, 0.4)",
-                pointerEvents: "none",
                 opacity: imageLoaded ? 1 : 0,
-                transition: "opacity 0.4s ease",
               }}
             />
           </>
