@@ -127,8 +127,19 @@ export const projectsData = [
     category: "Full Stack",
     title: "NutriExplore",
     description:
-      "Search out what's inside your packaged food. Check ingredients, nutrition, and product details in seconds.",
+      "Understanding what's actually inside packaged food can be difficult and time-consuming. NutriExplore simplifies this by providing instant access to millions of food products, their ingredients, and nutritional data.",
     image: "/projects/nutriexplore.png",
+    features: [
+      "Access to 3M+ products with 100% open data",
+      "Barcode scanning for instant product lookup",
+      "Nutri-Score and comprehensive ingredient analysis",
+      "Search and filter by product categories",
+    ],
+    problem:
+      "Scan any food packet's barcode to instantly uncover the truth about its ingredients.",
+
+    learned:
+      "Integrated the Open Food Facts API to handle massive amounts of open data, implemented barcode scanning functionality, and designed an intuitive UI to make complex nutritional information easily digestible.",
     links: {
       live: "https://nutriexplore.vercel.app/",
       github: "https://github.com/19Kushagra0/nutriexplore",
