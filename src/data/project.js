@@ -44,32 +44,8 @@ export const projectsData = [
     learned:
       "Designed a service layer architecture to decouple Next.js page components from Zustand stores, navigated the Next.js 16 App Router landscape, and integrated Tailwind v4 seamlessly with CSS Modules.",
     links: {
-      live: "https://crm-delta-five-60.vercel.app/loyalty",
+      live: "https://crm-delta-five-60.vercel.app/",
       github: "https://github.com/19Kushagra0/crm",
-    },
-  },
-  {
-    id: 14,
-    number: "13",
-    category: "RAG",
-    title: "Music DNA",
-    description:
-      "AI-powered Spotify Analyzer  using Spotify OAuth, allowing users to securely connect their Spotify account, GENERATE PLAYLIST and explore their listening habits, music taste, and analytics in an interactive way.",
-    image: "/projects/spotify.png",
-    tags: ["Next.js", "Spotify API", "OAuth"],
-    features: [
-      "Secure Spotify OAuth Flow",
-      "Top Tracks & Artists visual insights",
-      "AI-generated playlists based on mood input",
-      "Interactive audio visualization",
-    ],
-    problem: "Get deeper insights into your listening habits and music trends while instantly generating personalized AI-powered playlists based on your mood and preferences.",
-
-    learned:
-      "Working with rate-limited third-party APIs and managing secure token refresh cycles. It also vastly improved my skills in data visualization and handling complex audio features.",
-    links: {
-      live: "https://spotify-analizer.vercel.app/",
-      github: "https://github.com/19Kushagra0/spotify-analizer",
     },
   },
   {
@@ -94,6 +70,30 @@ export const projectsData = [
     links: {
       live: "https://alldrives-three.vercel.app/",
       github: "https://github.com/19Kushagra0/alldrives",
+    },
+  },
+  {
+    id: 14,
+    number: "13",
+    category: "RAG",
+    title: "Music DNA",
+    description:
+      "AI-powered Spotify Analyzer  using Spotify OAuth, allowing users to securely connect their Spotify account, GENERATE PLAYLIST and explore their listening habits, music taste, and analytics in an interactive way.",
+    image: "/projects/spotify.png",
+    tags: ["Next.js", "Spotify API", "OAuth"],
+    features: [
+      "Secure Spotify OAuth Flow",
+      "Top Tracks & Artists visual insights",
+      "AI-generated playlists based on mood input",
+      "Interactive audio visualization",
+    ],
+    problem: "Get deeper insights into your listening habits and music trends while instantly generating personalized AI-powered playlists based on your mood and preferences.",
+
+    learned:
+      "Working with rate-limited third-party APIs and managing secure token refresh cycles. It also vastly improved my skills in data visualization and handling complex audio features.",
+    links: {
+      live: "https://spotify-analizer.vercel.app/",
+      github: "https://github.com/19Kushagra0/spotify-analizer",
     },
   },
   {
@@ -150,7 +150,7 @@ export const projectsData = [
   {
     id: 9,
     number: "08",
-    category: "RAG",
+    category: "Full Stack",
     title: "MailClean (Gmail Dashboard)",
     description:
       "A simple gmail dashboard get access of your gmail analytics and actions at one place",
@@ -185,16 +185,16 @@ export const projectsData = [
     },
   },
   {
-    id: 4,
+    id: 1,
     number: "03",
     category: "Pixel Perfect",
-    title: "X Homepage ",
+    title: "Awwwards Homepage ",
     description:
-      "A pixel-perfect recreation of the X (Twitter) UI with a fully responsive design.",
-    image: "/projects/x.png",
+      "A pixel-perfect recreation of the Awwwards Homepage with a fully responsive design.",
+    image: "/projects/awwwards.png",
     links: {
-      live: "https://x-homepage-with-crud.vercel.app/",
-      github: "https://github.com/19Kushagra0/x-homepage-with-crud",
+      live: "https://awwwards-homepage-clone.vercel.app/",
+      github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
     },
   },
   {
@@ -224,16 +224,16 @@ export const projectsData = [
     },
   },
   {
-    id: 1,
+    id: 4,
     number: "00",
     category: "Pixel Perfect",
-    title: "Awwwards Homepage ",
+    title: "X Homepage ",
     description:
-      "A pixel-perfect recreation of the Awwwards Homepage with a fully responsive design.",
-    image: "/projects/awwwards.png",
+      "A pixel-perfect recreation of the X (Twitter) UI with a fully responsive design.",
+    image: "/projects/x.png",
     links: {
-      live: "https://awwwards-homepage-clone.vercel.app/",
-      github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
+      live: "https://x-homepage-with-crud.vercel.app/",
+      github: "https://github.com/19Kushagra0/x-homepage-with-crud",
     },
   },
 ];
