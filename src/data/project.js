@@ -113,7 +113,7 @@ export const projectsData = [
     ],
     problem:
 
-      "Community managers often struggle to find useful insights from large amounts of data. CoralStats makes it easy by turning API data into simple, accurate answers and reports using AI and Coral stats.",
+      "Community managers struggle to find important information hidden in thousands of Discord messages. By inviting the CoralStats Bot, server data and conversations become searchable, allowing AI to provide instant insights, answers, and reports.",
     learned:
       "Built local SQL regex parsing logic from scratch to handle complex queries. Optimized two-stage latency using Groq's high-speed inference and learned to multiplex a ReadableStream to send JSON metadata before text tokens.",
     links: {
