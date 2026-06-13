@@ -544,6 +544,15 @@ const CATEGORY_GRADIENTS = {
 const DEFAULT_GRADIENT = "#e8e8e8";
 
 function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      setImageLoaded(true);
+    }
+  }, []);
+
   return (
     <div
       className="project-row-card group"
@@ -748,21 +757,43 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
         }}
       >
         {project.image ? (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="project-card-image"
-            style={{
-              maxWidth: "90%",
-              maxHeight: "85%",
-              width: "auto",
-              height: "auto",
-              objectFit: "contain",
-              borderRadius: 12,
-              boxShadow: "0 12px 36px rgba(0, 0, 0, 0.4)",
-              pointerEvents: "none",
-            }}
-          />
+          <>
+            {!imageLoaded && (
+              <motion.div
+                initial={{ opacity: 0.5 }}
+                animate={{ opacity: 1 }}
+                transition={{ repeat: Infinity, duration: 0.8, repeatType: "reverse", ease: "easeInOut" }}
+                style={{
+                  position: "absolute",
+                  width: "90%",
+                  height: "85%",
+                  borderRadius: 12,
+                  backgroundColor: "#d4d4d4",
+                  boxShadow: "0 12px 36px rgba(0, 0, 0, 0.1)",
+                }}
+              />
+            )}
+            <img
+              ref={imgRef}
+              src={project.image}
+              alt={project.title}
+              className="project-card-image"
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageLoaded(true)}
+              style={{
+                maxWidth: "90%",
+                maxHeight: "85%",
+                width: "auto",
+                height: "auto",
+                objectFit: "contain",
+                borderRadius: 12,
+                boxShadow: "0 12px 36px rgba(0, 0, 0, 0.4)",
+                pointerEvents: "none",
+                opacity: imageLoaded ? 1 : 0,
+                transition: "opacity 0.4s ease",
+              }}
+            />
+          </>
         ) : (
           <div
             style={{
