@@ -17,7 +17,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Kushagra Sharma",
-  url: "https://kushagra-s.vercel.app",
+  url: "https://www.kushagrasharma.space",
   jobTitle: "Full Stack Developer",
   description:
     "Frontend-focused full stack developer from Delhi, India, specializing in Next.js, React, and AI-powered web applications.",
@@ -36,20 +36,20 @@ const jsonLd = {
 export const metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === "production"
-      ? "https://kushagra-s.vercel.app"
+      ? "https://www.kushagrasharma.space"
       : "http://localhost:3000"
   ),
   title: "Kushagra Sharma — Full Stack Developer | Next.js & React",
   description:
     "Kushagra Sharma is a full stack developer from Delhi, India, specializing in Next.js, React, and AI-powered web applications. Browse 15+ shipped projects.",
   alternates: {
-    canonical: "https://kushagra-s.vercel.app",
+    canonical: "https://www.kushagrasharma.space",
   },
   openGraph: {
     title: "Kushagra Sharma — Full Stack Developer | Next.js & React",
     description:
       "Kushagra Sharma is a full stack developer from Delhi, India, specializing in Next.js, React, and AI-powered web applications. Browse 15+ shipped projects.",
-    url: "https://kushagra-s.vercel.app",
+    url: "https://www.kushagrasharma.space",
     siteName: "Kushagra Sharma Portfolio",
     locale: "en_US",
     type: "website",
