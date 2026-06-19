@@ -35,8 +35,9 @@ export default function Header() {
         >
           Kushagra<span className="brand-last-name"> Sharma</span>.
         </a>
-        <div
+        <nav
           className="nav-links"
+          aria-label="Main navigation"
           style={{ display: "flex", alignItems: "center", gap: 24 }}
         >
           {["Projects", "Connect"].map((item) => (
@@ -57,7 +58,7 @@ export default function Header() {
               {item}
             </a>
           ))}
-        </div>
+        </nav>
       </div>
     </header>
   );
