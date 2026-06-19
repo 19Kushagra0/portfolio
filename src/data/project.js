@@ -149,7 +149,7 @@ export const projectsData = [
     id: 10,
     number: "09",
     category: "Full Stack",
-    title: "SnipLink ",
+    title: "SnipLink",
     description:
       "Shorten links with AI-generated aliases. Manage, share, and track every link from one dashboard.",
     image: "/projects/url_shortener.png",
@@ -186,7 +186,7 @@ export const projectsData = [
     id: 6,
     number: "05",
     category: "Pixel Perfect",
-    title: "Anki Homepage ",
+    title: "Anki Homepage",
     description:
       "A pixel-perfect recreation of the Anki Homepage with a fully responsive design.",
     image: "/projects/anki.png",
@@ -199,7 +199,7 @@ export const projectsData = [
     id: 1,
     number: "03",
     category: "Pixel Perfect",
-    title: "Awwwards Homepage ",
+    title: "Awwwards Homepage",
     description:
       "A pixel-perfect recreation of the Awwwards Homepage with a fully responsive design.",
     image: "/projects/awwwards.png",
@@ -212,7 +212,7 @@ export const projectsData = [
     id: 3,
     number: "02",
     category: "Pixel Perfect",
-    title: "Play.ht Homepage ",
+    title: "Play.ht Homepage",
     description:
       "A pixel-perfect recreation of the Play.ht Homepage with a fully responsive design.",
     image: "/projects/playht.png",
@@ -225,7 +225,7 @@ export const projectsData = [
     id: 2,
     number: "01",
     category: "Pixel Perfect",
-    title: "Baremetrics Homepage ",
+    title: "Baremetrics Homepage",
     description:
       "A pixel-perfect recreation of the Baremetrics Homepage with a fully responsive design.",
     image: "/projects/baremetrics.png",
@@ -238,7 +238,7 @@ export const projectsData = [
     id: 4,
     number: "00",
     category: "Pixel Perfect",
-    title: "X Homepage ",
+    title: "X Homepage",
     description:
       "A pixel-perfect recreation of the X (Twitter) UI with a fully responsive design.",
     image: "/projects/x.png",

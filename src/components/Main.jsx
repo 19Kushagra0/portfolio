@@ -162,6 +162,7 @@ export default function Main({ onOpenDetails }) {
               style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
             >
               <span
+                aria-hidden="true"
                 style={{
                   fontFamily: "'Geist Mono', ui-monospace, monospace",
                   fontSize: 12,
@@ -195,6 +196,7 @@ export default function Main({ onOpenDetails }) {
               style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
             >
               <span
+                aria-hidden="true"
                 style={{
                   fontFamily: "'Geist Mono', ui-monospace, monospace",
                   fontSize: 12,
@@ -206,7 +208,7 @@ export default function Main({ onOpenDetails }) {
               >
                 02
               </span>
-              <h2
+              <p
                 className="hero-headline"
                 style={{
                   fontSize: 48,
@@ -214,12 +216,13 @@ export default function Main({ onOpenDetails }) {
                   letterSpacing: "-2.4px",
                   lineHeight: "48px",
                   color: "#171717",
+                  margin: 0,
                 }}
               >
                 {"<I\u00A0"}
                 <span style={{ color: "#0057c0" }}>Wire</span>
                 {"\u00A0ideas\u00A0&>"}
-              </h2>
+              </p>
             </motion.div>
 
             {/* Line 03 */}
@@ -228,6 +231,7 @@ export default function Main({ onOpenDetails }) {
               style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
             >
               <span
+                aria-hidden="true"
                 style={{
                   fontFamily: "'Geist Mono', ui-monospace, monospace",
                   fontSize: 12,
@@ -239,7 +243,7 @@ export default function Main({ onOpenDetails }) {
               >
                 03
               </span>
-              <h2
+              <p
                 className="hero-headline"
                 style={{
                   fontSize: 48,
@@ -247,12 +251,13 @@ export default function Main({ onOpenDetails }) {
                   letterSpacing: "-2.4px",
                   lineHeight: "48px",
                   color: "#171717",
+                  margin: 0,
                 }}
               >
                 {"<"}
                 <span style={{ color: "#0057c0" }}>Ship</span>
                 {"\u00A0products>"}
-              </h2>
+              </p>
             </motion.div>
           </motion.div>
 
@@ -776,7 +781,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
             <motion.img
               ref={imgRef}
               src={project.image}
-              alt={project.title}
+              alt={`${project.title} — live project screenshot`}
               className="project-card-image"
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageLoaded(true)}
