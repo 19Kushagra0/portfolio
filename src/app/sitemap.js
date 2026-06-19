@@ -1,7 +1,7 @@
 export default function sitemap() {
   return [
     {
-      url: "https://kushagra-s.vercel.app",
+      url: "https://www.kushagrasharma.space",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,

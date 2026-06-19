@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://kushagra-s.vercel.app/sitemap.xml",
+    sitemap: "https://www.kushagrasharma.space/sitemap.xml",
   };
 }
