@@ -6,7 +6,7 @@ export const projectsData = [
     title: "YourMails",
     description:
       "YourMails is an AI-powered email client that helps users manage their inbox faster and more efficiently. Users can ask questions about their emails, generate instant summaries, understand lengthy email threads, create smart replies, and automatically organize incoming emails through an AI-powered labeling pipeline and custom rules.",
-    image: "/projects/yourmails.png",
+    image: "/projects/yourmails.webp",
     tags: ["Next.js", "Pinecone", "RAG", "OpenAI"],
     features: [
       "Semantic Inbox Search using natural language queries",
@@ -30,7 +30,7 @@ export const projectsData = [
     title: "DineFlow CRM",
     description:
       "DineFlow is a Michelin-service restaurant CRM and operations suite engineered to streamline front-of-house and kitchen communications. Designed for high-volume, premium dining environments, it ensures seamless synchronization between orders, table management, and customer loyalty programs, now backed by a real-time Firebase database.",
-    image: "/projects/crm.png",
+    image: "/projects/crm.webp",
     tags: ["Next.js", "Tailwind CSS", "Zustand", "CSS Modules", "Firebase"],
     features: [
       "Real-time Kitchen Display System (KDS) for instant order sync",
@@ -55,7 +55,7 @@ export const projectsData = [
     title: "AllDrives",
     description:
       "AllDrives is a premium, AI-powered cloud storage platform built on top of Google Drive, redesigned from the ground up with a Linear-inspired design system. It seamlessly integrates intelligent document summarization and persistent AI chat directly into the user's workspace.",
-    image: "/projects/alldrives.png",
+    image: "/projects/alldrives.webp",
     tags: ["Next.js", "Firebase", "Zustand", "Gemini AI"],
     features: [
       "AI Co-Pilot & Instant Summarization via Google Gemini",
@@ -79,7 +79,7 @@ export const projectsData = [
     title: "Music DNA",
     description:
       "AI-powered Spotify Analyzer  using Spotify OAuth, allowing users to securely connect their Spotify account, GENERATE PLAYLIST and explore their listening habits, music taste, and analytics in an interactive way.",
-    image: "/projects/spotify.png",
+    image: "/projects/spotify.webp",
     tags: ["Next.js", "Spotify API", "OAuth"],
     features: [
       "Secure Spotify OAuth Flow",
@@ -103,7 +103,7 @@ export const projectsData = [
     title: "CoralStats",
     description:
       "CoralStats is an intelligent Discord analytics dashboard that turns raw community data into actionable insights. Powered by a custom local-first SQL engine called 'Coral' and an AI co-pilot called 'Grok', it translates plain English questions into valid SQL queries, executing them against live API data.",
-    image: "/projects/discord-analyzer.png",
+    image: "/projects/discordAnalyzer.webp",
     tags: ["Next.js", "Firebase", "SQL", "Grok / LLaMA 3.3"],
     features: [
       "Natural Language to SQL Pipeline for intelligent querying",
@@ -128,7 +128,7 @@ export const projectsData = [
     title: "NutriExplore",
     description:
       "Understanding what's actually inside packaged food can be difficult and time-consuming. NutriExplore simplifies this by providing instant access to millions of food products, their ingredients, and nutritional data.",
-    image: "/projects/nutriexplore.png",
+    image: "/projects/nutriexplore.webp",
     features: [
       "Access to 3M+ products with 100% open data",
       "Barcode scanning for instant product lookup",
@@ -152,7 +152,7 @@ export const projectsData = [
     title: "SnipLink",
     description:
       "Shorten links with AI-generated aliases. Manage, share, and track every link from one dashboard.",
-    image: "/projects/url_shortener.png",
+    image: "/projects/url_shortener.webp",
     links: {
       live: "https://url-shortner-ashy-eta.vercel.app/",
       github: "https://github.com/19Kushagra0/url-shortner",
@@ -165,7 +165,7 @@ export const projectsData = [
     title: "MailClean (Gmail Dashboard)",
     description:
       "A simple gmail dashboard get access of your gmail analytics and actions at one place",
-    image: "/projects/gmail-dashboard.png",
+    image: "/projects/mailClean.webp",
     tags: ["Next.js", "Firebase", "Gmail API", "Drive API"],
     features: [
       "Secure OAuth2 Authentication with Firebase and Google Identity",
@@ -189,7 +189,7 @@ export const projectsData = [
     title: "Anki Homepage",
     description:
       "A pixel-perfect recreation of the Anki Homepage with a fully responsive design.",
-    image: "/projects/anki.png",
+    image: "/projects/anki.webp",
     links: {
       live: "https://anki-homepage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/anki-homepage-clone",
@@ -202,7 +202,7 @@ export const projectsData = [
     title: "Awwwards Homepage",
     description:
       "A pixel-perfect recreation of the Awwwards Homepage with a fully responsive design.",
-    image: "/projects/awwwards.png",
+    image: "/projects/awwwards.webp",
     links: {
       live: "https://awwwards-homepage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
@@ -215,7 +215,7 @@ export const projectsData = [
     title: "Play.ht Homepage",
     description:
       "A pixel-perfect recreation of the Play.ht Homepage with a fully responsive design.",
-    image: "/projects/playht.png",
+    image: "/projects/playht.webp",
     links: {
       live: "https://play-ht-homepage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/play.ht-homepage-clone",
@@ -228,23 +228,23 @@ export const projectsData = [
     title: "Baremetrics Homepage",
     description:
       "A pixel-perfect recreation of the Baremetrics Homepage with a fully responsive design.",
-    image: "/projects/baremetrics.png",
+    image: "/projects/baremetrics.webp",
     links: {
       live: "https://baremetrics-hompage-clone.vercel.app/",
       github: "https://github.com/19Kushagra0/baremetrics-hompage-clone",
     },
   },
-  {
-    id: 4,
-    number: "00",
-    category: "Pixel Perfect",
-    title: "X Homepage",
-    description:
-      "A pixel-perfect recreation of the X (Twitter) UI with a fully responsive design.",
-    image: "/projects/x.png",
-    links: {
-      live: "https://x-homepage-with-crud.vercel.app/",
-      github: "https://github.com/19Kushagra0/x-homepage-with-crud",
-    },
-  },
+  // {
+  //   id: 4,
+  //   number: "00",
+  //   category: "Pixel Perfect",
+  //   title: "X Homepage",
+  //   description:
+  //     "A pixel-perfect recreation of the X (Twitter) UI with a fully responsive design.",
+  //   image: "/projects/x.webp",
+  //   links: {
+  //     live: "https://x-homepage-with-crud.vercel.app/",
+  //     github: "https://github.com/19Kushagra0/x-homepage-with-crud",
+  //   },
+  // },
 ];
