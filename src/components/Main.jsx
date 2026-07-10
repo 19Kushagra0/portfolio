@@ -783,6 +783,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               src={project.image}
               alt={`${project.title} — live project screenshot`}
               className="project-card-image"
+              loading="lazy"
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageLoaded(true)}
               whileHover={{ scale: 1.05 }}
