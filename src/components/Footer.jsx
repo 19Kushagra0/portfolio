@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { GitHubIcon, LinkedInIcon } from "./Icons";
+import { GitHubIcon, LinkedInIcon, DownloadIcon } from "./Icons";
 
 function EnvelopeIcon() {
   return (
@@ -248,10 +248,14 @@ export default function Footer() {
 
         {/* Navigate col */}
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          {[{ label: "Work", href: "#projects" }].map((link) => (
+          {[
+            { label: "Work", href: "#projects" },
+            { label: "Resume", href: "/kushagra_sharma.pdf", download: "kushagra_sharma.pdf" },
+          ].map((link) => (
             <a
               key={link.label}
               href={link.href}
+              download={link.download}
               style={{
                 fontFamily: "'Geist Mono', ui-monospace, monospace",
                 fontSize: 12,
@@ -260,17 +264,21 @@ export default function Footer() {
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 transition: "color 0.2s",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
               }}
               onMouseEnter={(e) => {
-                e.target.style.color = "#171717";
-                e.target.style.textDecoration = "underline";
+                e.currentTarget.style.color = "#171717";
+                e.currentTarget.style.textDecoration = "underline";
               }}
               onMouseLeave={(e) => {
-                e.target.style.color =
+                e.currentTarget.style.color =
                   link.label === "Work" ? "#171717" : "#888888";
-                e.target.style.textDecoration = "none";
+                e.currentTarget.style.textDecoration = "none";
               }}
             >
+              {link.label === "Resume" && <DownloadIcon size={14} style={{ color: "currentColor" }} />}
               {link.label}
             </a>
           ))}

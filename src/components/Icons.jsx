@@ -14,7 +14,7 @@ import {
   SiOpenai,
 } from "react-icons/si";
 import { FaJava, FaLinkedin, FaRobot, FaBrain } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiDownload } from "react-icons/fi";
 import { GiBearFace, GiPineTree } from "react-icons/gi";
 
 export function TailwindIcon(props) { return <SiTailwindcss size={16} aria-hidden="true" {...props} />; }
@@ -38,3 +38,4 @@ export function RAGIcon(props) { return <FaBrain size={16} aria-hidden="true" {.
 export function GitHubIcon(props) { return <SiGithub size={16} title="GitHub" aria-label="GitHub" {...props} />; }
 export function LinkedInIcon(props) { return <FaLinkedin size={16} title="LinkedIn" aria-label="LinkedIn" {...props} />; }
 export function ExternalLinkIcon(props) { return <FiExternalLink size={16} title="External Link" aria-label="External Link" {...props} />; }
+export function DownloadIcon(props) { return <FiDownload size={16} title="Download" aria-label="Download" {...props} />; }
