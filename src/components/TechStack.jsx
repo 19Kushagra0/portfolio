@@ -18,6 +18,7 @@ import {
   ZustandIcon,
   PineconeIcon,
   RAGIcon,
+  FlutterIcon,
 } from "./Icons";
 
 const iconMap = {
@@ -37,6 +38,7 @@ const iconMap = {
   Zustand: ZustandIcon,
   Pinecone: PineconeIcon,
   RAG: RAGIcon,
+  Flutter: FlutterIcon,
 };
 
 export default function TechStack() {
