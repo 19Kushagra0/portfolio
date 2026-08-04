@@ -270,6 +270,7 @@ export default function Main({ onOpenDetails }) {
               gap: 16,
               paddingTop: 32,
               marginLeft: 40,
+              flexWrap: "wrap",
             }}
           >
             <a
