@@ -2,12 +2,11 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
-  async redirects() {
+  async rewrites() {
     return [
       {
         source: '/resume',
         destination: '/kushagra_sharma.pdf',
-        permanent: false,
       },
     ];
   },

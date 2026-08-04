@@ -250,7 +250,7 @@ export default function Footer() {
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {[
             { label: "Work", href: "#projects" },
-            { label: "Resume", href: "/kushagra_sharma.pdf", download: "kushagra_sharma.pdf" },
+            { label: "Resume", href: "/resume", download: "kushagra_sharma.pdf" },
           ].map((link) => (
             <a
               key={link.label}
