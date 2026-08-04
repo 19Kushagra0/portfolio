@@ -12,6 +12,7 @@ import {
   SiFirebase,
   SiNestjs,
   SiOpenai,
+  SiFlutter,
 } from "react-icons/si";
 import { FaJava, FaLinkedin, FaRobot, FaBrain } from "react-icons/fa";
 import { FiExternalLink, FiDownload } from "react-icons/fi";
@@ -39,3 +40,4 @@ export function GitHubIcon(props) { return <SiGithub size={16} title="GitHub" ar
 export function LinkedInIcon(props) { return <FaLinkedin size={16} title="LinkedIn" aria-label="LinkedIn" {...props} />; }
 export function ExternalLinkIcon(props) { return <FiExternalLink size={16} title="External Link" aria-label="External Link" {...props} />; }
 export function DownloadIcon(props) { return <FiDownload size={16} title="Download" aria-label="Download" {...props} />; }
+export function FlutterIcon(props) { return <SiFlutter size={16} aria-hidden="true" {...props} />; }
