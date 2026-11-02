@@ -48,12 +48,8 @@ export default function Header() {
               style={{
                 fontSize: 14,
                 fontWeight: 500,
-                color: "#888888",
                 textDecoration: "none",
-                transition: "color 0.2s",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "#171717")}
-              onMouseLeave={(e) => (e.target.style.color = "#888888")}
             >
               {item}
             </a>

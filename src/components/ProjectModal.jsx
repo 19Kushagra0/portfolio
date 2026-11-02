@@ -1,13 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Header from "@/components/Header";
-import Main from "@/components/Main";
-import Footer from "@/components/Footer";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 
-/* ── Project Modal Component ── */
-function ProjectModal({ project, onClose }) {
+export default function ProjectModal({ project, onClose }) {
   // Close on Escape key
   useEffect(() => {
     const handleEsc = (e) => {
@@ -40,17 +36,6 @@ function ProjectModal({ project, onClose }) {
         padding: "clamp(16px, 4vh, 40px) clamp(8px, 4vw, 24px)",
       }}
     >
-      <style>
-        {`
-          .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-          }
-          .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-        `}
-      </style>
       {/* Backdrop overlay */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -93,6 +78,7 @@ function ProjectModal({ project, onClose }) {
       >
         {/* Close button */}
         <button
+          type="button"
           onClick={onClose}
           style={{
             position: "absolute",
@@ -227,32 +213,3 @@ function ProjectModal({ project, onClose }) {
   );
 }
 
-export default function PageClient() {
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  return (
-    <div
-      style={{
-        backgroundColor: "#fafafa",
-        color: "#4d4d4d",
-        fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <Header />
-      <Main onOpenDetails={setSelectedProject} />
-      <Footer />
-      {/* Project Details Modal */}
-      <AnimatePresence>
-        {selectedProject && (
-          <ProjectModal
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}

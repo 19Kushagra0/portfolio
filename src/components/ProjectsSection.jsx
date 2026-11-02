@@ -1,31 +1,10 @@
+"use client";
+
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GitHubIcon, LinkedInIcon, ExternalLinkIcon } from "./Icons";
+import { ExternalLinkIcon } from "./Icons";
 import { projectsData } from "../data/project";
-import TechStack from "./TechStack";
-import GitHubContributions from "./GitHubContributions";
-
-const heroContainerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.25,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const heroLineVariants = {
-  hidden: { opacity: 0, x: -60 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.65,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
+import ProjectModal from "./ProjectModal";
 
 const cardContainerVariants = {
   hidden: { opacity: 1 },
@@ -72,23 +51,30 @@ const CATEGORY_PILL_STYLES = {
   },
 };
 
+const ALL_CATEGORIES = ["All", "RAG", "Full Stack", "Pixel Perfect"];
+const VISIBLE_CATEGORIES = ALL_CATEGORIES.filter(
+  (cat) =>
+    cat === "All" ||
+    projectsData.some(
+      (p) =>
+        p.category === cat || (cat === "Full Stack" && p.category === "RAG")
+    )
+);
+
 function useWindowWidth() {
   const [width, setWidth] = useState(1024);
   useEffect(() => {
-    setWidth(window.innerWidth);
     const handleResize = () => setWidth(window.innerWidth);
+    handleResize();
     window.addEventListener("resize", handleResize);
-    const timer = setTimeout(handleResize, 0);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      clearTimeout(timer);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
   return width;
 }
 
-export default function Main({ onOpenDetails }) {
+export default function ProjectsSection() {
   const [filter, setFilter] = useState("All");
+  const [selectedProject, setSelectedProject] = useState(null);
   const windowWidth = useWindowWidth();
   const isMobile = windowWidth <= 500;
 
@@ -98,258 +84,11 @@ export default function Main({ onOpenDetails }) {
     return project.category === filter;
   });
 
+  const activePillStyle =
+    CATEGORY_PILL_STYLES[filter] || CATEGORY_PILL_STYLES["All"];
+
   return (
-    <main
-      style={{
-        flexGrow: 1,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      {/* ── Hero Section ── */}
-      <section
-        style={{
-          position: "relative",
-          width: "100%",
-          maxWidth: 1400,
-          margin: "0 auto",
-          padding: "clamp(64px, 15vw, 192px) clamp(16px, 4vw, 24px)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          overflow: "hidden",
-        }}
-      >
-        {/* Mesh gradient */}
-        <div
-          className="mesh-bg"
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-            pointerEvents: "none",
-          }}
-        />
-
-        <div
-          style={{
-            position: "relative",
-            zIndex: 10,
-            display: "flex",
-            flexDirection: "column",
-            gap: 24,
-            maxWidth: 1000,
-            alignItems: "flex-start",
-          }}
-        >
-          {/* Code-numbered headline lines */}
-          <motion.div
-            variants={heroContainerVariants}
-            initial="hidden"
-            animate="visible"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: 12,
-              textAlign: "left",
-            }}
-          >
-            {/* Line 01 */}
-            <motion.div
-              variants={heroLineVariants}
-              style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
-            >
-              <span
-                aria-hidden="true"
-                style={{
-                  fontFamily: "'Geist Mono', ui-monospace, monospace",
-                  fontSize: 12,
-                  color: "#888888",
-                  paddingTop: 10,
-                  minWidth: 24,
-                  lineHeight: 1,
-                }}
-              >
-                01
-              </span>
-              <h1
-                className="hero-headline"
-                style={{
-                  fontSize: 48,
-                  fontWeight: 600,
-                  letterSpacing: "-2.4px",
-                  lineHeight: "48px",
-                  color: "#171717",
-                }}
-              >
-                {"<Hello, I'm\u00A0"}
-                <span style={{ color: "#0057c0" }}>Kushagra</span>
-                {">"}
-              </h1>
-            </motion.div>
-
-            {/* Line 02 */}
-            <motion.div
-              variants={heroLineVariants}
-              style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
-            >
-              <span
-                aria-hidden="true"
-                style={{
-                  fontFamily: "'Geist Mono', ui-monospace, monospace",
-                  fontSize: 12,
-                  color: "#888888",
-                  paddingTop: 10,
-                  minWidth: 24,
-                  lineHeight: 1,
-                }}
-              >
-                02
-              </span>
-              <p
-                className="hero-headline"
-                style={{
-                  fontSize: 48,
-                  fontWeight: 600,
-                  letterSpacing: "-2.4px",
-                  lineHeight: "48px",
-                  color: "#171717",
-                  margin: 0,
-                }}
-              >
-                {"<I\u00A0"}
-                <span style={{ color: "#0057c0" }}>Wire</span>
-                {"\u00A0ideas\u00A0&>"}
-              </p>
-            </motion.div>
-
-            {/* Line 03 */}
-            <motion.div
-              variants={heroLineVariants}
-              style={{ display: "flex", alignItems: "flex-start", gap: 16 }}
-            >
-              <span
-                aria-hidden="true"
-                style={{
-                  fontFamily: "'Geist Mono', ui-monospace, monospace",
-                  fontSize: 12,
-                  color: "#888888",
-                  paddingTop: 10,
-                  minWidth: 24,
-                  lineHeight: 1,
-                }}
-              >
-                03
-              </span>
-              <p
-                className="hero-headline"
-                style={{
-                  fontSize: 48,
-                  fontWeight: 600,
-                  letterSpacing: "-2.4px",
-                  lineHeight: "48px",
-                  color: "#171717",
-                  margin: 0,
-                }}
-              >
-                {"<"}
-                <span style={{ color: "#0057c0" }}>Ship</span>
-                {"\u00A0products>"}
-              </p>
-            </motion.div>
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <div
-            className="hero-cta-row"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 16,
-              paddingTop: 32,
-              marginLeft: 40,
-              flexWrap: "wrap",
-            }}
-          >
-            <a
-              href="https://github.com/19Kushagra0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-cta-btn"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 8,
-                height: 48,
-                padding: "0 32px",
-                borderRadius: 9999,
-                backgroundColor: "#171717",
-                color: "#ffffff",
-                fontSize: 16,
-                fontWeight: 700,
-                letterSpacing: "-0.05em",
-                textDecoration: "none",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#000000";
-                e.currentTarget.style.transform = "scale(1.05)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#171717";
-                e.currentTarget.style.transform = "scale(1)";
-              }}
-            >
-              <GitHubIcon />
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/kushagra-sharma-ks/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-cta-btn"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 8,
-                height: 48,
-                padding: "0 32px",
-                borderRadius: 9999,
-                backgroundColor: "#fafafa",
-                color: "#4d4d4d",
-                fontSize: 16,
-                fontWeight: 700,
-                letterSpacing: "-0.05em",
-                textDecoration: "none",
-                border: "1px solid #ebebeb",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#ffffff";
-                e.currentTarget.style.color = "#171717";
-                e.currentTarget.style.transform = "scale(1.05)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#fafafa";
-                e.currentTarget.style.color = "#4d4d4d";
-                e.currentTarget.style.transform = "scale(1)";
-              }}
-            >
-              <LinkedInIcon />
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <GitHubContributions />
-      <TechStack />
-
-      {/* ── Projects Section ── */}
+    <>
       <section
         id="projects"
         style={{
@@ -404,15 +143,11 @@ export default function Main({ onOpenDetails }) {
             gap: 4,
             padding: 6,
             borderRadius: 9999,
-            background: (
-              CATEGORY_PILL_STYLES[filter] || CATEGORY_PILL_STYLES["All"]
-            ).bg,
+            background: activePillStyle.bg,
             backdropFilter: "blur(12px)",
             WebkitBackdropFilter: "blur(12px)",
             border: "1px solid rgba(0, 0, 0, 0.05)",
-            boxShadow: (
-              CATEGORY_PILL_STYLES[filter] || CATEGORY_PILL_STYLES["All"]
-            ).shadow,
+            boxShadow: activePillStyle.shadow,
             marginTop: -8,
             marginBottom: 0,
             position: "relative",
@@ -422,13 +157,14 @@ export default function Main({ onOpenDetails }) {
             transition: "background 0.4s ease, box-shadow 0.4s ease",
           }}
         >
-          {["All", "RAG", "Full Stack", "Pixel Perfect"].map((cat) => {
+          {VISIBLE_CATEGORIES.map((cat) => {
             const isActive = filter === cat;
             const pillStyle =
               CATEGORY_PILL_STYLES[cat] || CATEGORY_PILL_STYLES["All"];
             return (
               <button
                 key={cat}
+                type="button"
                 className="filter-tab-btn"
                 onClick={() => setFilter(cat)}
                 style={{
@@ -519,7 +255,7 @@ export default function Main({ onOpenDetails }) {
                 <ProjectCard
                   project={project}
                   displayNumber={String(index + 1).padStart(2, "00")}
-                  onOpenDetails={() => onOpenDetails(project)}
+                  onOpenDetails={() => setSelectedProject(project)}
                   isMobile={isMobile}
                 />
               </motion.div>
@@ -527,27 +263,19 @@ export default function Main({ onOpenDetails }) {
           ))}
         </motion.div>
       </section>
-    </main>
+
+      {/* Project Details Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
+    </>
   );
 }
-
-/* ─────────────────────────────────────────────
-   Project Card Component
-   ─────────────────────────────────────────────
-   • Mouse tracking on the entire card wrapper
-   • Follow-cursor "View Project" tooltip shown
-     everywhere EXCEPT when hovering the two
-     action buttons (suppressTooltip flag)
-   • Right panel is an <a> that navigates to
-     the live site on click
-   ───────────────────────────────────────────── */
-const CATEGORY_GRADIENTS = {
-  "Full Stack": "#e8e8e8",
-  RAG: "#e8e8e8",
-  "Pixel Perfect": "#e8e8e8",
-};
-
-const DEFAULT_GRADIENT = "#e8e8e8";
 
 function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -654,8 +382,8 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
             zIndex: 10,
           }}
         >
-          {/* View Details — text-only blue; hides cursor tooltip while hovered */}
           <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
               onOpenDetails();
@@ -700,13 +428,13 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               strokeLinecap="round"
               strokeLinejoin="round"
               style={{ transform: "rotate(-45deg)" }}
+              aria-hidden="true"
             >
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </button>
 
-          {/* Live Demo — visible on all devices */}
           <a
             href={project.links.live}
             target="_blank"
@@ -768,7 +496,12 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               <motion.div
                 initial={{ opacity: 0.5 }}
                 animate={{ opacity: 1 }}
-                transition={{ repeat: Infinity, duration: 0.8, repeatType: "reverse", ease: "easeInOut" }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 0.8,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                }}
                 style={{
                   position: "absolute",
                   width: "90%",
@@ -792,7 +525,7 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
               whileHover={{ scale: 1.05 }}
               transition={{
                 scale: { type: "spring", stiffness: 400, damping: 25 },
-                opacity: { duration: 0.4, ease: "easeOut" }
+                opacity: { duration: 0.4, ease: "easeOut" },
               }}
               style={{
                 maxWidth: "90%",
@@ -830,3 +563,4 @@ function ProjectCard({ project, displayNumber, onOpenDetails, isMobile }) {
     </div>
   );
 }
+
