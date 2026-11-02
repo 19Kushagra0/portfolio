@@ -423,3 +423,133 @@ body {
   -ms-overflow-style: none !important;  /* IE and Edge */
   scrollbar-width: none !important;  /* Firefox */
 }
+
+
+/* ─── Server Component Hover & Hero Animations ─── */
+.nav-link-item {
+  color: #888888;
+  transition: color 0.2s ease;
+}
+
+.nav-link-item:hover {
+  color: #171717;
+}
+
+@keyframes hero-line-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-line-1,
+.hero-line-2,
+.hero-line-3 {
+  animation: hero-line-enter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-line-1 {
+  animation-delay: 0.1s;
+}
+
+.hero-line-2 {
+  animation-delay: 0.35s;
+}
+
+.hero-line-3 {
+  animation-delay: 0.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line-1,
+  .hero-line-2,
+  .hero-line-3 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-cta-primary {
+  background-color: #171717;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-cta-primary:hover {
+  background-color: #000000;
+  transform: scale(1.05);
+}
+
+.hero-cta-secondary {
+  background-color: #fafafa;
+  color: #4d4d4d;
+  border: 1px solid #ebebeb;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-cta-secondary:hover {
+  background-color: #ffffff;
+  color: #171717;
+  transform: scale(1.05);
+}
+
+.github-day-cell {
+  transition: transform 0.2s ease;
+}
+
+.github-day-cell:hover {
+  transform: scale(1.2);
+}
+
+.footer-social-link {
+  color: #888888;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: #171717;
+}
+
+.footer-nav-link {
+  color: #888888;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav-link-work {
+  color: #171717;
+}
+
+.footer-nav-link:hover {
+  color: #171717;
+  text-decoration: underline;
+}
+
+.email-pill-btn {
+  background-color: #fafafa;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.email-pill-btn:hover {
+  background-color: #ffffff;
+  border-color: #d5d5d5;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
