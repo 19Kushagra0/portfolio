@@ -182,58 +182,58 @@ export const projectsData = [
       github: "https://github.com/19Kushagra0/gmail-dashboard",
     },
   },
-  {
-    id: 6,
-    number: "05",
-    category: "Pixel Perfect",
-    title: "Anki Homepage",
-    description:
-      "A pixel-perfect recreation of the Anki Homepage with a fully responsive design.",
-    image: "/projects/anki.webp",
-    links: {
-      live: "https://anki-homepage-clone.vercel.app/",
-      github: "https://github.com/19Kushagra0/anki-homepage-clone",
-    },
-  },
-  {
-    id: 1,
-    number: "03",
-    category: "Pixel Perfect",
-    title: "Awwwards Homepage",
-    description:
-      "A pixel-perfect recreation of the Awwwards Homepage with a fully responsive design.",
-    image: "/projects/awwwards.webp",
-    links: {
-      live: "https://awwwards-homepage-clone.vercel.app/",
-      github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
-    },
-  },
-  {
-    id: 3,
-    number: "02",
-    category: "Pixel Perfect",
-    title: "Play.ht Homepage",
-    description:
-      "A pixel-perfect recreation of the Play.ht Homepage with a fully responsive design.",
-    image: "/projects/playht.webp",
-    links: {
-      live: "https://play-ht-homepage-clone.vercel.app/",
-      github: "https://github.com/19Kushagra0/play.ht-homepage-clone",
-    },
-  },
-  {
-    id: 2,
-    number: "01",
-    category: "Pixel Perfect",
-    title: "Baremetrics Homepage",
-    description:
-      "A pixel-perfect recreation of the Baremetrics Homepage with a fully responsive design.",
-    image: "/projects/baremetrics.webp",
-    links: {
-      live: "https://baremetrics-hompage-clone.vercel.app/",
-      github: "https://github.com/19Kushagra0/baremetrics-hompage-clone",
-    },
-  },
+  // {
+  //   id: 6,
+  //   number: "05",
+  //   category: "Pixel Perfect",
+  //   title: "Anki Homepage",
+  //   description:
+  //     "A pixel-perfect recreation of the Anki Homepage with a fully responsive design.",
+  //   image: "/projects/anki.webp",
+  //   links: {
+  //     live: "https://anki-homepage-clone.vercel.app/",
+  //     github: "https://github.com/19Kushagra0/anki-homepage-clone",
+  //   },
+  // },
+  // {
+  //   id: 1,
+  //   number: "03",
+  //   category: "Pixel Perfect",
+  //   title: "Awwwards Homepage",
+  //   description:
+  //     "A pixel-perfect recreation of the Awwwards Homepage with a fully responsive design.",
+  //   image: "/projects/awwwards.webp",
+  //   links: {
+  //     live: "https://awwwards-homepage-clone.vercel.app/",
+  //     github: "https://github.com/19Kushagra0/awwwards-homepage-clone",
+  //   },
+  // },
+  // {
+  //   id: 3,
+  //   number: "02",
+  //   category: "Pixel Perfect",
+  //   title: "Play.ht Homepage",
+  //   description:
+  //     "A pixel-perfect recreation of the Play.ht Homepage with a fully responsive design.",
+  //   image: "/projects/playht.webp",
+  //   links: {
+  //     live: "https://play-ht-homepage-clone.vercel.app/",
+  //     github: "https://github.com/19Kushagra0/play.ht-homepage-clone",
+  //   },
+  // },
+  // {
+  //   id: 2,
+  //   number: "01",
+  //   category: "Pixel Perfect",
+  //   title: "Baremetrics Homepage",
+  //   description:
+  //     "A pixel-perfect recreation of the Baremetrics Homepage with a fully responsive design.",
+  //   image: "/projects/baremetrics.webp",
+  //   links: {
+  //     live: "https://baremetrics-hompage-clone.vercel.app/",
+  //     github: "https://github.com/19Kushagra0/baremetrics-hompage-clone",
+  //   },
+  // },
   // {
   //   id: 4,
   //   number: "00",
